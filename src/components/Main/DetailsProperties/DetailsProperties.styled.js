@@ -1,0 +1,72 @@
+import styled from 'styled-components';
+
+export const DetailsPropertyWrapper = styled.div`
+  padding: 20px;
+`;
+
+export const DetailsPropertiesContainer = styled.div`
+  width: 100%;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(2, 1fr);
+  color: ${({ theme }) => theme.mainTextColor};
+`;
+
+export const PropertiesSubTitle = styled.h2`
+  color: ${({ theme }) => theme.mainTextColor};
+  text-decoration: underline;
+  margin-top: 50px;
+`;
+
+export const CustomProperyiesList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  & span {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+    margin-right: 8px;
+  }
+
+  & li {
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* align-items: center; */
+    font-size: 18px;
+  }
+`;
+
+export const CustomPropertyIcons = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding: 0;
+
+  & li {
+    background-color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  & svg {
+    fill: ${({ theme }) => theme.detailsIconFillColor};
+  }
+`;
+
+export const RateSpan = styled.span`
+  width: auto;
+  border: 1px solid red;
+  padding: 5px 10px;
+  background-color: #2aa5a0;
+  background-image: linear-gradient(90deg, gold, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+`;

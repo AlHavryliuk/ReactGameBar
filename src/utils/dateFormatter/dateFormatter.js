@@ -1,0 +1,40 @@
+export const releaseDate = released => {
+  const dateArray = released.split('-');
+  return `${dateArray[2]} ${getMounth(dateArray[1])} ${dateArray[0]} `;
+};
+
+const getMounth = numOfMounths => {
+  switch (numOfMounths) {
+    case '01':
+      return 'January';
+    case '02':
+      return 'February';
+    case '03':
+      return 'March';
+    case '04':
+      return 'April';
+    case '05':
+      return 'May';
+    case '06':
+      return 'June';
+    case '07':
+      return 'July';
+    case '08':
+      return 'August';
+    case '09':
+      return 'September';
+    case '10':
+      return 'October';
+    case '11':
+      return 'November';
+    case '12':
+      return 'December';
+    default:
+      return;
+  }
+};
+
+export const getLastDate = updated => {
+  const dateArray = updated.split('-');
+  return `${getMounth(dateArray[1])} ${dateArray[0]}`;
+};

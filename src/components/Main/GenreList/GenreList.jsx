@@ -13,7 +13,7 @@ const GenreList = () => {
 
     useEffect(() => {
         dispatch(getGenresList())
-    }, [])
+    }, [dispatch])
 
     console.log(genres);
     return (

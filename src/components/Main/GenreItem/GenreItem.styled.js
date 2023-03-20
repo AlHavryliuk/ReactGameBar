@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const GenreItemCard = styled.li`
+export const GenreItemCard = styled.div`
   position: relative;
   display: flex;
   align-items: center;

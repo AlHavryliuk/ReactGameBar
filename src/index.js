@@ -8,7 +8,7 @@ import { store } from 'store/store';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
-  <BrowserRouter basename="/react-homework-template">
+  <BrowserRouter basename="/ReactGameBar">
     <Provider store={store}>
       <App />
     </Provider>

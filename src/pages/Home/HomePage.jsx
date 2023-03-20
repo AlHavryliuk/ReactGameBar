@@ -19,12 +19,14 @@ const HomePage = () => {
   }, []);
 
   return (
-    <GameGallery>
-      {isLoading && <Loader />}
-      {gamesList &&
-        gamesList.map(game => <GameCard key={game.id} game={game} />)}
+    <>
+      <GameGallery>
+        {isLoading && <Loader />}
+        {gamesList &&
+          gamesList.map(game => <GameCard key={game.id} game={game} />)}
+      </GameGallery>
       <ManagerButton />
-    </GameGallery>
+    </>
   );
 };
 

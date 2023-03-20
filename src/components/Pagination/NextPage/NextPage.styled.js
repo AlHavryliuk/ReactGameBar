@@ -9,4 +9,5 @@ export const CustomNextButton = styled.button`
   text-transform: uppercase;
   background-color: ${({ theme }) => theme.loadMoreBtnColor};
   color: ${({ theme }) => theme.loadMoreBtnTextColor};
+  cursor: pointer;
 `;

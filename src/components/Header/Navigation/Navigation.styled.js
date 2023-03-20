@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { lineAnimation } from 'utils/animations/animations';
+import { mobile } from 'utils/mixins/adaptMixin';
 
 export const CustomNavigation = styled.nav`
   margin-left: auto;
@@ -9,6 +10,10 @@ export const NavigationLinks = styled.ul`
   display: flex;
   align-items: center;
   gap: 20px;
+
+  ${mobile`
+    display: none;
+  `}
 `;
 
 export const NavItem = styled(NavLink)`
@@ -28,7 +33,7 @@ export const NavItem = styled(NavLink)`
       bottom: 110%;
       left: -20%;
       background-color: white;
-      height: 2px;
+      height: 1px;
       animation: ${lineAnimation} 0.5s linear;
     }
 
@@ -40,11 +45,23 @@ export const NavItem = styled(NavLink)`
       top: 110%;
       right: -20%;
       background-color: white;
-      height: 3px;
+      height: 1px;
       animation: ${lineAnimation} 0.5s linear;
     }
   }
   &:hover {
     color: ${({ theme }) => theme.headerTextHoverColor};
   }
+`;
+
+export const BurgerMenu = styled.svg`
+  display: none;
+  width: 35px;
+  height: 35px;
+  fill: ${({ theme }) => theme.headerTextColor};
+
+  ${mobile`
+    display: block;
+    
+  `}
 `;

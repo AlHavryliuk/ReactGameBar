@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { mobile } from 'utils/mixins/adaptMixin';
 
 export const DetailsBlock = styled.div`
   padding: 30px 0;
@@ -7,7 +8,9 @@ export const DetailsBlock = styled.div`
 export const DetailsSubTitle = styled.h2`
   color: ${({ theme }) => theme.mainTextColor};
   text-decoration: underline;
-
+  ${mobile`
+    display: none;
+  `}
 `;
 
 export const DetailsText = styled.p`

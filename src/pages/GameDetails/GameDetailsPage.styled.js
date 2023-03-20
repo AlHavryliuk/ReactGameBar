@@ -1,11 +1,14 @@
 import styled from 'styled-components';
+import { mobile } from 'utils/mixins/adaptMixin';
 
 export const DetailsContainer = styled.div`
-  /* max-width: 940px; */
   max-width: 1000px;
-  width: 100%;
   padding: 60px 115px;
   margin: 0 auto;
+
+  ${mobile`
+      padding: 15px 35px;
+  `}
 `;
 
 export const GameTitle = styled.h1`

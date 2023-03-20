@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { mobile } from 'utils/mixins/adaptMixin';
 
 export const DetailsPropertyWrapper = styled.div`
   padding: 20px;
@@ -10,18 +11,31 @@ export const DetailsPropertiesContainer = styled.div`
   gap: 5px;
   grid-template-columns: repeat(2, 1fr);
   color: ${({ theme }) => theme.mainTextColor};
+
+  ${mobile`
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0;
+  `}
 `;
 
 export const PropertiesSubTitle = styled.h2`
   color: ${({ theme }) => theme.mainTextColor};
   text-decoration: underline;
   margin-top: 50px;
+
+  ${mobile`
+    text-align: center; 
+  `}
 `;
 
 export const CustomProperyiesList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  ${mobile`
+    padding: 0;
+  `}
 
   & span {
     display: flex;
@@ -63,10 +77,10 @@ export const CustomPropertyIcons = styled.ul`
 
 export const RateSpan = styled.span`
   width: auto;
-  border: 1px solid red;
+  border: 1px solid #30d5c8;
   padding: 5px 10px;
   background-color: #2aa5a0;
-  background-image: linear-gradient(90deg, gold, red);
+  background-image: linear-gradient(90deg, snow, #30d5c8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `;

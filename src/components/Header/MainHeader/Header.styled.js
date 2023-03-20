@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { lineAnimation } from 'utils/animations/animations';
+import { mobile } from 'utils/mixins/adaptMixin';
 
 export const GameHeader = styled.header`
   width: 100%;
@@ -17,6 +18,11 @@ export const HeaderTitle = styled(NavLink)`
   display: flex;
   align-items: center;
 
+  & span {
+    ${mobile`
+      display: none;
+  `}
+  }
 
   /* &.active {
     position: relative;

@@ -8,9 +8,11 @@ import { Route, Routes } from 'react-router-dom';
 import HomePage from 'pages/Home/HomePage';
 import GameDetailsPage from 'pages/GameDetails/GameDetailsPage';
 import GenresPage from 'pages/Genres/GenresPage';
+import MobileNav from './Header/MobileNav/MobileNav';
 
 export const App = () => {
   const darkMode = useSelector(select.darkMode);
+  const mobileNavigation = useSelector(select.mobileNavigation);
 
   return (
     <ThemeProvider theme={darkMode ? darkThemeVars : lightThemeVars}>
@@ -21,6 +23,7 @@ export const App = () => {
         <Route path="/details/:gameId/*" element={<GameDetailsPage />} />
         <Route path="/genres" element={<GenresPage />} />
       </Routes>
+      {mobileNavigation && <MobileNav />}
     </ThemeProvider>
   );
 };

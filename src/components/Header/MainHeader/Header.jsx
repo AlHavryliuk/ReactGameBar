@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <GameHeader>
       <HeaderContainer>
-        <HeaderTitle to="/">GameVortex 🎮</HeaderTitle>
+        <HeaderTitle to="/">GameVortex <span>🎮</span> </HeaderTitle>
         <Navigation />
       </HeaderContainer>
     </GameHeader>

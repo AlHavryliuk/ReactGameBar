@@ -9,6 +9,7 @@ export const CustomPrevBtn = styled.button`
   text-transform: uppercase;
   background-color: ${({ theme }) => theme.loadMoreBtnColor};
   color: ${({ theme }) => theme.loadMoreBtnTextColor};
+  cursor: pointer;
 
   &:disabled {
     background-color: gray;

@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const CustomGameCard = styled.li`
+export const CustomGameCard = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   background-color: ${({ theme }) => theme.cardBackgroundColor};
   position: relative;
@@ -9,6 +9,7 @@ export const CustomGameCard = styled.li`
   cursor: pointer;
   transition: 0.3s;
   transition: all 0.5s;
+  
 
   & img {
     object-fit: cover;

@@ -41,8 +41,6 @@ export const MobileHeader = styled.div`
   & button {
     width: 55px;
     height: 55px;
-    align-items: center;
-    justify-content: center;
     fill: black
     
   }

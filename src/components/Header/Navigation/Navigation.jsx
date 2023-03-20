@@ -7,6 +7,7 @@ import {
 import icon from '../../../images/icon-spread.svg';
 import { useDispatch } from 'react-redux';
 import { openMenu } from 'store/mobileNav/mobileNavSlice';
+import LightMode from 'components/LightMode/LightMode';
 
 
 const Navigation = () => {
@@ -19,6 +20,7 @@ const Navigation = () => {
   return (
     <CustomNavigation>
       <NavigationLinks>
+        <LightMode />
         <NavItem to="/genres">Genres</NavItem>
         <NavItem to="/libary">Libary</NavItem>
         <NavItem to="/about">About</NavItem>

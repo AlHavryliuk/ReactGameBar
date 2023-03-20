@@ -24,8 +24,31 @@ export const MobileNavItem = styled(NavLink)`
 export const MobileCloseButton = styled.svg`
   width: 40px;
   height: 40px;
+`;
+
+export const MobileHeader = styled.div`
+  width: 100%;
+  height: 40px;
   position: absolute;
-  top: 50px;
-  right: 50px;
+  padding: 50px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  top: 0;
+  left: 0;
   fill: ${({ theme }) => theme.headerTextColor};
+
+  & button {
+    width: 55px;
+    height: 55px;
+    align-items: center;
+    justify-content: center;
+    fill: black
+    
+  }
+
+  & svg {
+    width: 40px;
+    height: 40px;
+  }
 `;

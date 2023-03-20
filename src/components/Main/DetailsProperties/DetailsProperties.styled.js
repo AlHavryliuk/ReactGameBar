@@ -80,7 +80,8 @@ export const RateSpan = styled.span`
   border: 1px solid #30d5c8;
   padding: 5px 10px;
   background-color: #2aa5a0;
-  background-image: linear-gradient(90deg, snow, #30d5c8);
+  background-image: linear-gradient(90deg, #30d5c8, snow, gold,  #30d5c8);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 `;

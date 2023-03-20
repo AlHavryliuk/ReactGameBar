@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ReactGameBar/static/css/main.bb5916f1.css",
-    "main.js": "/ReactGameBar/static/js/main.5c37a190.js",
+    "main.js": "/ReactGameBar/static/js/main.d4e2b067.js",
     "static/media/icon-spread.svg": "/ReactGameBar/static/media/icon-spread.51e06ed7ed7f97394f118e40686c5bb1.svg",
     "static/media/slick.svg": "/ReactGameBar/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/ReactGameBar/static/media/slick.a4e97f5a2a64f0ab1323.eot",
@@ -9,10 +9,10 @@
     "static/media/slick.woff": "/ReactGameBar/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/ReactGameBar/index.html",
     "main.bb5916f1.css.map": "/ReactGameBar/static/css/main.bb5916f1.css.map",
-    "main.5c37a190.js.map": "/ReactGameBar/static/js/main.5c37a190.js.map"
+    "main.d4e2b067.js.map": "/ReactGameBar/static/js/main.d4e2b067.js.map"
   },
   "entrypoints": [
     "static/css/main.bb5916f1.css",
-    "static/js/main.5c37a190.js"
+    "static/js/main.d4e2b067.js"
   ]
 }

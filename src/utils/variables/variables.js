@@ -11,6 +11,8 @@ export const lightThemeVars = {
   popupBackgroundColor: '#888888',
   detailsIconFillColor: 'black',
   ratingIconFillColor: 'black',
+  removeAddButtons: '#442727',
+  removeAddText: 'white',
 };
 
 export const darkThemeVars = {
@@ -26,4 +28,6 @@ export const darkThemeVars = {
   popupBackgroundColor: '#110e15;',
   detailsIconFillColor: 'black',
   ratingIconFillColor: 'white',
+  removeAddButtons: 'white',
+  removeAddText: 'black',
 };

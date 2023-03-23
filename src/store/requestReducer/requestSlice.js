@@ -16,9 +16,13 @@ export const requestSlice = createSlice({
     setLastPage(state, action) {
       state.lastPage = action.payload / apiData.per_page;
     },
+    setFirstPage(state, action) {
+      state.page = 1;
+    },
   },
 });
 
-export const { incrementPage, decrementPage } = requestSlice.actions;
+export const { incrementPage, decrementPage, setFirstPage } =
+  requestSlice.actions;
 const requestReducer = requestSlice.reducer;
 export default requestReducer;

@@ -1,4 +1,4 @@
-import GameGallery from 'components/Custom/GamesGallery/GamesGallery';
+import GameGallery from 'components/Custom/GameGallery/GameGallery';
 import Loader from 'components/Loader/Loader';
 
 import GameCard from 'components/Main/GameCard/GameCard';
@@ -6,6 +6,7 @@ import ManagerButton from 'components/Pagination/ManagerButton/ManagerButton';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getGamesList } from 'store/gamesReducer/gamesOperation';
+import { setFirstPage } from 'store/requestReducer/requestSlice';
 import { select } from 'store/selectors/selectors';
 
 const HomePage = () => {
@@ -14,6 +15,7 @@ const HomePage = () => {
   const gamesList = useSelector(select.gamesList);
 
   useEffect(() => {
+    dispatch(setFirstPage())
     dispatch(getGamesList());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

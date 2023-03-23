@@ -7,5 +7,6 @@ export const select = {
   selectedGame: state => state.selectGame.game,
   screenshots: state => state.selectGame.screenshots,
   genres: state => state.genres.genresArray,
-  mobileNavigation: state => state.mobileNavigation.navMenu
+  mobileNavigation: state => state.mobileNavigation.navMenu,
+  favoriteGames: state => state.favoriteGames.gameList,
 };

@@ -21,6 +21,7 @@ const DetailsProperties = () => {
     stores,
     parent_platforms,
     updated,
+    website
   } = useSelector(select.selectedGame);
 
   return (
@@ -42,6 +43,9 @@ const DetailsProperties = () => {
           </li>
           <li>
             <span>Last updated:</span> {getLastDate(updated)}
+          </li>
+          <li>
+            <span> <a href={website} rel="noreferrer" target="_blank">Official website</a> </span>
           </li>
         </CustomProperyiesList>
         <CustomProperyiesList>

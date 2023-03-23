@@ -46,11 +46,14 @@ export const CustomProperyiesList = styled.ul`
   }
 
   & li {
-    /* display: flex; */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* align-items: center; */
     font-size: 18px;
+
+    & a {
+      font-size: 18px;
+      color: ${({ theme }) => theme.mainTextColor};
+    }
   }
 `;
 
@@ -80,7 +83,13 @@ export const RateSpan = styled.span`
   border: 1px solid #30d5c8;
   padding: 5px 10px;
   background-color: #2aa5a0;
-  background-image: linear-gradient(90deg, #30d5c8, snow, gold,  #30d5c8);
+  background-image: linear-gradient(
+    90deg,
+    #30d5c8,
+    ${({ theme }) => theme.mainTextColor},
+    gold,
+    #30d5c8
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

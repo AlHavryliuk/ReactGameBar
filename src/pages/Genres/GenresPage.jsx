@@ -1,4 +1,4 @@
-import GameGallery from 'components/Custom/GamesGallery/GamesGallery'
+import GameGallery from 'components/Custom/GameGallery/GameGallery'
 import GenreList from 'components/Main/GenreList/GenreList'
 
 

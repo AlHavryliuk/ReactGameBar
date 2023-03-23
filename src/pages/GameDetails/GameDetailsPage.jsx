@@ -14,15 +14,12 @@ import {
 } from 'store/selectGameReducer/selectGameOperation';
 import { select } from 'store/selectors/selectors';
 import RatingStars from 'components/Main/RatingStars/RatingStars';
-// import starsIcon from '../../images/icon-spread.svg';
+
 
 const GameDetailsPage = () => {
   const { gameId } = useParams();
   const dispatch = useDispatch();
   const game = useSelector(select.selectedGame);
-  // const stars = {
-  //   empty: `${starsIcon}#icon-star-full`,
-  // };
 
   useEffect(() => {
     dispatch(getGameDetails(gameId))

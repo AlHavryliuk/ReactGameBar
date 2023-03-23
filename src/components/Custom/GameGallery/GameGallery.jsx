@@ -1,5 +1,5 @@
 import React from 'react';
-import { GameGalleryContainer } from './GamesGallery.styled';
+import { GameGalleryContainer } from './GameGallery.styled';
 
 const GameGallery = ({ children }) => {
   return <GameGalleryContainer>{children}</GameGalleryContainer>;

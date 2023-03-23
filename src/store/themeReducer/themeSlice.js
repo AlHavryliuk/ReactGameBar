@@ -1,4 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
+import persistReducer from 'redux-persist/es/persistReducer';
+import storage from 'redux-persist/lib/storage';
 
 const initialState = { darkMode: false };
 
@@ -14,6 +16,14 @@ export const themeSlice = createSlice({
   },
 });
 
-const themeReducer = themeSlice.reducer;
 export const { toggleDarkMode } = themeSlice.actions;
-export default themeReducer;
+
+const persistedConfig = {
+  key: `lightMode`,
+  storage,
+};
+
+export const persistedThemeReducer = persistReducer(
+  persistedConfig,
+  themeSlice.reducer
+);

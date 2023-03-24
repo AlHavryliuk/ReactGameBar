@@ -2,6 +2,7 @@ import GameDetailsPage from 'pages/GameDetails/GameDetailsPage';
 import GenresPage from 'pages/Genres/GenresPage';
 import HomePage from 'pages/Home/HomePage';
 import LibaryPage from 'pages/Libary/LibaryPage';
+import SearchPage from 'pages/Search/SearchPage';
 import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
@@ -25,6 +26,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/details/:gameId/*" element={<GameDetailsPage />} />
+        <Route path="/search" element={<SearchPage />} />
         <Route path="/genres" element={<GenresPage />} />
         <Route path="/libary" element={<LibaryPage />} />
       </Routes>

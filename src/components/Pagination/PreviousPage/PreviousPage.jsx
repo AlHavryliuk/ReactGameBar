@@ -8,10 +8,11 @@ import { CustomPrevBtn } from './PreviousPage.styled';
 const PreviousPage = () => {
   const dispatch = useDispatch();
   const page = useSelector(select.page);
+  const searchQuery = useSelector(select.searchQuery);
 
   useEffect(() => {
-    dispatch(loadMoreGames(page));
-  }, [page, dispatch]);
+    dispatch(loadMoreGames({ page, searchQuery }));
+  }, [page, dispatch, searchQuery]);
 
   const decrementPages = () => {
     dispatch(decrementPage());

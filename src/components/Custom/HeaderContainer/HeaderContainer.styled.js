@@ -13,5 +13,7 @@ export const StyledHeaderContainer = styled.div`
   ${mobile`
       padding: 0 35px;
       font-size: 40px;
+
+    display: flex;
   `}
 `;

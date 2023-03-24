@@ -4,6 +4,7 @@ export const select = {
   isLoading: state => state.games.isLoading,
   page: state => state.request.page,
   lastPage: state => state.request.lastPage,
+  searchQuery: state => state.request.searchQuery,
   selectedGame: state => state.selectGame.game,
   screenshots: state => state.selectGame.screenshots,
   genres: state => state.genres.genresArray,

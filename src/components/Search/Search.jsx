@@ -1,19 +1,35 @@
-import React, { useRef } from 'react'
-import { SearchForm, SearchIcon, SearchInput, SearchWrapper } from './Search.styled'
-import icon from '../../images/icon-spread.svg'
+import { useRef } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { setFirstPage, setSearchQuery } from 'store/requestReducer/requestSlice';
+import { select } from 'store/selectors/selectors';
+import icon from '../../images/icon-spread.svg';
+import { SearchForm, SearchIcon, SearchInput, SearchWrapper } from './Search.styled';
 
 const Search = () => {
     const query = useRef(null)
+    const dispatch = useDispatch()
+
+    const handleSearchGameByQuery = (event) => {
+        if (query.current.value === '') return
+        dispatch(setFirstPage())
+        dispatch(setSearchQuery(query.current.value))
+        query.current.value = ''
+    }
+
 
     return (
         <SearchForm>
             <SearchWrapper>
                 <SearchInput type="text" ref={query} placeholder="Search..." />
-                <button>
-                    <SearchIcon>
-                        <use href={`${icon}#icon-search`}></use>
-                    </SearchIcon>
-                </button>
+                <Link to="/search">
+                    <button onClick={handleSearchGameByQuery}>
+                        <SearchIcon>
+                            <use href={`${icon}#icon-search`}></use>
+                        </SearchIcon>
+                    </button>
+                </Link>
+
             </SearchWrapper>
         </SearchForm>
     )

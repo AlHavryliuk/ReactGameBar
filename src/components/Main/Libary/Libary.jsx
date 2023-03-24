@@ -24,7 +24,7 @@ const Libary = () => {
                             <h3>{name}</h3>
                         </CustomGameCard>
                     </CustomNavLink>)
-                : <LibaryWarningTitle>Favorite games list is empty...</LibaryWarningTitle>
+                : <LibaryWarningTitle>The list of favorite games is empty...</LibaryWarningTitle>
             }
 
         </>

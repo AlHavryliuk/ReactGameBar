@@ -13,11 +13,24 @@ export const getGamesList = createAsyncThunk(
   }
 );
 
+export const searchGames = createAsyncThunk(
+  'games/searchGames',
+  async (query, { rejectWithValue }) => {
+    try {
+      const gamesList = await fetchGameList(1, query);
+      console.log(gamesList);
+      return gamesList;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
 export const loadMoreGames = createAsyncThunk(
   'games/loadMoreGames',
-  async (data, { rejectWithValue }) => {
+  async ({ page, searchQuery }, { rejectWithValue }) => {
     try {
-      const gamesList = await fetchGameList(data);
+      const gamesList = await fetchGameList(page, searchQuery);
       return gamesList;
     } catch (error) {
       return rejectWithValue(error.message);

@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { apiData } from 'configuration/config';
 
-const initialState = { page: 1, lastPage: null };
+const initialState = { page: 1, searchQuery: '', lastPage: null };
 
 export const requestSlice = createSlice({
   name: 'request',
@@ -19,10 +19,21 @@ export const requestSlice = createSlice({
     setFirstPage(state, action) {
       state.page = 1;
     },
+    setSearchQuery(state, action) {
+      state.searchQuery = action.payload;
+    },
+    clearSearchQuery(state) {
+      state.searchQuery = '';   
+    },
   },
 });
 
-export const { incrementPage, decrementPage, setFirstPage } =
-  requestSlice.actions;
+export const {
+  incrementPage,
+  decrementPage,
+  setFirstPage,
+  setSearchQuery,
+  clearSearchQuery,
+} = requestSlice.actions;
 const requestReducer = requestSlice.reducer;
 export default requestReducer;

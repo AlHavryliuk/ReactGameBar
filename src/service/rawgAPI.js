@@ -1,11 +1,16 @@
 import axios from 'axios';
 import { apiData } from 'configuration/config';
 
-export const fetchGameList = async (page = 1) => {
+export const fetchGameList = async (page = 1, search = '') => {
   const {
     data: { count, results },
   } = await axios.get(`${apiData.BASE_URL}games`, {
-    params: { key: apiData.KEY, page: page, page_size: apiData.per_page },
+    params: {
+      key: apiData.KEY,
+      page: page,
+      page_size: apiData.per_page,
+      search,
+    },
   });
 
   return { count, results };

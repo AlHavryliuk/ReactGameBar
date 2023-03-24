@@ -8,6 +8,8 @@ export const GameHeader = styled.header`
   padding: 30px 0;
   background-color: ${({ theme }) => theme.headerBackgroundColor};
   border-bottom: 0.3px solid white;
+
+
 `;
 
 export const HeaderTitle = styled(NavLink)`

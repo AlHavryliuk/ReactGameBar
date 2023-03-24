@@ -1,8 +1,7 @@
 import { useRef } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { setFirstPage, setSearchQuery } from 'store/requestReducer/requestSlice';
-import { select } from 'store/selectors/selectors';
 import icon from '../../images/icon-spread.svg';
 import { SearchForm, SearchIcon, SearchInput, SearchWrapper } from './Search.styled';
 

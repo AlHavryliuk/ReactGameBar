@@ -20,6 +20,7 @@
     "react-spinners": "^0.13.8",
     "react-toastify": "^9.1.2",
     "redux-persist": "^6.0.0",
+    "simplelightbox": "^2.12.1",
     "slick-carousel": "^1.8.1",
     "styled-component": "^2.8.0",
     "styled-components": "^5.3.8",

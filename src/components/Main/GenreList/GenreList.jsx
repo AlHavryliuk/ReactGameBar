@@ -19,7 +19,7 @@ const GenreList = () => {
     }, [dispatch, genres])
 
     return (
-        <Suspense>
+        <Suspense fallback={<Loader />  }>
             {genres ? genres.map(({ id, name, image_background }) => <LazyGenreCard key={id} name={name} image={image_background} />) : <Loader />}
         </Suspense>
     )

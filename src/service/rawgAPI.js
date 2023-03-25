@@ -20,9 +20,9 @@ export const fetchGenreList = async (page = 1) => {
   const {
     data: { count, results },
   } = await axios.get(`${apiData.BASE_URL}genres`, {
-    params: { key: apiData.KEY, page: page, page_size: apiData.per_page },
+    params: { key: apiData.KEY, page: page, page_size: 19 },
   });
-
+  console.log(count);
   return { count, results };
 };
 

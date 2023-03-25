@@ -4,6 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { useSelector } from 'react-redux';
 import { select } from 'store/selectors/selectors';
+import { SlaiderWrapper } from './SimpleSlider.styled';
 
 export const SimpleSlider = () => {
   const screenshots = useSelector(select.screenshots);
@@ -16,7 +17,7 @@ export const SimpleSlider = () => {
   };
 
   return (
-    <div>
+    <SlaiderWrapper>
       <Slider {...settings}>
         {screenshots &&
           screenshots.map(screen => {
@@ -27,7 +28,7 @@ export const SimpleSlider = () => {
             );
           })}
       </Slider>
-    </div>
+    </SlaiderWrapper>
   );
 };
 

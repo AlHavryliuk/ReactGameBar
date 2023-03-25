@@ -6,13 +6,14 @@ export const lightThemeVars = {
   mainTextColor: 'black',
   lightModeBackground: 'snow',
   cardBackgroundColor: 'snow',
-  loadMoreBtnColor: '#EE6983',
+  loadMoreBtnColor: '#442727',
   loadMoreBtnTextColor: '#ffffff',
   popupBackgroundColor: '#888888',
   detailsIconFillColor: 'black',
   ratingIconFillColor: 'black',
   removeAddButtons: '#442727',
   removeAddText: 'white',
+  sliderArrow: '#442727',
 };
 
 export const darkThemeVars = {
@@ -30,4 +31,5 @@ export const darkThemeVars = {
   ratingIconFillColor: 'white',
   removeAddButtons: 'white',
   removeAddText: 'black',
+  sliderArrow: 'white',
 };

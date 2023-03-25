@@ -22,7 +22,6 @@ export const SimpleSlider = () => {
   useEffect(() => {
     // eslint-disable-next-line
     const lightbox = new SimpleLightbox('.gallery a', { /* options */ });
-
   }, [])
 
 

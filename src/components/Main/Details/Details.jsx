@@ -1,4 +1,5 @@
 import { successToast } from 'components/Toaster/toasts';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFavoriteGame, removeFavoriteGame } from 'store/favoriteGames/favoriteSlice';
 import { select } from 'store/selectors/selectors';
@@ -10,7 +11,7 @@ const Details = () => {
     background_image_additional,
     name
   } = useSelector(select.selectedGame);
-  
+
   const favoriteGames = useSelector(select.favoriteGames)
   const dispatch = useDispatch()
   const gameAlreadyAdded = () => favoriteGames.some(({ id: gameId }) => gameId === id)
@@ -24,6 +25,11 @@ const Details = () => {
     successToast(`The game "${name}" has been successfully added to your library`)
   }
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+
+
   const handleRemoveFavoriteGame = () => {
     dispatch(removeFavoriteGame(id))
     successToast(`The game "${name}" has been successfully removed from your library`)
@@ -31,7 +37,6 @@ const Details = () => {
 
   return (
     <DetailsBlock>
- 
       <DetailsColorWrapper>
         <DetailsSubTitle>Description</DetailsSubTitle>
         <DetailsText>{description_raw}</DetailsText>

@@ -7,16 +7,23 @@ import { useDispatch, useSelector } from 'react-redux';
 import { select } from 'store/selectors/selectors';
 import { getGamesList } from './../../store/gamesReducer/gamesOperation';
 
+
+
+
 const HomePage = () => {
 
   const isLoading = useSelector(select.isLoading);
   const gamesList = useSelector(select.gamesList);
   const searchQuery = useSelector(select.searchQuery);
 
+
   const dispatch = useDispatch()
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+
 
   useEffect(() => {
-   
     dispatch(getGamesList(searchQuery))
   }, [dispatch, searchQuery])
 

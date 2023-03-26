@@ -1,11 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { fetchGameList } from 'service/rawgAPI';
+import { fetchGameList, fetchGameListByGenre } from 'service/rawgAPI';
 
 export const getGamesList = createAsyncThunk(
   'games/getGamesList',
-  async (_, { rejectWithValue }) => {
+  async (page, { rejectWithValue }) => {
     try {
-      const gamesList = await fetchGameList();
+      const gamesList = await fetchGameList(page);
       return gamesList;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -15,10 +15,21 @@ export const getGamesList = createAsyncThunk(
 
 export const searchGames = createAsyncThunk(
   'games/searchGames',
-  async (query, { rejectWithValue }) => {
+  async ({ page, searchQuery }, { rejectWithValue }) => {
     try {
-      const gamesList = await fetchGameList(1, query);
-      console.log(gamesList);
+      const gamesList = await fetchGameList(page, searchQuery);
+      return gamesList;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const searchGamesByGenre = createAsyncThunk(
+  'games/searchGamesByGenre',
+  async ({ page, genre }, { rejectWithValue }) => {
+    try {
+      const gamesList = await fetchGameListByGenre(page, genre);
       return gamesList;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -28,9 +39,13 @@ export const searchGames = createAsyncThunk(
 
 export const loadMoreGames = createAsyncThunk(
   'games/loadMoreGames',
-  async ({ page, searchQuery }, { rejectWithValue }) => {
+  async ({ page, searchQuery, searchGenres }, { rejectWithValue }) => {
     try {
-      const gamesList = await fetchGameList(page, searchQuery);
+      if (searchGenres) {
+        const gamesList = await fetchGameListByGenre(page, searchGenres);
+        return gamesList;
+      }
+      const gamesList = await fetchGameList(page, searchQuery, searchGenres);
       return gamesList;
     } catch (error) {
       return rejectWithValue(error.message);

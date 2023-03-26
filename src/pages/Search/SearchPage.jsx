@@ -5,7 +5,8 @@ import ManagerButton from 'components/Pagination/ManagerButton/ManagerButton';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
-import { getGamesList } from 'store/gamesReducer/gamesOperation';
+import { searchGames } from 'store/gamesReducer/gamesOperation';
+import { clearSearchQuery, setFirstPage } from 'store/requestReducer/requestSlice';
 import { select } from 'store/selectors/selectors';
 
 const SearchPage = () => {
@@ -13,14 +14,32 @@ const SearchPage = () => {
     const gamesList = useSelector(select.gamesList);
     const searchQuery = useSelector(select.searchQuery);
     const [, setSearchParams] = useSearchParams();
+    const page = useSelector(select.page);
     const dispatch = useDispatch()
 
+
     useEffect(() => {
-        if (searchQuery === '') return
-        setSearchParams({ query: searchQuery })
-        dispatch(getGamesList(searchQuery))
+        return () => {
+            dispatch(clearSearchQuery())
+            dispatch(setFirstPage())
+        }
         // eslint-disable-next-line
-    }, [dispatch, searchQuery])
+    }, [])
+
+
+    useEffect(() => {
+
+        setSearchParams({ game: searchQuery })
+        dispatch(searchGames({ page, searchQuery }))
+        // eslint-disable-next-line
+    }, [searchQuery])
+
+    useEffect(() => {
+        if (page === 1) return
+        window.scrollTo(0, 0);
+        dispatch(searchGames({ page, searchQuery }))
+        // eslint-disable-next-line
+    }, [page])
 
 
     return (

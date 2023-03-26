@@ -31,11 +31,9 @@ export const SimpleSlider = () => {
         {screenshots &&
           screenshots.map(screen => {
             return (
-              <a href={screen} >
-                <div key={screen}>
-
+              <a href={screen} key={screen}>
+                <div >
                   <img src={screen} width="100%" alt="" />
-
                 </div>
               </a>
             );

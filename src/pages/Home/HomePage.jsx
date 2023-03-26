@@ -4,28 +4,34 @@ import GameCard from 'components/Main/GameCard/GameCard';
 import ManagerButton from 'components/Pagination/ManagerButton/ManagerButton';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { setCurrentPage } from 'store/requestReducer/requestSlice';
+
 import { select } from 'store/selectors/selectors';
 import { getGamesList } from './../../store/gamesReducer/gamesOperation';
-
-
-
 
 const HomePage = () => {
 
   const isLoading = useSelector(select.isLoading);
   const gamesList = useSelector(select.gamesList);
-  const searchQuery = useSelector(select.searchQuery);
-
-
+  const currentPage = useSelector(select.currentPage);
   const dispatch = useDispatch()
+  const page = useSelector(select.page);
+
+
   useEffect(() => {
-    window.scrollTo(0, 0);
+    dispatch(setCurrentPage('home'))
+    // eslint-disable-next-line
   }, [])
 
 
   useEffect(() => {
-    dispatch(getGamesList(searchQuery))
-  }, [dispatch, searchQuery])
+    if (currentPage !== 'home') return
+    window.scrollTo(0, 0);
+    dispatch(getGamesList(page))
+
+
+  }, [dispatch, currentPage, page])
+
 
   return (
     <>

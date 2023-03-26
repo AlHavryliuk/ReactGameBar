@@ -1,7 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { apiData } from 'configuration/config';
 
-const initialState = { page: 1, searchQuery: '', lastPage: null };
+const initialState = {
+  page: 1,
+  searchQuery: '',
+  currentPage: null,
+  lastPage: null,
+};
 
 export const requestSlice = createSlice({
   name: 'request',
@@ -23,7 +28,10 @@ export const requestSlice = createSlice({
       state.searchQuery = action.payload;
     },
     clearSearchQuery(state) {
-      state.searchQuery = '';   
+      state.searchQuery = '';
+    },
+    setCurrentPage(state, action) {
+      state.currentPage = action.payload;
     },
   },
 });
@@ -34,6 +42,7 @@ export const {
   setFirstPage,
   setSearchQuery,
   clearSearchQuery,
+  setCurrentPage,
 } = requestSlice.actions;
 const requestReducer = requestSlice.reducer;
 export default requestReducer;

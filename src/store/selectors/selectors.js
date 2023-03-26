@@ -5,6 +5,7 @@ export const select = {
   page: state => state.request.page,
   lastPage: state => state.request.lastPage,
   searchQuery: state => state.request.searchQuery,
+  currentPage: state => state.request.currentPage,
   selectedGame: state => state.selectGame.game,
   screenshots: state => state.selectGame.screenshots,
   genres: state => state.genres.genresArray,

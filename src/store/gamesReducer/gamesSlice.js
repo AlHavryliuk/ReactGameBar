@@ -1,5 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getGamesList, loadMoreGames, searchGames } from './gamesOperation';
+import {
+  getGamesList,
+  loadMoreGames,
+  searchGames,
+  searchGamesByGenre,
+} from './gamesOperation';
 
 const initialState = { gamesArray: null, isLoading: false, error: null };
 
@@ -43,6 +48,19 @@ export const gamesSlice = createSlice({
         state.gamesArray = action.payload.results;
       })
       .addCase(loadMoreGames.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+
+      .addCase(searchGamesByGenre.pending, state => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(searchGamesByGenre.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.gamesArray = action.payload.results;
+      })
+      .addCase(searchGamesByGenre.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       }),

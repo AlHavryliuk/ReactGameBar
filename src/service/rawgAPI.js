@@ -12,6 +12,20 @@ export const fetchGameList = async (page = 1, search = '') => {
       search,
     },
   });
+  return { count, results };
+};
+
+export const fetchGameListByGenre = async (page = 1, genres) => {
+  const {
+    data: { count, results },
+  } = await axios.get(`${apiData.BASE_URL}games`, {
+    params: {
+      key: apiData.KEY,
+      page: page,
+      page_size: apiData.per_page,
+      genres,
+    },
+  });
 
   return { count, results };
 };
@@ -22,7 +36,7 @@ export const fetchGenreList = async (page = 1) => {
   } = await axios.get(`${apiData.BASE_URL}genres`, {
     params: { key: apiData.KEY, page: page, page_size: 19 },
   });
-  console.log(count);
+
   return { count, results };
 };
 

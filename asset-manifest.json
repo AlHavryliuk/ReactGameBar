@@ -1,14 +1,15 @@
 {
   "files": {
     "main.css": "/ReactGameBar/static/css/main.3306520a.css",
-    "main.js": "/ReactGameBar/static/js/main.dc4380f7.js",
+    "main.js": "/ReactGameBar/static/js/main.8796e389.js",
+    "static/js/820.e4f31d6a.chunk.js": "/ReactGameBar/static/js/820.e4f31d6a.chunk.js",
     "static/css/897.4f881e93.chunk.css": "/ReactGameBar/static/css/897.4f881e93.chunk.css",
-    "static/js/897.7a18b216.chunk.js": "/ReactGameBar/static/js/897.7a18b216.chunk.js",
-    "static/js/796.d286df6e.chunk.js": "/ReactGameBar/static/js/796.d286df6e.chunk.js",
-    "static/js/793.dd0d89ea.chunk.js": "/ReactGameBar/static/js/793.dd0d89ea.chunk.js",
-    "static/js/978.1502aed7.chunk.js": "/ReactGameBar/static/js/978.1502aed7.chunk.js",
-    "static/js/465.887c5d12.chunk.js": "/ReactGameBar/static/js/465.887c5d12.chunk.js",
-    "static/js/600.4779c58d.chunk.js": "/ReactGameBar/static/js/600.4779c58d.chunk.js",
+    "static/js/897.ddf0d94f.chunk.js": "/ReactGameBar/static/js/897.ddf0d94f.chunk.js",
+    "static/js/796.8ddfdfa6.chunk.js": "/ReactGameBar/static/js/796.8ddfdfa6.chunk.js",
+    "static/js/793.deb0a59b.chunk.js": "/ReactGameBar/static/js/793.deb0a59b.chunk.js",
+    "static/js/978.d5e093cc.chunk.js": "/ReactGameBar/static/js/978.d5e093cc.chunk.js",
+    "static/js/465.60459676.chunk.js": "/ReactGameBar/static/js/465.60459676.chunk.js",
+    "static/js/600.61dc4b16.chunk.js": "/ReactGameBar/static/js/600.61dc4b16.chunk.js",
     "static/js/645.35dfbb27.chunk.js": "/ReactGameBar/static/js/645.35dfbb27.chunk.js",
     "static/media/icon-spread.svg": "/ReactGameBar/static/media/icon-spread.605f547c2c2418de17bf97ddb626c6b7.svg",
     "static/media/slick.svg": "/ReactGameBar/static/media/slick.2630a3e3eab21c607e21.svg",
@@ -17,18 +18,19 @@
     "static/media/slick.woff": "/ReactGameBar/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/ReactGameBar/index.html",
     "main.3306520a.css.map": "/ReactGameBar/static/css/main.3306520a.css.map",
-    "main.dc4380f7.js.map": "/ReactGameBar/static/js/main.dc4380f7.js.map",
+    "main.8796e389.js.map": "/ReactGameBar/static/js/main.8796e389.js.map",
+    "820.e4f31d6a.chunk.js.map": "/ReactGameBar/static/js/820.e4f31d6a.chunk.js.map",
     "897.4f881e93.chunk.css.map": "/ReactGameBar/static/css/897.4f881e93.chunk.css.map",
-    "897.7a18b216.chunk.js.map": "/ReactGameBar/static/js/897.7a18b216.chunk.js.map",
-    "796.d286df6e.chunk.js.map": "/ReactGameBar/static/js/796.d286df6e.chunk.js.map",
-    "793.dd0d89ea.chunk.js.map": "/ReactGameBar/static/js/793.dd0d89ea.chunk.js.map",
-    "978.1502aed7.chunk.js.map": "/ReactGameBar/static/js/978.1502aed7.chunk.js.map",
-    "465.887c5d12.chunk.js.map": "/ReactGameBar/static/js/465.887c5d12.chunk.js.map",
-    "600.4779c58d.chunk.js.map": "/ReactGameBar/static/js/600.4779c58d.chunk.js.map",
+    "897.ddf0d94f.chunk.js.map": "/ReactGameBar/static/js/897.ddf0d94f.chunk.js.map",
+    "796.8ddfdfa6.chunk.js.map": "/ReactGameBar/static/js/796.8ddfdfa6.chunk.js.map",
+    "793.deb0a59b.chunk.js.map": "/ReactGameBar/static/js/793.deb0a59b.chunk.js.map",
+    "978.d5e093cc.chunk.js.map": "/ReactGameBar/static/js/978.d5e093cc.chunk.js.map",
+    "465.60459676.chunk.js.map": "/ReactGameBar/static/js/465.60459676.chunk.js.map",
+    "600.61dc4b16.chunk.js.map": "/ReactGameBar/static/js/600.61dc4b16.chunk.js.map",
     "645.35dfbb27.chunk.js.map": "/ReactGameBar/static/js/645.35dfbb27.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3306520a.css",
-    "static/js/main.dc4380f7.js"
+    "static/js/main.8796e389.js"
   ]
 }

@@ -21,7 +21,6 @@ export const DetailsPropertiesContainer = styled.div`
 export const PropertiesSubTitle = styled.h2`
   color: ${({ theme }) => theme.mainTextColor};
   text-decoration: underline;
-  margin-top: 50px;
 
   ${mobile`
     text-align: center; 

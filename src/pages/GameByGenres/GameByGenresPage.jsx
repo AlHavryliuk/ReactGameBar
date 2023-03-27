@@ -8,6 +8,7 @@ import { searchGamesByGenre } from "store/gamesReducer/gamesOperation";
 import { select } from "store/selectors/selectors";
 import { setCurrentPage, setFirstPage } from 'store/requestReducer/requestSlice';
 import ManagerButton from "components/Pagination/ManagerButton/ManagerButton";
+import { SectionTitle } from "components/Custom/GameGallery/GameGallery.styled";
 
 const GameByGenresPage = () => {
     const isLoading = useSelector(select.isLoading);
@@ -34,6 +35,7 @@ const GameByGenresPage = () => {
         <>
             {isLoading && <Loader />}
             <GameGallery>
+                <SectionTitle>{`Games in the genre: ${genre}`}</SectionTitle>
                 {gamesList &&
                     gamesList.map(game => <GameCard key={game.id} game={game} />)}
             </GameGallery>

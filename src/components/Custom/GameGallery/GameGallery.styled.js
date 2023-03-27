@@ -18,3 +18,14 @@ export const GameGalleryContainer = styled.div`
     grid-template-columns: repeat(1, 1fr);
   `}
 `;
+
+export const SectionTitle = styled.h1`
+  grid-column: 1 / -1;
+  text-align: center;
+  color: ${({ theme }) => theme.mainTextColor};
+  display: none;
+
+  ${mobile`
+    display: block;
+  `}
+`;

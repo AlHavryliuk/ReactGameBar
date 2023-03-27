@@ -35,7 +35,6 @@ const HomePage = () => {
 
   return (
     <>
-      {isLoading && <Loader />}
       <GameGallery>
         {gamesList &&
           gamesList.map(game => <GameCard key={game.id} game={game} />)}

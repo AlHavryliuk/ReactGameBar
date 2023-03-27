@@ -27,8 +27,7 @@ const GameByGenresPage = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
         dispatch(searchGamesByGenre({ page, genre }))
-        // eslint-disable-next-line
-    }, [page])
+    }, [page, genre, dispatch])
 
 
     return (

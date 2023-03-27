@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 import { searchGames } from 'store/gamesReducer/gamesOperation';
-import { clearSearchQuery, setFirstPage } from 'store/requestReducer/requestSlice';
+import { clearSearchQuery, setCurrentPage, setFirstPage } from 'store/requestReducer/requestSlice';
 import { select } from 'store/selectors/selectors';
 
 const SearchPage = () => {
@@ -19,6 +19,7 @@ const SearchPage = () => {
 
 
     useEffect(() => {
+        dispatch(setCurrentPage('search'))
         return () => {
             dispatch(clearSearchQuery())
             dispatch(setFirstPage())

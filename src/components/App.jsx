@@ -1,4 +1,3 @@
-import HomePage from 'pages/Home/HomePage';
 import { lazy, Suspense } from 'react';
 import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
@@ -16,6 +15,7 @@ import ToasterContainer from './Toaster/ToasterContainer';
 export const App = () => {
   const darkMode = useSelector(select.darkMode);
   const mobileNavigation = useSelector(select.mobileNavigation);
+  const LazyHomePage = lazy(() => import('pages/Home/HomePage'))
   const LazyDetailsPage = lazy(() => import('pages/GameDetails/GameDetailsPage'))
   const LazySearchPage = lazy(() => import('pages/Search/SearchPage'))
   const LazyLibaryPage = lazy(() => import('pages/Libary/LibaryPage'))
@@ -28,7 +28,7 @@ export const App = () => {
       <Header />
       <Suspense fallback={<Loader />}>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<LazyHomePage />} />
           <Route path="/details/:gameId/*" element={<LazyDetailsPage />} />
           <Route path="/search" element={<LazySearchPage />} />
           <Route path="/genres" element={<LazyGenresPage />} />

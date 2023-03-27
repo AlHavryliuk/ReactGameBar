@@ -1,17 +1,14 @@
 import GameGallery from 'components/Custom/GameGallery/GameGallery';
-import Loader from 'components/Loader/Loader';
 import GameCard from 'components/Main/GameCard/GameCard';
 import ManagerButton from 'components/Pagination/ManagerButton/ManagerButton';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setCurrentPage } from 'store/requestReducer/requestSlice';
+import { setCurrentPage, setFirstPage } from 'store/requestReducer/requestSlice';
 
 import { select } from 'store/selectors/selectors';
 import { getGamesList } from './../../store/gamesReducer/gamesOperation';
 
 const HomePage = () => {
-
-  const isLoading = useSelector(select.isLoading);
   const gamesList = useSelector(select.gamesList);
   const currentPage = useSelector(select.currentPage);
   const dispatch = useDispatch()
@@ -20,6 +17,7 @@ const HomePage = () => {
 
   useEffect(() => {
     dispatch(setCurrentPage('home'))
+    return () => dispatch(setFirstPage());
     // eslint-disable-next-line
   }, [])
 

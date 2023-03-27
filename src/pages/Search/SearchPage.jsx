@@ -6,20 +6,27 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 import { searchGames } from 'store/gamesReducer/gamesOperation';
-import { clearSearchQuery, setCurrentPage, setFirstPage } from 'store/requestReducer/requestSlice';
+import { clearSearchQuery, setCurrentPage, setFirstPage, setSearchQuery } from 'store/requestReducer/requestSlice';
 import { select } from 'store/selectors/selectors';
 
 const SearchPage = () => {
     const isLoading = useSelector(select.isLoading);
     const gamesList = useSelector(select.gamesList);
+    const currentPage = useSelector(select.currentPage);
     const searchQuery = useSelector(select.searchQuery);
-    const [, setSearchParams] = useSearchParams();
+    const [searchParams, setSearchParams] = useSearchParams();
     const page = useSelector(select.page);
     const dispatch = useDispatch()
 
 
     useEffect(() => {
         dispatch(setCurrentPage('search'))
+        if (searchQuery === '') {
+            if (searchParams.get('game') !== '') {
+                const game = searchParams.get('game')
+                dispatch(setSearchQuery(game))
+            }
+        }
         return () => {
             dispatch(clearSearchQuery())
             dispatch(setFirstPage())
@@ -29,18 +36,12 @@ const SearchPage = () => {
 
 
     useEffect(() => {
-
+        if (currentPage !== 'search') return
+        window.scrollTo(0, 0);
         setSearchParams({ game: searchQuery })
         dispatch(searchGames({ page, searchQuery }))
         // eslint-disable-next-line
-    }, [searchQuery])
-
-    useEffect(() => {
-        if (page === 1) return
-        window.scrollTo(0, 0);
-        dispatch(searchGames({ page, searchQuery }))
-        // eslint-disable-next-line
-    }, [page])
+    }, [page, currentPage, dispatch, searchQuery])
 
 
     return (

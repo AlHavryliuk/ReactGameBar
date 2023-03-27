@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ReactGameBar/static/css/main.3306520a.css",
-    "main.js": "/ReactGameBar/static/js/main.9f9f42b0.js",
+    "main.js": "/ReactGameBar/static/js/main.398bf6a3.js",
     "static/js/820.016fd0f1.chunk.js": "/ReactGameBar/static/js/820.016fd0f1.chunk.js",
     "static/css/897.4f881e93.chunk.css": "/ReactGameBar/static/css/897.4f881e93.chunk.css",
     "static/js/897.32165321.chunk.js": "/ReactGameBar/static/js/897.32165321.chunk.js",
@@ -11,14 +11,14 @@
     "static/js/465.0e3bad2f.chunk.js": "/ReactGameBar/static/js/465.0e3bad2f.chunk.js",
     "static/js/600.a051ff24.chunk.js": "/ReactGameBar/static/js/600.a051ff24.chunk.js",
     "static/js/645.35dfbb27.chunk.js": "/ReactGameBar/static/js/645.35dfbb27.chunk.js",
-    "static/media/icon-spread.svg": "/ReactGameBar/static/media/icon-spread.605f547c2c2418de17bf97ddb626c6b7.svg",
+    "static/media/icon-spread.svg": "/ReactGameBar/static/media/icon-spread.8a42aacf842713cae847a1456617ce21.svg",
     "static/media/slick.svg": "/ReactGameBar/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/ReactGameBar/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/ReactGameBar/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/ReactGameBar/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/ReactGameBar/index.html",
     "main.3306520a.css.map": "/ReactGameBar/static/css/main.3306520a.css.map",
-    "main.9f9f42b0.js.map": "/ReactGameBar/static/js/main.9f9f42b0.js.map",
+    "main.398bf6a3.js.map": "/ReactGameBar/static/js/main.398bf6a3.js.map",
     "820.016fd0f1.chunk.js.map": "/ReactGameBar/static/js/820.016fd0f1.chunk.js.map",
     "897.4f881e93.chunk.css.map": "/ReactGameBar/static/css/897.4f881e93.chunk.css.map",
     "897.32165321.chunk.js.map": "/ReactGameBar/static/js/897.32165321.chunk.js.map",
@@ -31,6 +31,6 @@
   },
   "entrypoints": [
     "static/css/main.3306520a.css",
-    "static/js/main.9f9f42b0.js"
+    "static/js/main.398bf6a3.js"
   ]
 }

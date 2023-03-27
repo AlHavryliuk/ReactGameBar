@@ -1,3 +1,5 @@
+import AboutPage from 'pages/About/AboutPage';
+import ContactPage from 'pages/Contact/ContactPage';
 import { lazy, Suspense } from 'react';
 import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
@@ -34,6 +36,8 @@ export const App = () => {
           <Route path="/genres" element={<LazyGenresPage />} />
           <Route path="/genres/:genre/*" element={<LazyGameByGenresPage />} />
           <Route path="/libary" element={<LazyLibaryPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </Suspense>
       {mobileNavigation && <MobileNav />}

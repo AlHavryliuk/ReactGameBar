@@ -35,7 +35,7 @@ const GameByGenresPage = () => {
         <>
             {isLoading && <Loader />}
             <GameGallery>
-                <SectionTitle>{`Games in the genre: ${genre}`}</SectionTitle>
+                <SectionTitle>{`Games in the genre: "${genre}"`}</SectionTitle>
                 {gamesList &&
                     gamesList.map(game => <GameCard key={game.id} game={game} />)}
             </GameGallery>

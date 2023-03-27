@@ -16,6 +16,7 @@ export const GameGalleryContainer = styled.div`
 
   ${mobile`
     grid-template-columns: repeat(1, 1fr);
+    padding: 30px 15px 15px;
   `}
 `;
 
@@ -27,5 +28,6 @@ export const SectionTitle = styled.h1`
 
   ${mobile`
     display: block;
+    margin: 0;
   `}
 `;

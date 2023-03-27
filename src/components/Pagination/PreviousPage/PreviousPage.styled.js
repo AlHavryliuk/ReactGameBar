@@ -12,6 +12,6 @@ export const CustomPrevBtn = styled.button`
   cursor: pointer;
 
   &:disabled {
-    background-color: gray;
+    background-color: ${({ theme }) => theme.loadMoreDisabledColor};
   }
 `;

@@ -7,6 +7,7 @@ export const select = {
   searchQuery: state => state.request.searchQuery,
   currentPage: state => state.request.currentPage,
   selectedGame: state => state.selectGame.game,
+  selectedIsLoading: state => state.selectGame.isLoading,
   screenshots: state => state.selectGame.screenshots,
   genres: state => state.genres.genresArray,
   mobileNavigation: state => state.mobileNavigation.navMenu,

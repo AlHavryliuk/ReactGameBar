@@ -1,3 +1,4 @@
+import Loader from 'components/Loader/Loader';
 import { successToast } from 'components/Toaster/toasts';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -11,9 +12,12 @@ const Details = () => {
     background_image_additional,
     name
   } = useSelector(select.selectedGame);
-
   const favoriteGames = useSelector(select.favoriteGames)
   const dispatch = useDispatch()
+  const isLoading = useSelector(select.selectedIsLoading)
+
+
+
   const gameAlreadyAdded = () => favoriteGames.some(({ id: gameId }) => gameId === id)
 
   const handleAddFavoriteGame = () => {
@@ -37,6 +41,7 @@ const Details = () => {
 
   return (
     <DetailsBlock>
+      {isLoading && <Loader />}
       <DetailsColorWrapper>
         <DetailsSubTitle>Description</DetailsSubTitle>
         <DetailsText>{description_raw}</DetailsText>
@@ -46,7 +51,6 @@ const Details = () => {
         <DetailsButton onClick={handleAddFavoriteGame} disabled={gameAlreadyAdded()}>{gameAlreadyAdded() ? `Already added` : `Add to Libary`}  </DetailsButton>
         <DetailsButton onClick={handleRemoveFavoriteGame} disabled={!gameAlreadyAdded()}>Remove from Libary</DetailsButton>
       </DetailsButtonWrapper>
-
     </DetailsBlock>
   );
 };

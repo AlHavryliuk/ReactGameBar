@@ -1,4 +1,5 @@
 import GameGallery from 'components/Custom/GameGallery/GameGallery';
+import Loader from 'components/Loader/Loader';
 import GameCard from 'components/Main/GameCard/GameCard';
 import ManagerButton from 'components/Pagination/ManagerButton/ManagerButton';
 import { useEffect } from 'react';
@@ -11,6 +12,7 @@ import { getGamesList } from './../../store/gamesReducer/gamesOperation';
 const HomePage = () => {
   const gamesList = useSelector(select.gamesList);
   const currentPage = useSelector(select.currentPage);
+  const isLoading = useSelector(select.isLoading);
   const dispatch = useDispatch()
   const page = useSelector(select.page);
 
@@ -26,13 +28,11 @@ const HomePage = () => {
     if (currentPage !== 'home') return
     window.scrollTo(0, 0);
     dispatch(getGamesList(page))
-
-
   }, [dispatch, currentPage, page])
-
 
   return (
     <>
+      {isLoading && <Loader />}
       <GameGallery>
         {gamesList &&
           gamesList.map(game => <GameCard key={game.id} game={game} />)}

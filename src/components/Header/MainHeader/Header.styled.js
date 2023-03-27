@@ -8,8 +8,6 @@ export const GameHeader = styled.header`
   padding: 30px 0;
   background-color: ${({ theme }) => theme.headerBackgroundColor};
   border-bottom: 0.3px solid white;
-
-
 `;
 
 export const HeaderTitle = styled(NavLink)`
@@ -41,4 +39,13 @@ export const HeaderTitle = styled(NavLink)`
       animation: ${lineAnimation} 0.5s linear;
     }
   } */
+`;
+
+export const CustomSvg = styled.svg`
+  margin-left: 15px;
+  fill: ${({ theme }) => theme.headerTextColor};
+
+  ${mobile`
+      display: none;
+  `}
 `;

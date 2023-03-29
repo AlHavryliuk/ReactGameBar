@@ -14,12 +14,19 @@ import {
 } from 'store/selectGameReducer/selectGameOperation';
 import { select } from 'store/selectors/selectors';
 import RatingStars from 'components/Main/RatingStars/RatingStars';
+import { setCurrentPage } from 'store/requestReducer/requestSlice';
 
 
 const GameDetailsPage = () => {
   const { gameId } = useParams();
   const dispatch = useDispatch();
   const game = useSelector(select.selectedGame);
+
+
+  useEffect(() => {
+    dispatch(setCurrentPage('details'));
+    // eslint-disable-next-line
+  }, [])
 
   useEffect(() => {
     dispatch(getGameDetails(gameId))

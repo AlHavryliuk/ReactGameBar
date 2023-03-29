@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { lineAnimation } from 'utils/animations/animations';
 import { mobile } from 'utils/mixins/adaptMixin';
 
 export const GameHeader = styled.header`
@@ -18,31 +17,34 @@ export const HeaderTitle = styled(NavLink)`
   display: flex;
   align-items: center;
 
+  ${mobile`
+      display: none;
+  `}
+
   & span {
     ${mobile`
       display: none;
   `}
   }
+`;
 
-  /* &.active {
-    position: relative;
-
-    &::after {
-      content: '';
+export const HeaderDinamicTitle = styled.h2`
+  display: none;
+  width: 300px;
+  text-decoration: none;
+  color: ${({ theme }) => theme.headerTextColor};
+  font-size: 36px;
+  margin: 0;
+  text-transform: capitalize;
+  
+  ${mobile`
       display: block;
-      position: absolute;
-      height: 2px;
-      width: 120%;
-      background-color: white;
-      bottom: 0;
-      left: 0;
-      animation: ${lineAnimation} 0.5s linear;
-    }
-  } */
+  `}
 `;
 
 export const CustomSvg = styled.svg`
   margin-left: 15px;
+
   fill: ${({ theme }) => theme.headerTextColor};
 
   ${mobile`

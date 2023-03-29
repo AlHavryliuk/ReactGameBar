@@ -19,7 +19,7 @@ const GameByGenresPage = () => {
 
     useEffect(() => {
         if (!genre) return
-        dispatch(setCurrentPage('gameByGenres'))
+        dispatch(setCurrentPage('by Genres'))
         return () => dispatch(setFirstPage())
         // eslint-disable-next-line
     }, [])

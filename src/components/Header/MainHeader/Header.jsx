@@ -22,7 +22,7 @@ const Header = () => {
             <use href={`${svg}#icon-gamepad`}></use>
           </CustomSvg>
         </HeaderTitle>
-        <HeaderDinamicTitle>{currentPage}</HeaderDinamicTitle>
+        <HeaderDinamicTitle>{currentPage === 'home' ? 'GameVortex' : currentPage}</HeaderDinamicTitle>
         <Search />
         <Navigation />
       </HeaderContainer>

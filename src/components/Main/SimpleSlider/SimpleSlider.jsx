@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Slider from 'react-slick';
@@ -10,6 +11,7 @@ import { SlaiderWrapper } from './SimpleSlider.styled';
 
 export const SimpleSlider = () => {
   const screenshots = useSelector(select.screenshots);
+  const [lightbox, setLightbox] = useState(null);
   const settings = {
     dots: true,
     infinite: true,
@@ -18,11 +20,12 @@ export const SimpleSlider = () => {
     slidesToScroll: 1,
   };
 
-
   useEffect(() => {
-    // eslint-disable-next-line
-    const lightbox = new SimpleLightbox('.gallery a', { /* options */ });
-  }, [])
+    if (screenshots && screenshots.length && !lightbox) {
+      const lb = new SimpleLightbox('.gallery a', { /* options */ });
+      setLightbox(lb);
+    }
+  }, [screenshots, lightbox]);
 
 
   return (

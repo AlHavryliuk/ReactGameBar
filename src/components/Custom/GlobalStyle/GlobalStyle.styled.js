@@ -7,6 +7,9 @@ export const GlobalStyle = createGlobalStyle`
 
     & .sl-wrapper {
       background-color: #010101c9 !important;
+      & .sl-counter, .sl-close, .sl-prev, .sl-next{
+        color:  ${({ theme }) => theme.headerTextColor} !important;
+      }
     }
   }
   `;

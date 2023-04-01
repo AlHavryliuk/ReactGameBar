@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+
 import { mobile } from 'utils/mixins/adaptMixin';
 
 export const GameHeader = styled.header`
@@ -36,7 +37,7 @@ export const HeaderDinamicTitle = styled.h2`
   font-size: 36px;
   margin: 0;
   text-transform: capitalize;
-  
+
   ${mobile`
       display: block;
   `}

@@ -5,6 +5,7 @@ export const DetailsContainer = styled.div`
   max-width: 1000px;
   padding: 60px 115px;
   margin: 0 auto;
+  
 
   ${mobile`
       padding: 15px 35px;

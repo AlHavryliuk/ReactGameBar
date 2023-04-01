@@ -24,7 +24,6 @@ const MobileNav = () => {
             <MobileNavItem onClick={handleCloseNavigationMenu} to="/genres">Genres</MobileNavItem>
             <MobileNavItem onClick={handleCloseNavigationMenu} to="/libary">Libary</MobileNavItem>
             <MobileNavItem onClick={handleCloseNavigationMenu} to="/about">About</MobileNavItem>
-            <MobileNavItem onClick={handleCloseNavigationMenu} to="/contact">Contact</MobileNavItem>
         </MobileNavPopup>
     )
 }

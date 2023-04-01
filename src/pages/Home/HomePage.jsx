@@ -38,6 +38,7 @@ const HomePage = () => {
           gamesList.map(game => <GameCard key={game.id} game={game} />)}
       </GameGallery>
       <ManagerButton />
+      <footer />
     </>
   );
 };

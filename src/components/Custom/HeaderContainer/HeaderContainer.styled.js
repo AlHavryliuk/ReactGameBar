@@ -7,6 +7,7 @@ export const StyledHeaderContainer = styled.div`
   margin: 0 auto;
   /* display: flex; */
   /* align-items: center; */
+  
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 

@@ -1,7 +1,7 @@
 export const lightThemeVars = {
   headerBackgroundColor: '#7f7e7a',
   headerTextColor: 'snow',
-  headerTextHoverColor: 'gray',
+  headerTextHoverColor: 'black',
   mainBackgroundColor: 'snow',
   mainTextColor: 'black',
   lightModeBackground: 'snow',
@@ -15,6 +15,8 @@ export const lightThemeVars = {
   removeAddButtons: '#442727',
   removeAddText: 'white',
   sliderArrow: '#442727',
+  aboutTextColor: 'black',
+  aboutTwiceBlock: '#7f7e7a',
 };
 
 export const darkThemeVars = {
@@ -34,4 +36,6 @@ export const darkThemeVars = {
   removeAddButtons: 'white',
   removeAddText: 'black',
   sliderArrow: 'white',
+  aboutTextColor: '#DCD7C9',
+  aboutTwiceBlock: '#2C3639',
 };

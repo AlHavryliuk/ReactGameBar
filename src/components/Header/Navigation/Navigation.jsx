@@ -24,7 +24,6 @@ const Navigation = () => {
         <NavItem to="/genres">Genres</NavItem>
         <NavItem to="/libary">Libary</NavItem>
         <NavItem to="/about">About</NavItem>
-        <NavItem to="/contact">Contact</NavItem>
       </NavigationLinks>
       <BurgerMenu onClick={handleOpenNavigationMenu}>
         <use href={`${icon}#icon-paragraph`}></use>

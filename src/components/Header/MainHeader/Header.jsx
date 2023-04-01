@@ -12,7 +12,6 @@ import { useSelector } from 'react-redux';
 const Header = () => {
   const currentPage = useSelector(select.currentPage)
 
-
   return (
     <GameHeader>
       <HeaderContainer>

@@ -8,6 +8,7 @@ export const DetailsBlock = styled.div`
 export const DetailsSubTitle = styled.h2`
   color: ${({ theme }) => theme.headerTextColor};
   text-decoration: underline;
+  text-align: center;
   ${mobile`
     display: none;
   `}
@@ -15,7 +16,7 @@ export const DetailsSubTitle = styled.h2`
 
 export const DetailsText = styled.p`
   color: ${({ theme }) => theme.headerTextColor};
-  padding: 0 15px;
+  padding: 0 20px;
   font-size: 18px;
 `;
 

@@ -29,6 +29,10 @@ export const SearchInput = styled.input`
   border: none;
   background-color: transparent;
   color: ${({ theme }) => theme.headerTextColor};
+
+  &::placeholder {
+    color: ${({ theme }) => theme.headerTextColor};
+  }
 `;
 
 export const SearchIcon = styled.svg`

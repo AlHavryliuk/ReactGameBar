@@ -122,17 +122,23 @@ export const AboutSubContainer = styled.div`
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     background-color: ${({ theme }) => theme.cardBackgroundColor};
   }
+
+  ${mobile`
+      grid-template-columns: repeat(1, 1fr);
+  `}
 `;
 
 export const AboutSubBlockTitle = styled.h2`
   color: ${({ theme }) => theme.aboutTextColor};
   padding-left: 40px;
   font-size: 28px;
+  margin-top: 0;
   position: relative;
 
   ${mobile`
       text-align: center;
       padding-left: 0;
+      margin: 0;
   `} 
   
   &::after {

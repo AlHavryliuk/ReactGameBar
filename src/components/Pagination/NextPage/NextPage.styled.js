@@ -15,7 +15,7 @@ export const CustomNextButton = styled.button`
   transition: all 0.5s ease 0s;
 
   &:hover {
-    background-color: ${({ theme }) => theme.headerTextColor};
-    color: ${({ theme }) => theme.loadMoreBtnColor};
+    background-color: ${({ theme }) => theme.loadMoreHoverColor};
+    color: ${({ theme }) => theme.mainCardTextColor};
   }
 `;

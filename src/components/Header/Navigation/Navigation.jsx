@@ -8,6 +8,7 @@ import icon from '../../../images/icon-spread.svg';
 import { useDispatch } from 'react-redux';
 import { openMenu } from 'store/mobileNav/mobileNavSlice';
 import LightMode from 'components/LightMode/LightMode';
+import { setFirstPage } from 'store/requestReducer/requestSlice';
 
 
 const Navigation = () => {
@@ -17,11 +18,13 @@ const Navigation = () => {
     dispatch(openMenu())
   }
 
+  const handleSetFirstPage = () => dispatch(setFirstPage())
+
   return (
     <CustomNavigation>
       <NavigationLinks>
         <LightMode />
-        <NavItem to="/genres">Genres</NavItem>
+        <NavItem onClick={handleSetFirstPage} to="/genres">Genres</NavItem>
         <NavItem to="/libary">Libary</NavItem>
         <NavItem to="/about">About</NavItem>
       </NavigationLinks>

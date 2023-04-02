@@ -5,13 +5,19 @@ const GameCard = ({ game: { id, name, short_screenshots = '#' } }) => {
   const title = sliceName(name);
   const notFoundImage = 'https://picturesofmaidenhead.files.wordpress.com/2019/01/image-not-found.jpg?w=1620'
 
+  const handleAltImage = () => {
+    if (!short_screenshots.length) return notFoundImage
+    if (short_screenshots.length > 1) return short_screenshots[1].image
+    return notFoundImage
+  }
+
   return (
     <CustomNavLink to={`/details/${id}`}>
       <CustomGameCard>
         <img
           width="100%"
           // src={background_image}
-          src={short_screenshots.length ? short_screenshots[1].image : notFoundImage}
+          src={handleAltImage()}
           alt=""
         />
         <h3>{title}</h3>

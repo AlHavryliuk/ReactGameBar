@@ -7,15 +7,16 @@ export const BackIcon = styled.span`
   border-radius: 10px;
   background-color: white;
   text-align: center;
+  padding-bottom: 5px;
   cursor: pointer;
   background-color: ${({ theme }) => theme.headerBackgroundColor};
-  color: ${({ theme }) => theme.headerTextColor};
+  color: ${({ theme }) => theme.loadMoreBtnTextColor};
 
   transition: all 0.3s ease 0s;
 
   &:hover {
-    background-color: ${({ theme }) => theme.headerTextColor};
-    color: ${({ theme }) => theme.headerBackgroundColor};
+    background-color: ${({ theme }) => theme.detailsIconFillColor};
+    color: ${({ theme }) => theme.loadMoreBtnTextColor};
   }
 `;
 

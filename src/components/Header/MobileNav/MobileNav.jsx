@@ -3,10 +3,16 @@ import icon from '../../../images/icon-spread.svg';
 import { useDispatch } from "react-redux";
 import { closeMenu } from "store/mobileNav/mobileNavSlice";
 import LightMode from "components/LightMode/LightMode";
+import { setFirstPage } from "store/requestReducer/requestSlice";
 
 const MobileNav = () => {
     const dispatch = useDispatch()
     const handleCloseNavigationMenu = () => {
+        dispatch(closeMenu())
+    }
+
+    const handleCloseAndSetFirstPage = () => {
+        dispatch(setFirstPage())
         dispatch(closeMenu())
     }
 
@@ -20,8 +26,8 @@ const MobileNav = () => {
                 </MobileCloseButton>
             </MobileHeader>
 
-            <MobileNavItem onClick={handleCloseNavigationMenu} to="/">Home</MobileNavItem>
-            <MobileNavItem onClick={handleCloseNavigationMenu} to="/genres">Genres</MobileNavItem>
+            <MobileNavItem onClick={handleCloseAndSetFirstPage} to="/">Home</MobileNavItem>
+            <MobileNavItem onClick={handleCloseAndSetFirstPage} to="/genres">Genres</MobileNavItem>
             <MobileNavItem onClick={handleCloseNavigationMenu} to="/libary">Libary</MobileNavItem>
             <MobileNavItem onClick={handleCloseNavigationMenu} to="/about">About</MobileNavItem>
         </MobileNavPopup>

@@ -24,7 +24,6 @@ const RatingStars = ({ rating }) => {
           star = stars.full;
         }
         if (index + 1 > simpleRate) {
-          console.log(index + 1 - simpleRate);
           if (index + 1 - simpleRate < 1) {
             star = stars.half;
           } else {

@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { setSearchQuery } from 'store/requestReducer/requestSlice';
+import { setFirstPage, setSearchQuery } from 'store/requestReducer/requestSlice';
 import icon from '../../images/icon-spread.svg';
 import { SearchForm, SearchIcon, SearchInput, SearchWrapper } from './Search.styled';
 
@@ -10,6 +10,7 @@ const Search = () => {
     const dispatch = useDispatch()
 
     const handleSearchGameByQuery = () => {
+        dispatch(setFirstPage())
         dispatch(setSearchQuery(query.current.value))
         query.current.value = '';
     }

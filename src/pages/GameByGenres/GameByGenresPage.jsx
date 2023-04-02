@@ -1,14 +1,14 @@
 import GameGallery from "components/Custom/GameGallery/GameGallery";
+import { SectionTitle } from "components/Custom/GameGallery/GameGallery.styled";
 import Loader from "components/Loader/Loader";
 import GameCard from "components/Main/GameCard/GameCard";
+import ManagerButton from "components/Pagination/ManagerButton/ManagerButton";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { searchGamesByGenre } from "store/gamesReducer/gamesOperation";
+import { setCurrentPage } from 'store/requestReducer/requestSlice';
 import { select } from "store/selectors/selectors";
-import { setCurrentPage, setFirstPage } from 'store/requestReducer/requestSlice';
-import ManagerButton from "components/Pagination/ManagerButton/ManagerButton";
-import { SectionTitle } from "components/Custom/GameGallery/GameGallery.styled";
 
 const GameByGenresPage = () => {
     const isLoading = useSelector(select.isLoading);
@@ -20,7 +20,6 @@ const GameByGenresPage = () => {
     useEffect(() => {
         if (!genre) return
         dispatch(setCurrentPage('by Genres'))
-        return () => dispatch(setFirstPage())
         // eslint-disable-next-line
     }, [])
 

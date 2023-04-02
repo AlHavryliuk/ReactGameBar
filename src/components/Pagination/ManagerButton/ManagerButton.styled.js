@@ -13,5 +13,8 @@ export const PaginationWrapper = styled.div`
   /* text-transform: uppercase; */
   /* background-color: ${({ theme }) => theme.loadMoreBtnColor};
   color: ${({ theme }) => theme.loadMoreBtnTextColor}; */
+  color: ${({ theme }) => theme.headerTextColor};
   display: flex;
+
+  
 `;

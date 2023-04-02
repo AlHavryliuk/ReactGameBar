@@ -9,10 +9,13 @@ const LoadMoreButton = () => {
   const favoriteGames = useSelector(select.favoriteGames)
   const per_page = useSelector(select.per_page)
   const page = useSelector(select.localPage)
+  const currentPage = useSelector(select.currentPage)
 
 
   useEffect(() => {
+    if (currentPage === 'details') return
     dispatch(setFirstLocalPage())
+    // eslint-disable-next-line
   }, [dispatch])
 
 

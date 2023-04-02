@@ -8,7 +8,15 @@ export const LocalPage = styled.button`
   border: none;
   text-transform: uppercase;
   background-color: ${({ theme }) => theme.loadMoreBtnColor};
-  color: ${({ theme }) => theme.loadMoreBtnTextColor};
+  /* color: ${({ theme }) => theme.loadMoreBtnTextColor}; */
+  cursor: pointer;
+  color: ${({ theme }) => theme.headerTextColor};
+  transition: all 0.5s ease 0s;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.headerTextColor};
+    color: ${({ theme }) => theme.loadMoreBtnColor};
+  }
 `;
 
 export const LoadMoreContainer = styled.div`
@@ -18,5 +26,5 @@ export const LoadMoreContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px
+  gap: 10px;
 `;

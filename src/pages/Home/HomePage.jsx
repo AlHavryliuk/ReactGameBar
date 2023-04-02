@@ -5,7 +5,6 @@ import ManagerButton from 'components/Pagination/ManagerButton/ManagerButton';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCurrentPage, setFirstPage } from 'store/requestReducer/requestSlice';
-
 import { select } from 'store/selectors/selectors';
 import { getGamesList } from './../../store/gamesReducer/gamesOperation';
 
@@ -19,6 +18,7 @@ const HomePage = () => {
 
   useEffect(() => {
     dispatch(setCurrentPage('home'))
+    // return () => dispatch(setFirstPage());
     return () => dispatch(setFirstPage());
     // eslint-disable-next-line
   }, [])

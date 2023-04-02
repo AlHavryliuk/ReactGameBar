@@ -8,6 +8,14 @@ export const CustomNextButton = styled.button`
   border: none;
   text-transform: uppercase;
   background-color: ${({ theme }) => theme.loadMoreBtnColor};
-  color: ${({ theme }) => theme.loadMoreBtnTextColor};
+  /* color: ${({ theme }) => theme.loadMoreBtnTextColor}; */
+  color: ${({ theme }) => theme.headerTextColor};
   cursor: pointer;
+
+  transition: all 0.5s ease 0s;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.headerTextColor};
+    color: ${({ theme }) => theme.loadMoreBtnColor};
+  }
 `;

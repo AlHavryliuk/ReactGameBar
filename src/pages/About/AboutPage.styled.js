@@ -21,6 +21,7 @@ export const AboutTitle = styled.h1`
     bottom: -30px;
     left: -40px;
     background-color: ${({ theme }) => theme.aboutTextColor};
+    
 
     ${mobile`
       display: none;
@@ -34,6 +35,7 @@ export const AboutText = styled.p`
 
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   background-color: ${({ theme }) => theme.cardBackgroundColor};
+  border-radius: 10px;
   padding: 30px 30px;
   ${mobile`
       text-align: center;
@@ -121,6 +123,7 @@ export const AboutSubContainer = styled.div`
     padding: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     background-color: ${({ theme }) => theme.cardBackgroundColor};
+    border-radius: 10px;
   }
 
   ${mobile`
@@ -150,6 +153,7 @@ export const AboutSubBlockTitle = styled.h2`
     bottom: -30px;
     left: -40px;
     background-color: ${({ theme }) => theme.aboutTextColor};
+    
 
     ${mobile`
       display: none;

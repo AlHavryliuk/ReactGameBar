@@ -5,6 +5,7 @@ import {
   DetailsContainer,
   GameRating,
   GameTitle,
+  RatingBackWrapper,
 } from './GameDetailsPage.styled';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -15,6 +16,7 @@ import {
 import { select } from 'store/selectors/selectors';
 import RatingStars from 'components/Main/RatingStars/RatingStars';
 import { setCurrentPage } from 'store/requestReducer/requestSlice';
+import GoBackButton from 'components/GoBackButton/GoBackButton';
 
 
 const GameDetailsPage = () => {
@@ -39,10 +41,13 @@ const GameDetailsPage = () => {
       {game && (
         <>
           <GameTitle>{game.name}</GameTitle>
-          <GameRating>
-            {game.rating.toFixed(1)}
-            <RatingStars rating={game.rating}></RatingStars>
-          </GameRating>
+          <RatingBackWrapper >
+            <GameRating>
+              {game.rating.toFixed(1)}
+              <RatingStars rating={game.rating}></RatingStars>
+            </GameRating>
+            <GoBackButton />
+          </RatingBackWrapper>
           <SimpleSlider />
           <Details />
         </>

@@ -1,23 +1,48 @@
-import React, { useEffect, useState } from 'react';
-import { CustomLoadButton } from './LoadMoreButton.styled';
-import { useDispatch } from 'react-redux';
-import { loadMoreGames } from 'store/gamesReducer/gamesOperation';
+import { useDispatch, useSelector } from 'react-redux';
+import { LoadMoreContainer, LocalPage } from './LoadMoreButton.styled';
+import { decrementLocalPage, incrementLocalPage, setFirstLocalPage } from 'store/favoriteGames/favoriteSlice';
+import { select } from 'store/selectors/selectors';
+import { useEffect } from 'react';
 
 const LoadMoreButton = () => {
-  const dispatch = useDispatch();
-  const [page, setPage] = useState(1);
+  const dispatch = useDispatch()
+  const favoriteGames = useSelector(select.favoriteGames)
+  const per_page = useSelector(select.per_page)
+  const page = useSelector(select.localPage)
+
 
   useEffect(() => {
-    if (page === 1) return;
-    dispatch(loadMoreGames(page));
-  }, [page, dispatch]);
+    dispatch(setFirstLocalPage())
+  }, [dispatch])
 
-  const incrementPages = () => {
-    setPage(page + 1);
-  };
+
+  const handleLimitPage = () => {
+    const maxPages = Math.ceil(favoriteGames.length / per_page);
+    return page < maxPages;
+  }
+
+  const handleIncrementLocalPage = () => {
+    dispatch(incrementLocalPage())
+  }
+
+
+  const handleDecrementLocalPage = () => {
+    dispatch(decrementLocalPage())
+  }
+
+
 
   return (
-    <CustomLoadButton onClick={incrementPages}>Load More</CustomLoadButton>
+    <LoadMoreContainer>
+      {favoriteGames.length > per_page &&
+        <>
+          {page > 1 && <LocalPage onClick={handleDecrementLocalPage}>Previous page</LocalPage>}
+          {handleLimitPage() && <LocalPage onClick={handleIncrementLocalPage}>Next page</LocalPage>}
+
+        </>
+      }
+
+    </LoadMoreContainer>
   );
 };
 

@@ -1,11 +1,10 @@
-import React from 'react'
 import { useSelector } from 'react-redux';
-import { select } from 'store/selectors/selectors';
+import { reselect } from 'store/selectors/selectors';
 import { CustomGameCard, CustomNavLink } from '../GameCard/GameCard.styled';
 import { LibaryWarningTitle } from './Libary.styled';
 
 const Libary = () => {
-    const favoriteGames = useSelector(select.favoriteGames)
+    const favoriteGames = useSelector(reselect.gamesPagination)
 
     return (
         <>

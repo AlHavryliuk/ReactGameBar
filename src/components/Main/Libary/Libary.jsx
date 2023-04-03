@@ -1,10 +1,20 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { reselect } from 'store/selectors/selectors';
 import { CustomGameCard, CustomNavLink } from '../GameCard/GameCard.styled';
 import { LibaryWarningTitle } from './Libary.styled';
+import { useEffect } from 'react';
+import { setFirstLocalPage } from 'store/favoriteGames/favoriteSlice';
 
 const Libary = () => {
     const favoriteGames = useSelector(reselect.gamesPagination)
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        return () => {
+            dispatch(setFirstLocalPage())
+        }
+    }, [dispatch])
+
 
     return (
         <>

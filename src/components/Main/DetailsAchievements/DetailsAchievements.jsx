@@ -12,7 +12,6 @@ const DetailsAchievements = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-
         return () => {
             dispatch(clearAchievements())
         }

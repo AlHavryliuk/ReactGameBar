@@ -3,6 +3,9 @@ import { mobile } from 'utils/mixins/adaptMixin';
 
 export const DetailsPropertyWrapper = styled.div`
   padding: 20px;
+  ${mobile`
+    padding: 20px 0;
+  `}
 `;
 
 export const DetailsPropertiesContainer = styled.div`

@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/ReactGameBar/static/css/main.3306520a.css",
-    "main.js": "/ReactGameBar/static/js/main.e3efdafb.js",
+    "main.js": "/ReactGameBar/static/js/main.65cd2c2b.js",
     "static/js/820.4b884ccf.chunk.js": "/ReactGameBar/static/js/820.4b884ccf.chunk.js",
     "static/css/123.3900d9dd.chunk.css": "/ReactGameBar/static/css/123.3900d9dd.chunk.css",
     "static/js/123.04ba6ada.chunk.js": "/ReactGameBar/static/js/123.04ba6ada.chunk.js",
-    "static/js/796.93978a70.chunk.js": "/ReactGameBar/static/js/796.93978a70.chunk.js",
+    "static/js/796.8e550d02.chunk.js": "/ReactGameBar/static/js/796.8e550d02.chunk.js",
     "static/js/616.99fadf23.chunk.js": "/ReactGameBar/static/js/616.99fadf23.chunk.js",
     "static/js/978.8f32a581.chunk.js": "/ReactGameBar/static/js/978.8f32a581.chunk.js",
     "static/js/465.20b17def.chunk.js": "/ReactGameBar/static/js/465.20b17def.chunk.js",
@@ -18,11 +18,11 @@
     "static/media/slick.woff": "/ReactGameBar/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/ReactGameBar/index.html",
     "main.3306520a.css.map": "/ReactGameBar/static/css/main.3306520a.css.map",
-    "main.e3efdafb.js.map": "/ReactGameBar/static/js/main.e3efdafb.js.map",
+    "main.65cd2c2b.js.map": "/ReactGameBar/static/js/main.65cd2c2b.js.map",
     "820.4b884ccf.chunk.js.map": "/ReactGameBar/static/js/820.4b884ccf.chunk.js.map",
     "123.3900d9dd.chunk.css.map": "/ReactGameBar/static/css/123.3900d9dd.chunk.css.map",
     "123.04ba6ada.chunk.js.map": "/ReactGameBar/static/js/123.04ba6ada.chunk.js.map",
-    "796.93978a70.chunk.js.map": "/ReactGameBar/static/js/796.93978a70.chunk.js.map",
+    "796.8e550d02.chunk.js.map": "/ReactGameBar/static/js/796.8e550d02.chunk.js.map",
     "616.99fadf23.chunk.js.map": "/ReactGameBar/static/js/616.99fadf23.chunk.js.map",
     "978.8f32a581.chunk.js.map": "/ReactGameBar/static/js/978.8f32a581.chunk.js.map",
     "465.20b17def.chunk.js.map": "/ReactGameBar/static/js/465.20b17def.chunk.js.map",
@@ -31,6 +31,6 @@
   },
   "entrypoints": [
     "static/css/main.3306520a.css",
-    "static/js/main.e3efdafb.js"
+    "static/js/main.65cd2c2b.js"
   ]
 }

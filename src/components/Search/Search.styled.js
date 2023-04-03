@@ -17,6 +17,26 @@ export const SearchForm = styled.form`
   ${mobile`
     display: none;
   `}
+
+  &.mobile-search {
+    display: none;
+
+    ${mobile`
+      max-width: 100%;
+      width: 100%;
+      display: flex;
+      margin: 30px auto;
+
+      & div {
+        width: 75%;
+
+        & input {
+          font-size: 30px;
+          max-width: 100%;
+        }
+      }
+  `}
+  }
 `;
 
 export const SearchInput = styled.input`

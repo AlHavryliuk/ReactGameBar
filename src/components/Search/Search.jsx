@@ -5,7 +5,7 @@ import { setFirstPage, setSearchQuery } from 'store/requestReducer/requestSlice'
 import icon from '../../images/icon-spread.svg';
 import { SearchForm, SearchIcon, SearchInput, SearchWrapper } from './Search.styled';
 
-const Search = () => {
+const Search = ({ type }) => {
     const query = useRef(null)
     const dispatch = useDispatch()
 
@@ -16,7 +16,7 @@ const Search = () => {
     }
 
     return (
-        <SearchForm>
+        <SearchForm className={type ? 'mobile-search' : false}>
             <SearchWrapper>
                 <SearchInput type="text" ref={query} placeholder="Search..." />
                 <Link to={`/search`}>

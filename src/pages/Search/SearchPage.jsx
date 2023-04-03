@@ -2,6 +2,7 @@ import GameGallery from 'components/Custom/GameGallery/GameGallery';
 import Loader from 'components/Loader/Loader';
 import GameCard from 'components/Main/GameCard/GameCard';
 import ManagerButton from 'components/Pagination/ManagerButton/ManagerButton';
+import Search from 'components/Search/Search';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
@@ -35,8 +36,8 @@ const SearchPage = () => {
 
     useEffect(() => {
         if (currentPage !== 'search') return
+        if (searchQuery === 'null') return
         window.scrollTo(0, 0);
-
         setSearchParams({ game: searchQuery, page })
         dispatch(searchGames({ page, searchQuery }))
         // eslint-disable-next-line
@@ -45,6 +46,7 @@ const SearchPage = () => {
 
     return (
         <>
+            <Search type={`mobile`} />
             {isLoading && <Loader />}
             <GameGallery>
                 {gamesList &&

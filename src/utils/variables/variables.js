@@ -2,7 +2,7 @@ export const lightThemeVars = {
   headerBackgroundColor: '#7f7e7a',
   headerTextColor: 'snow',
   headerTextHoverColor: 'black',
-  mainBackgroundColor: '#e7e7e7',
+  mainBackgroundColor: 'lightcyan',
   mainTextColor: 'black',
   lightModeBackground: 'snow',
   cardBackgroundColor: 'snow',

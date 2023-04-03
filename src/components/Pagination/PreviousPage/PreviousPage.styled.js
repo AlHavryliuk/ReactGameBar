@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { mobile } from 'utils/mixins/adaptMixin';
 
 export const CustomPrevBtn = styled.button`
   width: 50%;
@@ -8,7 +9,6 @@ export const CustomPrevBtn = styled.button`
   text-align: center;
   text-transform: uppercase;
   background-color: ${({ theme }) => theme.loadMoreBtnColor};
-  /* color: ${({ theme }) => theme.loadMoreBtnTextColor}; */
   color: ${({ theme }) => theme.headerTextColor};
   cursor: pointer;
 
@@ -17,6 +17,11 @@ export const CustomPrevBtn = styled.button`
   &:hover {
     background-color: ${({ theme }) => theme.loadMoreHoverColor};
     color: ${({ theme }) => theme.mainCardTextColor};
+
+    ${mobile`
+      background-color: ${({ theme }) => theme.loadMoreBtnColor};
+      color: ${({ theme }) => theme.headerTextColor};
+  `}
   }
 
   &:disabled {
@@ -25,6 +30,9 @@ export const CustomPrevBtn = styled.button`
     &:hover {
       background-color: ${({ theme }) => theme.loadMoreDisabledColor};
       color: ${({ theme }) => theme.headerTextColor};
+      ${mobile`
+      background-color: ${({ theme }) => theme.loadMoreDisabledColor};
+  `}
     }
   }
 `;

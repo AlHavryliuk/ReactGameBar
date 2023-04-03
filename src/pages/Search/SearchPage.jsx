@@ -36,9 +36,10 @@ const SearchPage = () => {
 
     useEffect(() => {
         if (currentPage !== 'search') return
-        if (searchQuery === 'null') return
         window.scrollTo(0, 0);
-        setSearchParams({ game: searchQuery, page })
+        if (searchQuery !== null) {
+            setSearchParams({ game: searchQuery, page })
+        }
         dispatch(searchGames({ page, searchQuery }))
         // eslint-disable-next-line
     }, [page, currentPage, dispatch, searchQuery])

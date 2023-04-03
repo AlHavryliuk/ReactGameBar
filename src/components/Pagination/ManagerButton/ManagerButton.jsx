@@ -14,7 +14,7 @@ const ManagerButton = () => {
       {games && games.length ? <PaginationWrapper>
         < PreviousPage />
         <NextPage />
-      </PaginationWrapper > : <LibaryWarningTitle>Game list is empty...</LibaryWarningTitle>}
+      </PaginationWrapper > : <LibaryWarningTitle>Game list is empty... Specify parameters for the query...</LibaryWarningTitle>}
     </>
   );
 };

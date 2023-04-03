@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { mobile } from 'utils/mixins/adaptMixin';
 
 export const LocalPage = styled.button`
   max-width: 50%;
@@ -16,6 +17,11 @@ export const LocalPage = styled.button`
   &:hover {
     background-color: ${({ theme }) => theme.loadMoreHoverColor};
     color: ${({ theme }) => theme.mainCardTextColor};
+
+    ${mobile`
+      background-color: ${({ theme }) => theme.loadMoreBtnColor};
+      color: ${({ theme }) => theme.headerTextColor};
+  `}
   }
 `;
 

@@ -16,7 +16,7 @@ export const getGamesList = createAsyncThunk(
 export const searchGames = createAsyncThunk(
   'games/searchGames',
   async ({ page, searchQuery }, { rejectWithValue }) => {
-    if (searchQuery == null) return;
+    if (searchQuery == null) return { results: [] };
     try {
       const gamesList = await fetchGameList(page, searchQuery);
       return gamesList;

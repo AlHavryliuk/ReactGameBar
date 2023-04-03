@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { mobile } from 'utils/mixins/adaptMixin';
 
 export const CustomNextButton = styled.button`
   font-size: 17px;
@@ -17,5 +18,10 @@ export const CustomNextButton = styled.button`
   &:hover {
     background-color: ${({ theme }) => theme.loadMoreHoverColor};
     color: ${({ theme }) => theme.mainCardTextColor};
+
+    ${mobile`
+      background-color: ${({ theme }) => theme.loadMoreBtnColor};
+      color: ${({ theme }) => theme.headerTextColor};
+  `}
   }
 `;

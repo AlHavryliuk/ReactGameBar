@@ -1,5 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { fetchGameDetails, fetchGameScreenshots } from 'service/rawgAPI';
+import {
+  fetchGameAchievements,
+  fetchGameDetails,
+  fetchGameScreenshots,
+} from 'service/rawgAPI';
 
 export const getGameDetails = createAsyncThunk(
   'games/getGameDetails',
@@ -19,6 +23,18 @@ export const getScreenshots = createAsyncThunk(
     try {
       const screen = await fetchGameScreenshots(game_pk);
       return screen;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const getAchievements = createAsyncThunk(
+  'games/getAchievements',
+  async (id, { rejectWithValue }) => {
+    try {
+      const achievements = await fetchGameAchievements(id);
+      return achievements;
     } catch (error) {
       return rejectWithValue(error.message);
     }

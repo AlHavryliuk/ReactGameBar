@@ -57,3 +57,13 @@ export const fetchGameScreenshots = async game_pk => {
 
   return results;
 };
+
+export const fetchGameAchievements = async id => {
+  const {
+    data: { results },
+  } = await axios.get(`${apiData.BASE_URL}games/${id}/achievements`, {
+    params: { key: apiData.KEY },
+  });
+  console.log(results);
+  return results;
+};

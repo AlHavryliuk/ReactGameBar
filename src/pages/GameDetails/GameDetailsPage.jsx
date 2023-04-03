@@ -10,6 +10,7 @@ import {
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
+  getAchievements,
   getGameDetails,
   getScreenshots,
 } from 'store/selectGameReducer/selectGameOperation';
@@ -33,7 +34,10 @@ const GameDetailsPage = () => {
   useEffect(() => {
     dispatch(getGameDetails(gameId))
       .unwrap()
-      .then(() => dispatch(getScreenshots(gameId)));
+      .then(() => {
+        dispatch(getScreenshots(gameId))
+        dispatch(getAchievements(gameId))
+      });
   }, [gameId, dispatch]);
 
   return (

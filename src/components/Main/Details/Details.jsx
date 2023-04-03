@@ -6,6 +6,7 @@ import { addFavoriteGame, removeFavoriteGame } from 'store/favoriteGames/favorit
 import { select } from 'store/selectors/selectors';
 import DetailsProperties from '../DetailsProperties/DetailsProperties';
 import { DetailsBlock, DetailsButton, DetailsButtonWrapper, DetailsColorWrapper, DetailsSubTitle, DetailsText } from './Details.styled';
+import DetailsAchievements from '../DetailsAchievements/DetailsAchievements';
 
 const Details = () => {
   const { id, description_raw,
@@ -51,6 +52,7 @@ const Details = () => {
         <DetailsButton onClick={handleAddFavoriteGame} disabled={gameAlreadyAdded()}>{gameAlreadyAdded() ? `Already added` : `Add to Libary`}  </DetailsButton>
         <DetailsButton onClick={handleRemoveFavoriteGame} disabled={!gameAlreadyAdded()}>Remove from Libary</DetailsButton>
       </DetailsButtonWrapper>
+      <DetailsAchievements />
     </DetailsBlock>
   );
 };

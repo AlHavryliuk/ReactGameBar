@@ -9,7 +9,6 @@ export const LocalPage = styled.button`
   border: none;
   text-transform: uppercase;
   background-color: ${({ theme }) => theme.loadMoreBtnColor};
-  /* color: ${({ theme }) => theme.loadMoreBtnTextColor}; */
   cursor: pointer;
   color: ${({ theme }) => theme.headerTextColor};
   transition: all 0.5s ease 0s;

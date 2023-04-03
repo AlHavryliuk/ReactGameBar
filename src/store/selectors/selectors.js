@@ -11,6 +11,7 @@ export const select = {
   selectedGame: state => state.selectGame.game,
   selectedIsLoading: state => state.selectGame.isLoading,
   screenshots: state => state.selectGame.screenshots,
+  achievements: state => state.selectGame.achievements,
   genres: state => state.genres.genresArray,
   mobileNavigation: state => state.mobileNavigation.navMenu,
   favoriteGames: state => state.favoriteGames.gameList,

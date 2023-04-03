@@ -1,9 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getGameDetails, getScreenshots } from './selectGameOperation';
+import { getGameDetails, getScreenshots, getAchievements } from './selectGameOperation';
 
 const initialState = {
   game: null,
   screenshots: null,
+  achievements: null,
   isLoading: false,
   error: null,
 };
@@ -33,6 +34,18 @@ export const selectGameSlice = createSlice({
         state.screenshots = action.payload.map(({ image }) => image);
       })
       .addCase(getScreenshots.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+
+      .addCase(getAchievements.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(getAchievements.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.achievements = action.payload;
+      })
+      .addCase(getAchievements.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       }),

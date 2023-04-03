@@ -18,6 +18,7 @@ export const lightThemeVars = {
   sliderArrow: '#442727',
   aboutTextColor: 'black',
   aboutTwiceBlock: '#7f7e7a',
+  achievementsCardColor: 'white',
 };
 
 export const darkThemeVars = {
@@ -40,4 +41,5 @@ export const darkThemeVars = {
   sliderArrow: 'white',
   aboutTextColor: '#DCD7C9',
   aboutTwiceBlock: '#2C3639',
+  achievementsCardColor: '#2C3639',
 };

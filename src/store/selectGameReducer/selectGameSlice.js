@@ -1,5 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getGameDetails, getScreenshots, getAchievements } from './selectGameOperation';
+import {
+  getGameDetails,
+  getScreenshots,
+  getAchievements,
+} from './selectGameOperation';
 
 const initialState = {
   game: null,
@@ -12,6 +16,11 @@ const initialState = {
 export const selectGameSlice = createSlice({
   name: 'selectGame',
   initialState: initialState,
+  reducers: {
+    clearAchievements(state) {
+      state.achievements = null;
+    },
+  },
   extraReducers: builder =>
     builder
       .addCase(getGameDetails.pending, state => {
@@ -52,4 +61,5 @@ export const selectGameSlice = createSlice({
 });
 
 const selectGameReducer = selectGameSlice.reducer;
+export const { clearAchievements } = selectGameSlice.actions;
 export default selectGameReducer;

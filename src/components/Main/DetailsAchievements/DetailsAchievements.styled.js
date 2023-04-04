@@ -23,6 +23,8 @@ export const AchievementsContainer = styled.div`
       theme.headerBackgroundColor}; /* цвет бегунка */
     border-radius: 20px; /* округлось бегунка */
     border: none; /* отступ вокруг бегунка */
+    border: 1px solid;
+    border-color: ${({ theme }) => theme.mainTextColor};
   }
 `;
 // background-color: ${({ theme }) => theme.lightModeBackground};

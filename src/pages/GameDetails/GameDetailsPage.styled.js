@@ -5,6 +5,7 @@ export const DetailsContainer = styled.div`
   max-width: 1000px;
   padding: 60px 115px;
   margin: 0 auto;
+  background-color: ${({ theme }) => theme.detailsIconSubContainer};
 
   ${mobile`
       padding: 15px 35px;

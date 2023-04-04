@@ -19,12 +19,15 @@ export const SearchForm = styled.form`
   `}
 
   &.mobile-search {
-    display: none;
-
     max-width: 100%;
     width: 100%;
-    display: flex;
+
     margin: 30px auto;
+    display: none;
+
+    ${mobile`
+      display: flex;
+    `}
 
     & div {
       width: 75%;

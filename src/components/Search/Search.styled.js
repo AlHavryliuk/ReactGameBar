@@ -21,21 +21,28 @@ export const SearchForm = styled.form`
   &.mobile-search {
     display: none;
 
-    ${mobile`
-      max-width: 100%;
-      width: 100%;
-      display: flex;
-      margin: 30px auto;
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    margin: 30px auto;
 
-      & div {
-        width: 75%;
+    & div {
+      width: 75%;
+      border-bottom: 1px solid ${({ theme }) => theme.mainTextColor};
 
-        & input {
-          font-size: 30px;
-          max-width: 100%;
+      & input {
+        font-size: 30px;
+        max-width: 100%;
+        color: ${({ theme }) => theme.mainTextColor};
+        &::placeholder {
+          color: ${({ theme }) => theme.mainTextColor};
         }
       }
-  `}
+
+      & > a > button > svg {
+        fill: ${({ theme }) => theme.mainTextColor};
+      }
+    }
   }
 `;
 

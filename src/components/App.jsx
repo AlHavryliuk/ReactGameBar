@@ -25,7 +25,6 @@ export const App = () => {
 
   console.log('====================================');
   console.log(process.env);
-  console.log('Ok');
   console.log('====================================');
 
   return (

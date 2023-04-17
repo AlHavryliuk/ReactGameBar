@@ -15,10 +15,12 @@ export const fetchGameList = async (page = 1, search = '') => {
   return { count, results };
 };
 
+const { BASE_URL } = process.env;
+
 export const fetchGameListByGenre = async (page = 1, genres) => {
   const {
     data: { count, results },
-  } = await axios.get(`${apiData.BASE_URL}games`, {
+  } = await axios.get(`${BASE_URL}games`, {
     params: {
       key: apiData.KEY,
       page: page,
@@ -33,7 +35,7 @@ export const fetchGameListByGenre = async (page = 1, genres) => {
 export const fetchGenreList = async (page = 1) => {
   const {
     data: { count, results },
-  } = await axios.get(`${apiData.BASE_URL}genres`, {
+  } = await axios.get(`${BASE_URL}genres`, {
     params: { key: apiData.KEY, page: page, page_size: 19 },
   });
 
@@ -41,7 +43,7 @@ export const fetchGenreList = async (page = 1) => {
 };
 
 export const fetchGameDetails = async id => {
-  const { data } = await axios.get(`${apiData.BASE_URL}games/${id}`, {
+  const { data } = await axios.get(`${BASE_URL}games/${id}`, {
     params: { key: apiData.KEY },
   });
 
@@ -51,7 +53,7 @@ export const fetchGameDetails = async id => {
 export const fetchGameScreenshots = async game_pk => {
   const {
     data: { results },
-  } = await axios.get(`${apiData.BASE_URL}games/${game_pk}/screenshots`, {
+  } = await axios.get(`${BASE_URL}games/${game_pk}/screenshots`, {
     params: { key: apiData.KEY },
   });
 
@@ -61,7 +63,7 @@ export const fetchGameScreenshots = async game_pk => {
 export const fetchGameAchievements = async id => {
   const {
     data: { results },
-  } = await axios.get(`${apiData.BASE_URL}games/${id}/achievements`, {
+  } = await axios.get(`${BASE_URL}games/${id}/achievements`, {
     params: { key: apiData.KEY },
   });
   console.log(results);

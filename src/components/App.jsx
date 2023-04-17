@@ -23,10 +23,6 @@ export const App = () => {
   const LazyGameByGenresPage = lazy(() => import('pages/GameByGenres/GameByGenresPage'))
   const LazyGenresPage = lazy(() => import('pages/Genres/GenresPage'))
 
-  console.log('====================================');
-  console.log(process.env);
-  console.log(process.env.BASE_URL);
-  console.log('====================================');
 
   return (
     <ThemeProvider theme={darkMode ? darkThemeVars : lightThemeVars}>

@@ -25,6 +25,7 @@ export const App = () => {
 
   console.log('====================================');
   console.log(process.env);
+  console.log(process.env.BASE_URL);
   console.log('====================================');
 
   return (

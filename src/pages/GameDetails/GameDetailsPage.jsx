@@ -30,6 +30,9 @@ const GameDetailsPage = () => {
 
   useEffect(() => {
     dispatch(setCurrentPage('details'));
+    return () => {
+      setTitle('')
+    }
     // eslint-disable-next-line
   }, [])
 

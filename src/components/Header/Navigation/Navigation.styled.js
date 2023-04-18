@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { SmoothAppearance, extendNav, lineAnimation } from 'utils/animations/animations';
+import { SmoothAppearance, lineAnimation } from 'utils/animations/animations';
 import { mobile } from 'utils/mixins/adaptMixin';
 
 export const CustomNavigation = styled.nav`

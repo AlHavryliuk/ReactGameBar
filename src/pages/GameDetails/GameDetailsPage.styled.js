@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { ratingMove } from 'utils/animations/animations';
 import { mobile } from 'utils/mixins/adaptMixin';
 
 export const DetailsContainer = styled.div`
@@ -27,9 +28,11 @@ export const GameRating = styled.h2`
   padding: 5px 10px;
   margin: 0 0 25px;
 
+  animation: ${ratingMove} 3000ms ease;
+
   ${mobile`
-      padding: 0;
-     
+     padding: 0;
+     animation: none
   `}
 
   & svg {

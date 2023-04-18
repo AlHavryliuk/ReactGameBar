@@ -18,6 +18,7 @@ export const DetailsText = styled.p`
   color: ${({ theme }) => theme.headerTextColor};
   padding: 0 20px;
   font-size: 18px;
+  animation: smoothMove 1500ms ease;
 `;
 
 export const DetailsColorWrapper = styled.div`

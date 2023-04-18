@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { arrowMove } from 'utils/animations/animations';
 import { mobile } from 'utils/mixins/adaptMixin';
 
 export const BackIcon = styled.span`
@@ -13,6 +14,11 @@ export const BackIcon = styled.span`
   color: ${({ theme }) => theme.loadMoreBtnTextColor};
 
   transition: all 0.3s ease 0s;
+  animation: ${arrowMove} 1200ms ease;
+
+  ${mobile`
+    animation: none;
+  `}
 
   &:hover {
     background-color: ${({ theme }) => theme.detailsIconFillColor};

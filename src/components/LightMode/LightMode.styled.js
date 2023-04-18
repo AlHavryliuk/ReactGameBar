@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { SmoothAppearance } from 'utils/animations/animations';
 
 export const LightButton = styled.button`
   width: 30px;
@@ -9,5 +10,7 @@ export const LightButton = styled.button`
   justify-content: center;
   border: none;
   background-color: ${({ theme }) => theme.lightModeBackground};
+  opacity: 0;
   cursor: pointer;
+  animation: ${SmoothAppearance} 250ms ease 1200ms forwards; 
 `;

@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import { SmoothAppearance } from 'utils/animations/animations';
 
 import { mobile } from 'utils/mixins/adaptMixin';
 
@@ -45,6 +46,8 @@ export const HeaderDinamicTitle = styled.h2`
 
 export const CustomSvg = styled.svg`
   margin-left: 15px;
+  opacity: 0;
+  animation: ${SmoothAppearance} 0.2s ease 1475ms forwards;
 
   fill: ${({ theme }) => theme.headerTextColor};
 

@@ -1,6 +1,6 @@
 import Details from 'components/Main/Details/Details';
 import SimpleSlider from 'components/Main/SimpleSlider/SimpleSlider';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   DetailsContainer,
   GameRating,
@@ -18,18 +18,43 @@ import { select } from 'store/selectors/selectors';
 import RatingStars from 'components/Main/RatingStars/RatingStars';
 import { setCurrentPage } from 'store/requestReducer/requestSlice';
 import GoBackButton from 'components/GoBackButton/GoBackButton';
+import { handleUnderLine } from 'utils/helpers/writeUnderLine';
 
 
 const GameDetailsPage = () => {
   const { gameId } = useParams();
   const dispatch = useDispatch();
+  const currentPage = useSelector(select.currentPage)
   const game = useSelector(select.selectedGame);
+  const [title, setTitle] = useState('')
+
 
 
   useEffect(() => {
     dispatch(setCurrentPage('details'));
     // eslint-disable-next-line
   }, [])
+
+  useEffect(() => {
+    const writter = setInterval(() => {
+
+      if (currentPage !== 'details') {
+        clearInterval(writter)
+        return
+      }
+      if (!game) return
+      if (title !== game.name) {
+        setTitle(() => title.concat(game.name[title.length]))
+        return
+      }
+    }, 150)
+    return () => {
+      clearInterval(writter)
+    }
+  }, [title, game, currentPage])
+
+
+
 
   useEffect(() => {
     dispatch(getGameDetails(gameId))
@@ -44,7 +69,7 @@ const GameDetailsPage = () => {
     <DetailsContainer>
       {game && (
         <>
-          <GameTitle>{game.name}</GameTitle>
+          <GameTitle>{handleUnderLine(title, game.name)}</GameTitle>
           <RatingBackWrapper >
             <GameRating>
               {game.rating.toFixed(1)}

@@ -64,6 +64,6 @@ export const fetchGameAchievements = async id => {
   } = await axios.get(`${apiData.BASE_URL}games/${id}/achievements`, {
     params: { key: apiData.KEY },
   });
-  console.log(results);
+
   return results;
 };

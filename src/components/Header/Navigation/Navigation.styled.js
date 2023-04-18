@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { lineAnimation } from 'utils/animations/animations';
+import { SmoothAppearance, extendNav, lineAnimation } from 'utils/animations/animations';
 import { mobile } from 'utils/mixins/adaptMixin';
 
 export const CustomNavigation = styled.nav`
@@ -10,6 +10,9 @@ export const NavigationLinks = styled.ul`
   display: flex;
   align-items: center;
   gap: 20px;
+  /* overflow: hidden; */
+  /* width: 0; */
+  animation: ${SmoothAppearance} 1700ms ease forwards;
 
   ${mobile`
     display: none;

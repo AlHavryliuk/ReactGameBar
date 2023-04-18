@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { searchMove } from 'utils/animations/animations';
 import { mobile } from 'utils/mixins/adaptMixin';
 
 export const SearchForm = styled.form`
@@ -7,6 +8,9 @@ export const SearchForm = styled.form`
   display: flex;
   align-items: center;
   justify-content: center;
+  transform: translateY(-100px);
+  animation: ${searchMove} 350ms ease-out 1500ms forwards;
+
   & button {
     background-color: transparent;
     border: none;

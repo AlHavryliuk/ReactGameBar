@@ -19,7 +19,6 @@ const Header = () => {
 
   useEffect(() => {
     const writter = setInterval(() => {
-      console.log('sa');
       if (title !== templateTitle) {
         setTitle(() => title.concat(templateTitle[title.length]))
         return

@@ -41,6 +41,7 @@ const GameDetailsPage = () => {
     const writter = setInterval(() => {
       if (!game) {
         clearInterval(writter);
+        return
       }
       if (title !== game.name) {
         setTitle(() => title.concat(game.name[title.length]))

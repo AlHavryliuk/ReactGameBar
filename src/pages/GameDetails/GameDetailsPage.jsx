@@ -28,8 +28,6 @@ const GameDetailsPage = () => {
   const game = useSelector(select.selectedGame);
   const [title, setTitle] = useState('')
 
-
-
   useEffect(() => {
     dispatch(setCurrentPage('details'));
     // eslint-disable-next-line

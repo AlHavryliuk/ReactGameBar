@@ -19,6 +19,7 @@ import RatingStars from 'components/Main/RatingStars/RatingStars';
 import { setCurrentPage } from 'store/requestReducer/requestSlice';
 import GoBackButton from 'components/GoBackButton/GoBackButton';
 import { handleUnderLine } from 'utils/helpers/writeUnderLine';
+import { clearSeletedGame } from 'store/selectGameReducer/selectGameSlice';
 
 
 const GameDetailsPage = () => {
@@ -31,29 +32,26 @@ const GameDetailsPage = () => {
   useEffect(() => {
     dispatch(setCurrentPage('details'));
     return () => {
-      setTitle('')
+      dispatch(clearSeletedGame())
     }
     // eslint-disable-next-line
   }, [])
 
   useEffect(() => {
     const writter = setInterval(() => {
-
-      if (currentPage !== 'details') {
-        clearInterval(writter)
-        return
+      if (!game) {
+        clearInterval(writter);
       }
-      if (!game) return
       if (title !== game.name) {
         setTitle(() => title.concat(game.name[title.length]))
         return
       }
+      clearInterval(writter)
     }, 150)
     return () => {
       clearInterval(writter)
     }
   }, [title, game, currentPage])
-
 
 
 

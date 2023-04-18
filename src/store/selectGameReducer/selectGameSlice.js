@@ -20,6 +20,9 @@ export const selectGameSlice = createSlice({
     clearAchievements(state) {
       state.achievements = null;
     },
+    clearSeletedGame(state) {
+      state.game = null;
+    },
   },
   extraReducers: builder =>
     builder
@@ -61,5 +64,5 @@ export const selectGameSlice = createSlice({
 });
 
 const selectGameReducer = selectGameSlice.reducer;
-export const { clearAchievements } = selectGameSlice.actions;
+export const { clearAchievements, clearSeletedGame } = selectGameSlice.actions;
 export default selectGameReducer;

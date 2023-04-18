@@ -9,6 +9,7 @@ export const CustomGameCard = styled.div`
   cursor: pointer;
   transition: 0.3s;
   transition: all 0.5s;
+  border-radius: 5px;
 
   & img {
     object-fit: cover;

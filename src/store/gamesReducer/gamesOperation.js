@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { fetchGameList, fetchGameListByGenre } from 'service/rawgAPI';
+import { setLastPage } from 'store/requestReducer/requestSlice';
 
 export const getGamesList = createAsyncThunk(
   'games/getGamesList',
@@ -15,11 +16,13 @@ export const getGamesList = createAsyncThunk(
 
 export const searchGames = createAsyncThunk(
   'games/searchGames',
-  async ({ page, searchQuery }, { rejectWithValue }) => {
+  async ({ page, searchQuery }, { rejectWithValue, dispatch }) => {
     if (searchQuery == null) return { results: [] };
     try {
-      const gamesList = await fetchGameList(page, searchQuery);
-      return gamesList;
+      const data = await fetchGameList(page, searchQuery);
+    
+      dispatch(setLastPage(data.count));
+      return data;
     } catch (error) {
       return rejectWithValue(error.message);
     }

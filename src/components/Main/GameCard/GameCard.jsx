@@ -6,6 +6,7 @@ const GameCard = ({ game: { id, name, short_screenshots = '#' } }) => {
   const notFoundImage = 'https://picturesofmaidenhead.files.wordpress.com/2019/01/image-not-found.jpg?w=1620'
 
   const handleAltImage = () => {
+    if (!short_screenshots) return notFoundImage
     if (!short_screenshots.length) return notFoundImage
     if (short_screenshots.length > 1) return short_screenshots[1].image
     return notFoundImage

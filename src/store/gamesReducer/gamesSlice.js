@@ -33,6 +33,7 @@ export const gamesSlice = createSlice({
       .addCase(searchGames.fulfilled, (state, action) => {
         state.isLoading = false;
         state.gamesArray = action.payload.results;
+        
       })
       .addCase(searchGames.rejected, (state, action) => {
         state.isLoading = false;

@@ -19,7 +19,7 @@ export const requestSlice = createSlice({
       state.page = state.page - 1;
     },
     setLastPage(state, action) {
-      state.lastPage = action.payload / apiData.per_page;
+      state.lastPage = Math.ceil(action.payload / apiData.per_page);
     },
     setSearchPage(state, action) {
       state.page = +action.payload;
@@ -52,6 +52,7 @@ export const {
   setCurrentPage,
   setSearchPage,
   setFullSearchParams,
+  setLastPage,
 } = requestSlice.actions;
 const requestReducer = requestSlice.reducer;
 export default requestReducer;

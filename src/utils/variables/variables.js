@@ -1,7 +1,7 @@
 export const lightThemeVars = {
   headerBackgroundColor: '#393231',
   headerTextColor: 'snow',
-  headerTextHoverColor: 'black',
+  headerTextHoverColor: 'gray',
   mainBackgroundColor: '#D9D9D9   ',
   mainTextColor: 'black',
   lightModeBackground: 'snow',
@@ -32,7 +32,7 @@ export const darkThemeVars = {
   cardBackgroundColor: '#2C3639',
   loadMoreBtnColor: '#2C3639',
   loadMoreBtnTextColor: 'snow',
-  loadMoreHoverColor: 'black',
+  loadMoreHoverColor: '#1c292d',
   loadMoreDisabledColor: 'gray',
   popupBackgroundColor: '#2C3639',
   detailsIconFillColor: 'black',

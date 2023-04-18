@@ -18,19 +18,14 @@ const Header = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    const writter = setInterval(() => {
-      if (title !== templateTitle) {
-        setTitle(() => title.concat(templateTitle[title.length]))
-        return
-      }
-      clearInterval(writter)
-    }, 120)
-    return () => {
-      clearInterval(writter)
+    let intervalId;
+    if (title !== templateTitle) {
+      intervalId = setInterval(() => {
+        setTitle(title + templateTitle[title.length]);
+      }, 120);
     }
-  }, [title])
-
-
+    return () => clearInterval(intervalId);
+  }, [title, templateTitle]);
 
 
   const handleSetFirstPage = () => dispatch(setFirstPage())

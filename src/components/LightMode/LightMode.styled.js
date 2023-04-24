@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { SmoothAppearance } from 'utils/animations/animations';
+import { mobile } from 'utils/mixins/adaptMixin';
 
 export const LightButton = styled.button`
   width: 30px;
@@ -12,5 +13,10 @@ export const LightButton = styled.button`
   background-color: ${({ theme }) => theme.lightModeBackground};
   opacity: 0;
   cursor: pointer;
-  animation: ${SmoothAppearance} 250ms ease 1200ms forwards; 
+  animation: ${SmoothAppearance} 250ms ease 1200ms forwards;
+
+  ${mobile`
+    animation: none;
+    opacity: 1;
+  `}
 `;

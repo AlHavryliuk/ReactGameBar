@@ -16,6 +16,7 @@ export const NavigationLinks = styled.ul`
 
   ${mobile`
     display: none;
+    animation: none;
   `}
 `;
 

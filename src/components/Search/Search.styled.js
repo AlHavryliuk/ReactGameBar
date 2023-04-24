@@ -8,14 +8,14 @@ export const SearchForm = styled.form`
   display: flex;
   align-items: center;
   justify-content: center;
-  /* transform: translateY(-100px);
-  animation: ${searchMove} 350ms ease-out 1500ms forwards; */
+  transform: translateY(-100px);
+  animation: ${searchMove} 350ms ease-out 1500ms forwards;
 
-  /* ${mobile`
+  ${mobile`
     animation: none;
     transform: translateY(0px);
     opacity: 1;
-  `} */
+  `}
 
   & button {
     background-color: transparent;

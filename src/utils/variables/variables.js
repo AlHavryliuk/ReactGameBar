@@ -20,6 +20,7 @@ export const lightThemeVars = {
   aboutTextColor: 'black',
   aboutTwiceBlock: '#393231',
   achievementsCardColor: 'white',
+  scrollColor: 'white',
 };
 
 export const darkThemeVars = {
@@ -44,4 +45,5 @@ export const darkThemeVars = {
   aboutTextColor: '#DCD7C9',
   aboutTwiceBlock: '#2C3639',
   achievementsCardColor: '#2C3639',
+  scrollColor: '#2C3639',
 };

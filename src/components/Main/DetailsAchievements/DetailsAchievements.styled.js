@@ -19,8 +19,7 @@ export const AchievementsContainer = styled.div`
     border-color: ${({ theme }) => theme.headerBackgroundColor};
   }
   ::-webkit-scrollbar-thumb {
-    background-color: ${({ theme }) =>
-      theme.headerBackgroundColor}; /* цвет бегунка */
+    background-color: ${({ theme }) => theme.scrollColor}; /* цвет бегунка */
     border-radius: 20px; /* округлось бегунка */
     border: none; /* отступ вокруг бегунка */
     border: 1px solid;

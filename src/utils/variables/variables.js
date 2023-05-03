@@ -45,7 +45,7 @@ export const darkThemeVars = {
   sliderArrow: 'white',
   aboutTextColor: '#DCD7C9',
   aboutTwiceBlock: '#2C3639',
-  achievementsCardColor: '#2C3639',
+  achievementsCardColor: '#233035',
   scrollColor: '#2C3639',
   subHeaderColor: '#233035',
 };

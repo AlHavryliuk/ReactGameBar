@@ -21,12 +21,15 @@ export const AboutTitle = styled.h1`
     bottom: -30px;
     left: -40px;
     background-color: ${({ theme }) => theme.aboutTextColor};
-    
 
     ${mobile`
       display: none;
   `}
   }
+`;
+
+export const AboutLinks = styled.a`
+  color: ${({ theme }) => theme.aboutTextColor};
 `;
 
 export const AboutText = styled.p`
@@ -51,24 +54,17 @@ export const AboutSubTitle = styled.h2`
   ${mobile`
       text-align: center;
       padding-left: 0;
-  `}/* &::after {
-    content: '';
-    display: block;
-    width: 65%;
-    height: 2px;
-    position: absolute;
-    bottom: -30px;
-    left: -40px;
-    background-color: ${({ theme }) => theme.aboutTextColor};
-
-    ${mobile`
-      display: none;
   `}
-  } */
 `;
 
 export const AboutList = styled.ul`
   color: ${({ theme }) => theme.aboutTextColor};
+
+  & svg {
+    vertical-align: middle;
+    margin-right: 10px;
+    fill: ${({ theme }) => theme.aboutTextColor};
+  }
 
   ${mobile`
       text-align: center;
@@ -78,6 +74,7 @@ export const AboutList = styled.ul`
   & li {
     font-size: 22px;
     list-style-type: circle;
+    margin-top: 5px;
 
     ${mobile`
       text-align: center;
@@ -85,7 +82,6 @@ export const AboutList = styled.ul`
   `}
 
     & a {
-      /* text-decoration: none; */
       color: ${({ theme }) => theme.aboutTextColor};
     }
   }
@@ -142,8 +138,8 @@ export const AboutSubBlockTitle = styled.h2`
       text-align: center;
       padding-left: 0;
       margin: 0;
-  `} 
-  
+  `}
+
   &::after {
     content: '';
     display: block;
@@ -153,10 +149,9 @@ export const AboutSubBlockTitle = styled.h2`
     bottom: -30px;
     left: -40px;
     background-color: ${({ theme }) => theme.aboutTextColor};
-    
 
     ${mobile`
       display: none;
   `}
-  } 
+  }
 `;

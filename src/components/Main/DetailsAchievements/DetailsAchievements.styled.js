@@ -26,7 +26,7 @@ export const AchievementsContainer = styled.div`
     border-color: ${({ theme }) => theme.mainTextColor};
   }
 `;
-// background-color: ${({ theme }) => theme.lightModeBackground};
+
 export const AchievementsCard = styled.div`
   display: flex;
   flex-direction: column;
@@ -47,7 +47,6 @@ export const AchievementsCard = styled.div`
   }
 
   &:hover {
-    /* background-color: ${({ theme }) => theme.headerBackgroundColor}; */
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     scale: 1.05;
 

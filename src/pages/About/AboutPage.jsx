@@ -1,8 +1,9 @@
 import AboutContainer from "components/Custom/AboutContainer/AboutContainer";
-import { useEffect } from "react"
+import { useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import { setCurrentPage } from 'store/requestReducer/requestSlice';
-import { AboutContactList, AboutList, AboutSubBlockTitle, AboutSubContainer, AboutSubTitle, AboutText, AboutTitle } from "./AboutPage.styled";
+import { AboutLinks, AboutList, AboutSubBlockTitle, AboutSubContainer, AboutSubTitle, AboutText, AboutTitle } from "./AboutPage.styled";
+import svg from "../../images/icon-spread.svg"
 
 const AboutPage = () => {
     const dispatch = useDispatch()
@@ -15,40 +16,126 @@ const AboutPage = () => {
 
     return (
         <AboutContainer>
-            <AboutTitle># React Game Library</AboutTitle>
-            <AboutText>This project allows you to view a library of games, search for a game by genre or name, and view detailed information about a specific game. The project uses the GameRAWG API.</AboutText>
 
+            <AboutTitle># Game Vortex</AboutTitle>
+            <AboutText>Game Vortex is a non-commercial project created for the purpose of self-education and skills demonstration.
+                The project enables users to view, search, and add games to their "favorites" library.
+
+            </AboutText>
 
             <AboutSubBlockTitle># API</AboutSubBlockTitle>
-            <AboutText>This project uses the GameRAWG API.</AboutText>
+            <AboutText>The project uses the GameRAWG API to get information about the game.</AboutText>
 
 
             <AboutSubContainer>
                 <div>
                     <AboutSubTitle># Features</AboutSubTitle>
                     <AboutList>
-                        <li>View a library of games</li>
-                        <li>Search for games by genre or name</li>
-                        <li> View detailed information about a specific game</li>
+                        <li>Game information viewing</li>
+                        <li>Game search functionality</li>
+                        <li>Game search functionality</li>
+                        <li>Game filtering by genre</li>
+                        <li>Available game achievements viewing</li>
                     </AboutList>
                 </div>
                 <div>
-                    <AboutSubTitle># Technologies Used</AboutSubTitle>
+                    <AboutSubTitle># Technologies Used (Frontend)</AboutSubTitle>
                     <AboutList>
                         <li>React</li>
                         <li>Redux Toolkit</li>
+                        <li>React Router DOM</li>
                         <li>Axios</li>
-                        <li>React Router</li>
                         <li>Styled Components</li>
+                        <li>React Hook Form</li>
+                        <li>Simplelightbox</li>
+                        <li>React Slick</li>
+                        <li>React Spinners</li>
+                        <li>React Toastify</li>
+                    </AboutList>
+                </div>
+                <div>
+                    <AboutSubTitle># Technologies Used (Backend) </AboutSubTitle>
+                    <AboutList>
+                        <li>Node.js</li>
+                        <li>Express.js</li>
+                        <li>MongoDB</li>
+                        <li>Mongoose</li>
+                        <li>Bcrypt</li>
+                        <li>JSON Web Tokens (JWT)</li>
+                        <li>Joi</li>
+                        <li>Nodemailer</li>
+                        <li>Cors</li>
+                        <li>Morgan</li>
+                        <li>Dotenv</li>
+                        <li>Cross-env</li>
+                    </AboutList>
+                </div>
+                <div>
+                    <AboutSubTitle># Technologies Used (Testing) </AboutSubTitle>
+                    <AboutList>
+                        <li>AVA Testing</li>
                     </AboutList>
                 </div>
             </AboutSubContainer>
+            <AboutSubBlockTitle># Backend</AboutSubBlockTitle>
+            <AboutText>The project uses its own backend. <br /><br />
+                The backend supports the ability to authorize and register.
+                It is also possible to save games to the cloud library. MongoDB is used as the database. <br /><br />
+                You can see the backend code by clicking on the <AboutLinks href="https://github.com/AlekasndrHavryliuk/VortexBackend">link</AboutLinks>.
+            </AboutText>
             <AboutSubBlockTitle># Author</AboutSubBlockTitle>
-            <AboutContactList>
-                <li>— Havryliuk Oleksand</li>
-                <li><a href="mailto:gavrfavorite@gmail.com">— gavrfavorite@gmail.com</a></li>
-                <li><a href="https://t.me/algavriluk">— Telegram</a></li>
-            </AboutContactList>
+
+            <AboutSubContainer>
+                <div>
+                    <AboutSubTitle># Information</AboutSubTitle>
+                    <AboutList>
+                        <li>Havryliuk Oleksand</li>
+                        <li><a href="mailto:gavrfavorite@gmail.com">
+                            <svg width={24} height={24}>
+                                <use href={`${svg}#icon-envelop`}></use>
+                            </svg>gavrfavorite@gmail.com</a>
+                        </li>
+                        <li><a href="https://github.com/AlekasndrHavryliuk">
+                            <svg width={24} height={24}>
+                                <use href={`${svg}#icon-github`}></use>
+                            </svg>AlekasndrHavryliuk</a>
+                        </li>
+                    </AboutList>
+                </div>
+
+                <div>
+                    <AboutSubTitle># Social Links</AboutSubTitle>
+                    <AboutList>
+                        <li><a href="https://t.me/algavriluk">
+                            <svg width={24} height={24}>
+                                <use href={`${svg}#icon-telegram`}></use>
+                            </svg>@algavriluk</a>
+                        </li>
+                        <li><a href="https://www.reddit.com/user/HavryliukAl">
+                            <svg width={24} height={24}>
+                                <use href={`${svg}#icon-reddit`}></use>
+                            </svg>HavryliukAl</a>
+                        </li>
+                        <li><a href="https://instagram.com/al_gavrilyuk?igshid=YmMyMTA2M2Y=">
+                            <svg width={24} height={24}>
+                                <use href={`${svg}#icon-instagram`}></use>
+                            </svg>al_gavrilyuk</a>
+                        </li>
+                        <li><a href="https://www.linkedin.com/in/aleksandr-havryliuk/">
+                            <svg width={24} height={24}>
+                                <use href={`${svg}#icon-linkedin`}></use>
+                            </svg>Aleksandr Havryliuk</a>
+                        </li>
+                    </AboutList>
+                </div>
+
+
+
+
+            </AboutSubContainer>
+
+
+
         </AboutContainer >
     )
 }

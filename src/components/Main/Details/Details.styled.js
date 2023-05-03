@@ -22,10 +22,15 @@ export const DetailsText = styled.p`
 `;
 
 export const DetailsColorWrapper = styled.div`
-  background-color: ${({ theme }) => theme.headerBackgroundColor};
+  background-color: ${({ theme }) => theme.subHeaderColor};
   padding: 20px;
   margin-top: 10px;
   border-radius: 10px;
+
+  ${mobile`
+    text-align: center;
+    padding: 15px 5px
+  `}
 `;
 
 export const DetailsButtonWrapper = styled.div`

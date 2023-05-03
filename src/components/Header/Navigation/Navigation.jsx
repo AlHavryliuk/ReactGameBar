@@ -1,36 +1,32 @@
-import {
-  BurgerMenu,
-  CustomNavigation,
-  NavigationLinks,
-  NavItem
-} from './Navigation.styled';
-import icon from '../../../images/icon-spread.svg';
-import { useDispatch } from 'react-redux';
-import { openMenu } from 'store/mobileNav/mobileNavSlice';
 import LightMode from 'components/LightMode/LightMode';
+import { useDispatch, useSelector } from 'react-redux';
 import { setFirstPage } from 'store/requestReducer/requestSlice';
+import { reselect } from 'store/selectors/selectors';
+
+import {
+  CustomNavigation,
+  NavItem,
+  NavigationLinks
+} from './Navigation.styled';
 
 
 const Navigation = () => {
   const dispatch = useDispatch()
-
-  const handleOpenNavigationMenu = () => {
-    dispatch(openMenu())
-  }
+  const authComplete = useSelector(reselect.authCompleteSuccess)
 
   const handleSetFirstPage = () => dispatch(setFirstPage())
 
   return (
     <CustomNavigation>
       <NavigationLinks>
-        <LightMode />
         <NavItem onClick={handleSetFirstPage} to="/genres">Genres</NavItem>
-        <NavItem to="/libary">Libary</NavItem>
+        <NavItem to="/libary">Locale Libary</NavItem>
+        {authComplete && <NavItem onClick={handleSetFirstPage} to="/cloudLibary">Cloud Libary</NavItem>}
+
         <NavItem to="/about">About</NavItem>
+        <LightMode />
       </NavigationLinks>
-      <BurgerMenu onClick={handleOpenNavigationMenu}>
-        <use href={`${icon}#icon-paragraph`}></use>
-      </BurgerMenu>
+ 
     </CustomNavigation>
   );
 };

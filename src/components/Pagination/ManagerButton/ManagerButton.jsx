@@ -8,13 +8,17 @@ import { PaginationWrapper } from './ManagerButton.styled';
 const ManagerButton = () => {
 
   const games = useSelector(select.gamesList)
+  const cloudGames = useSelector(select.cloudGames)
+  const currentPage = useSelector(select.currentPage)
+
+  const tempGames = currentPage === "cloudLibary" ? cloudGames : games
 
   return (
     <>
-      {games && games.length ? <PaginationWrapper>
+      {tempGames && tempGames.length ? <PaginationWrapper>
         < PreviousPage />
         <NextPage />
-      </PaginationWrapper > : <LibaryWarningTitle>Game list is empty... Specify parameters for the query...</LibaryWarningTitle>}
+      </PaginationWrapper > : <LibaryWarningTitle>Game list is empty... </LibaryWarningTitle>}
     </>
   );
 };

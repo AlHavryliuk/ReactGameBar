@@ -2,7 +2,7 @@ export const lightThemeVars = {
   headerBackgroundColor: '#393231',
   headerTextColor: 'snow',
   headerTextHoverColor: 'gray',
-  mainBackgroundColor: '#D9D9D9   ',
+  mainBackgroundColor: '#D9D9D9',
   mainTextColor: 'black',
   lightModeBackground: 'snow',
   cardBackgroundColor: 'snow',
@@ -21,6 +21,7 @@ export const lightThemeVars = {
   aboutTwiceBlock: '#393231',
   achievementsCardColor: 'white',
   scrollColor: 'white',
+  subHeaderColor: '#233035',
 };
 
 export const darkThemeVars = {
@@ -46,4 +47,5 @@ export const darkThemeVars = {
   aboutTwiceBlock: '#2C3639',
   achievementsCardColor: '#2C3639',
   scrollColor: '#2C3639',
+  subHeaderColor: '#233035',
 };

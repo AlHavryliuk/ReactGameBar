@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import { SmoothAppearance } from 'utils/animations/animations';
 import { mobile } from 'utils/mixins/adaptMixin';
 
 export const CustomGameCard = styled.div`
@@ -10,6 +11,8 @@ export const CustomGameCard = styled.div`
   transition: 0.3s;
   transition: all 0.5s;
   border-radius: 5px;
+  /* opacity: 0; */
+  /* animation: ${SmoothAppearance} 10ms ease 600ms forwards; */
 
   & img {
     object-fit: cover;

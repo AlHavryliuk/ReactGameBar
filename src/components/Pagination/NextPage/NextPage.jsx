@@ -7,12 +7,31 @@ const NextPage = () => {
   const dispatch = useDispatch();
   const lastPage = useSelector(select.lastPage)
   const currentPage = useSelector(select.page)
+  const currentPageName = useSelector(select.currentPage)
+  const cloudTotalPages = useSelector(select.totalPages)
+
+
+
 
   const incrementPages = () => {
     dispatch(incrementPage());
   };
 
-  return <CustomNextButton disabled={currentPage + 1 === lastPage} onClick={incrementPages}>NextPage</CustomNextButton>;
+  const checkLastPage = () => {
+    switch (currentPageName) {
+      case 'cloudLibary':
+        if (currentPage < cloudTotalPages) return false;
+        return true
+      case 'home':
+      case 'by Genres':
+        return false
+      default:
+        if (currentPage < lastPage) return false;
+        return true;
+    }
+  }
+
+  return <CustomNextButton disabled={checkLastPage()} onClick={incrementPages}>NextPage</CustomNextButton>;
 };
 
 export default NextPage;

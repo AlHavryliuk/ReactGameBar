@@ -43,6 +43,10 @@ export const DetailsButton = styled.button`
   background-color: ${({ theme }) => theme.removeAddButtons};
   color: ${({ theme }) => theme.removeAddText};
   cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+  }
 
   &:disabled {
     background-color: #6c757d;

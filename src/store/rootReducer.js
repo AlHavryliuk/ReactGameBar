@@ -1,4 +1,6 @@
 import { combineReducers } from '@reduxjs/toolkit';
+import { persistedAuthReducer } from './authReducer/authSlice';
+import cloudGamesReducer from './cloudGamesReducer/cloudGamesSlice';
 import { persistedFavoriteGamesReducer } from './favoriteGames/favoriteSlice';
 import gamesReducer from './gamesReducer/gamesSlice';
 import genresReducer from './genresReducer/genresSlice';
@@ -15,4 +17,6 @@ export const rootReducer = combineReducers({
   genres: genresReducer,
   mobileNavigation: mobileNavReducer,
   favoriteGames: persistedFavoriteGamesReducer,
+  auth: persistedAuthReducer,
+  cloudGames: cloudGamesReducer,
 });

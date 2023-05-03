@@ -4,7 +4,7 @@ import { SmoothAppearance, lineAnimation } from 'utils/animations/animations';
 import { mobile } from 'utils/mixins/adaptMixin';
 
 export const CustomNavigation = styled.nav`
-  margin-left: auto;
+  /* margin-left: auto; */
 `;
 export const NavigationLinks = styled.ul`
   display: flex;
@@ -12,7 +12,9 @@ export const NavigationLinks = styled.ul`
   gap: 20px;
   /* overflow: hidden; */
   /* width: 0; */
-  animation: ${SmoothAppearance} 1700ms ease forwards;
+  margin: 0;
+  /* animation: ${SmoothAppearance} 1700ms ease forwards; */
+  padding: 0 10px;
 
   ${mobile`
     display: none;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ratingMove } from 'utils/animations/animations';
+import { ratingMove, typing } from 'utils/animations/animations';
 import { mobile } from 'utils/mixins/adaptMixin';
 
 export const DetailsContainer = styled.div`
@@ -17,9 +17,17 @@ export const GameTitle = styled.h1`
   color: ${({ theme }) => theme.mainTextColor};
   display: flex;
   justify-content: space-between;
+  width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: ${typing} 3s steps(40, end) forwards;
 
   ${mobile`
+      width: auto;
       justify-content: center; 
+      animation: none;
+      white-space: normal;
+      text-align: center;
   `}
 `;
 

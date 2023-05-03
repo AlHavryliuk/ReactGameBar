@@ -12,7 +12,9 @@ export const favoriteGamesSlice = createSlice({
       state.gameList = [...state.gameList, payload];
     },
     removeFavoriteGame(state, { payload }) {
-      state.gameList = state.gameList.filter(({ id }) => id !== payload);
+      state.gameList = state.gameList.filter(
+        ({ gameID }) => gameID !== payload
+      );
     },
     incrementLocalPage(state) {
       ++state.page;

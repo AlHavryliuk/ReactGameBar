@@ -1,16 +1,20 @@
 import AboutPage from 'pages/About/AboutPage';
-import { lazy, Suspense } from 'react';
-import { useSelector } from 'react-redux';
+import { lazy, Suspense, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
-import { select } from 'store/selectors/selectors';
+import { token } from 'service/hosts';
+import { reselect, select } from 'store/selectors/selectors';
 import { ThemeProvider } from 'styled-components';
 import { darkThemeVars, lightThemeVars } from 'utils/variables/variables';
 import { GlobalStyle } from './Custom/GlobalStyle/GlobalStyle.styled';
+import SubHeader from './Custom/SubHeader/SubHeader';
+import ToasterContainer from './Custom/Toaster/ToasterContainer';
 import Header from './Header/MainHeader/Header';
 import MobileNav from './Header/MobileNav/MobileNav';
 import Loader from './Loader/Loader';
-import ToasterContainer from './Toaster/ToasterContainer';
+import { getCurrentUser } from 'store/authReducer/authOperations';
+
 
 
 export const App = () => {
@@ -22,12 +26,29 @@ export const App = () => {
   const LazyLibaryPage = lazy(() => import('pages/Libary/LibaryPage'))
   const LazyGameByGenresPage = lazy(() => import('pages/GameByGenres/GameByGenresPage'))
   const LazyGenresPage = lazy(() => import('pages/Genres/GenresPage'))
+  const LazyCloudLibaryPage = lazy(() => import('pages/CloudLibary/CloudLibary'))
+  const authComplete = useSelector(reselect.authCompleteSuccess)
+  const user = useSelector(select.userData)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    if (!authComplete) return;
+    else {
+      token.set(user.token)
+      dispatch(getCurrentUser())
+    }
+  }, [authComplete, user?.token, dispatch])
+
+  console.log(process.env.KEY);
+  console.log(process.env);
+  console.log(process.env.API_KEY);
 
 
   return (
     <ThemeProvider theme={darkMode ? darkThemeVars : lightThemeVars}>
       <GlobalStyle />
       <Header />
+      <SubHeader />
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<LazyHomePage />} />
@@ -36,6 +57,7 @@ export const App = () => {
           <Route path="/genres" element={<LazyGenresPage />} />
           <Route path="/genres/:genre/*" element={<LazyGameByGenresPage />} />
           <Route path="/libary" element={<LazyLibaryPage />} />
+          <Route path="/cloudLibary" element={<LazyCloudLibaryPage />} />
           <Route path="/about" element={<AboutPage />} />
         </Routes>
       </Suspense>

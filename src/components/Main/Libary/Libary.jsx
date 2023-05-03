@@ -20,10 +20,10 @@ const Libary = () => {
         <>
             {favoriteGames.length ?
                 favoriteGames.map(({
-                    id,
+                    gameID,
                     background_image_additional,
                     name
-                }) => <CustomNavLink key={id} to={`/details/${id}`}>
+                }) => <CustomNavLink key={gameID} to={`/details/${gameID}`}>
                         <CustomGameCard>
                             <img
                                 width="100%"

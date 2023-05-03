@@ -17,11 +17,18 @@ export const select = {
   favoriteGames: state => state.favoriteGames.gameList,
   localPage: state => state.favoriteGames.page,
   per_page: state => state.favoriteGames.per_page,
+  userData: state => state.auth.user,
+  authIsLoading: state => state.auth.isLoading,
+  authError: state => state.auth.error,
+  cloudGames: state => state.cloudGames.cloudGames,
+  cloudLoading: state => state.cloudGames.isLoading,
+  tempGame: state => state.cloudGames.tempGame,
+  totalPages: state => state.cloudGames.totalPages,
 };
 
 export const reselect = {
   gamesPagination: createSelector(
-    [select.favoriteGames, select.localPage, select.per_page], // Arguments
+    [select.favoriteGames, select.localPage, select.per_page],
     (games, page, per_page) => {
       if (page === 1) {
         return games.filter((_, index) => index < per_page);
@@ -32,4 +39,13 @@ export const reselect = {
       );
     }
   ),
+  authCompleteSuccess: createSelector([select.userData], user => {
+    if (!user) return false;
+    const { email, token } = user;
+    if (email && token) {
+      return true;
+    } else {
+      return false;
+    }
+  }),
 };

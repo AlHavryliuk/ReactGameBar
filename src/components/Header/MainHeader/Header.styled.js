@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { SmoothAppearance } from 'utils/animations/animations';
+import { SmoothAppearance, rotateX } from 'utils/animations/animations';
 
 import { mobile } from 'utils/mixins/adaptMixin';
 
@@ -18,6 +18,7 @@ export const HeaderTitle = styled(NavLink)`
   font-size: 36px;
   display: flex;
   align-items: center;
+  animation: ${rotateX} 2000ms ease-in-out;
 
   ${mobile`
       display: none;
@@ -41,6 +42,7 @@ export const HeaderDinamicTitle = styled.h2`
 
   ${mobile`
       display: block;
+      
   `}
 `;
 
@@ -54,4 +56,14 @@ export const CustomSvg = styled.svg`
   ${mobile`
       display: none;
   `}
+`;
+
+export const DeskAutorized = styled.div`
+
+
+  ${mobile`
+      display: none;
+  `}
+
+  
 `;

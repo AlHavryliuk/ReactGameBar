@@ -1,7 +1,8 @@
 import LightMode from "components/LightMode/LightMode";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { closeMenu } from "store/mobileNav/mobileNavSlice";
 import { setFirstPage } from "store/requestReducer/requestSlice";
+import { reselect } from "store/selectors/selectors";
 import icon from '../../../images/icon-spread.svg';
 import { MobileCloseButton, MobileHeader, MobileNavItem, MobileNavPopup } from "./MobileNav.styled";
 
@@ -10,7 +11,7 @@ const MobileNav = () => {
     const handleCloseNavigationMenu = () => {
         dispatch(closeMenu())
     }
-
+    const authComplete = useSelector(reselect.authCompleteSuccess)
     const handleCloseAndSetFirstPage = () => {
         dispatch(setFirstPage())
         dispatch(closeMenu())
@@ -27,7 +28,8 @@ const MobileNav = () => {
             </MobileHeader>
             <MobileNavItem onClick={handleCloseAndSetFirstPage} to="/">Home</MobileNavItem>
             <MobileNavItem onClick={handleCloseAndSetFirstPage} to="/genres">Genres</MobileNavItem>
-            <MobileNavItem onClick={handleCloseNavigationMenu} to="/libary">Libary</MobileNavItem>
+            <MobileNavItem onClick={handleCloseNavigationMenu} to="/libary">Locale Libary</MobileNavItem>
+            {authComplete && <MobileNavItem onClick={handleCloseAndSetFirstPage} to="/cloudLibary">Cloud Libary</MobileNavItem>}
             <MobileNavItem onClick={handleCloseNavigationMenu} to="/about">About</MobileNavItem>
             <MobileNavItem onClick={handleCloseNavigationMenu} to="/search">Search</MobileNavItem>
         </MobileNavPopup>

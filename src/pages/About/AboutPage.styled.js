@@ -1,4 +1,10 @@
 import styled from 'styled-components';
+import {
+  SmoothAppearance,
+  halfMoveAboutUnderline,
+  moveAboutUnderline,
+  rotateX,
+} from 'utils/animations/animations';
 import { mobile } from 'utils/mixins/adaptMixin';
 
 export const AboutTitle = styled.h1`
@@ -6,6 +12,7 @@ export const AboutTitle = styled.h1`
   padding-left: 40px;
   font-size: 35px;
   position: relative;
+  animation: ${SmoothAppearance} 1200ms forwards;
 
   ${mobile`
       text-align: center;
@@ -21,9 +28,11 @@ export const AboutTitle = styled.h1`
     bottom: -30px;
     left: -40px;
     background-color: ${({ theme }) => theme.aboutTextColor};
+    animation: ${halfMoveAboutUnderline} 1100ms ease-in-out forwards;
 
     ${mobile`
       display: none;
+      animation: none
   `}
   }
 `;
@@ -35,7 +44,7 @@ export const AboutLinks = styled.a`
 export const AboutText = styled.p`
   color: ${({ theme }) => theme.aboutTextColor};
   font-size: 22px;
-
+  animation: ${rotateX} 1200ms forwards;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   background-color: ${({ theme }) => theme.cardBackgroundColor};
   border-radius: 10px;
@@ -133,25 +142,30 @@ export const AboutSubBlockTitle = styled.h2`
   font-size: 28px;
   margin-top: 0;
   position: relative;
+  animation: ${SmoothAppearance} 1300ms forwards;
 
   ${mobile`
       text-align: center;
       padding-left: 0;
       margin: 0;
+      animation: none;
   `}
 
   &::after {
     content: '';
     display: block;
-    width: 100%;
+    /* width: calc(100% + 80px); */
+    width: 0;
     height: 2px;
     position: absolute;
     bottom: -30px;
     left: -40px;
     background-color: ${({ theme }) => theme.aboutTextColor};
+    animation: ${moveAboutUnderline} 1100ms ease-in-out forwards;
 
     ${mobile`
       display: none;
-  `}
+      animation: none
+  `};
   }
 `;

@@ -90,3 +90,19 @@ export const halfRotateX = keyframes`
     transform: rotateX(180deg);
     background-color: rosybrown }
   `;
+
+export const moveAboutUnderline = keyframes`
+  0% {
+    width: 0%
+  }
+  100% {
+    width: calc(100% + 80px);
+  }`;
+
+export const halfMoveAboutUnderline = keyframes`
+  0% {
+    width: 0%
+  }
+  100% {
+    width:65%;
+  }`;

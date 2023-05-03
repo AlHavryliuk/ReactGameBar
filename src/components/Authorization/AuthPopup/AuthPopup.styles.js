@@ -15,15 +15,8 @@ export const CustomAuthPopup = styled.div`
 `;
 export const CustomAuthPopupBody = styled.div`
   background-color: ${({ theme }) => theme.headerBackgroundColor};
-  /* top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  position: absolute; */
   max-width: 400px;
   width: 100%;
-  /* max-height: 450px; */
   height: auto;
   padding: 25px 25px 90px;
   border-radius: 20px;

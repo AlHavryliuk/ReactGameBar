@@ -84,6 +84,5 @@ export const SearchIcon = styled.svg`
 export const SearchWrapper = styled.div`
   display: flex;
   align-items: center;
-  /* border-radius: 10px; */
   border-bottom: 1px solid ${({ theme }) => theme.headerTextColor};
 `;

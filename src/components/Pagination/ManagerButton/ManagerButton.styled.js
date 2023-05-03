@@ -11,9 +11,6 @@ export const PaginationWrapper = styled.div`
   font-size: 17px;
   border: none;
   gap: 10px;
-  /* text-transform: uppercase; */
-  /* background-color: ${({ theme }) => theme.loadMoreBtnColor};
-  color: ${({ theme }) => theme.loadMoreBtnTextColor}; */
   color: ${({ theme }) => theme.headerTextColor};
   display: flex;
 
@@ -21,19 +18,6 @@ export const PaginationWrapper = styled.div`
     border-radius: 5px;
     position: relative;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-
-    /* &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      border-radius: 5px;
-      width: 0%;
-      height: 100%;
-      background-color: brown;
-      opacity: 0.7;
-      transition: all 0.3s;
-    } */
 
     &:hover {
       background-color: ${({ theme }) => theme.loadMoreHoverColor};
@@ -46,10 +30,6 @@ export const PaginationWrapper = styled.div`
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
       `}
     }
-
-    /* &:hover::before {
-      width: 100%;
-    } */
 
     &:disabled {
       background-color: ${({ theme }) => theme.loadMoreDisabledColor};

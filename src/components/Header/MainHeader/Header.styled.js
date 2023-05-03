@@ -42,7 +42,6 @@ export const HeaderDinamicTitle = styled.h2`
 
   ${mobile`
       display: block;
-      
   `}
 `;
 
@@ -50,7 +49,6 @@ export const CustomSvg = styled.svg`
   margin-left: 15px;
   opacity: 0;
   animation: ${SmoothAppearance} 0.2s ease 1475ms forwards;
-
   fill: ${({ theme }) => theme.headerTextColor};
 
   ${mobile`
@@ -59,11 +57,7 @@ export const CustomSvg = styled.svg`
 `;
 
 export const DeskAutorized = styled.div`
-
-
   ${mobile`
       display: none;
   `}
-
-  
 `;

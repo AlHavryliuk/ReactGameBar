@@ -29,8 +29,6 @@ export const MobileCloseButton = styled.svg`
 export const MobileHeader = styled.div`
   width: 100%;
   height: 40px;
-  position: absolute;
-  padding: 50px 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -41,8 +39,7 @@ export const MobileHeader = styled.div`
   & button {
     width: 55px;
     height: 55px;
-    fill: black
-    
+    fill: black 
   }
 
   & svg {

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { mobile } from 'utils/mixins/adaptMixin';
 
 export const CustomNextButton = styled.button`
   font-size: 17px;
@@ -9,19 +8,7 @@ export const CustomNextButton = styled.button`
   border: none;
   text-transform: uppercase;
   background-color: ${({ theme }) => theme.loadMoreBtnColor};
-  /* color: ${({ theme }) => theme.loadMoreBtnTextColor}; */
   color: ${({ theme }) => theme.headerTextColor};
   cursor: pointer;
-
   transition: all 0.5s ease 0s;
-
-  /* &:hover {
-    background-color: ${({ theme }) => theme.loadMoreHoverColor};
-    color: ${({ theme }) => theme.mainCardTextColor};
-
-    ${mobile`
-      background-color: ${({ theme }) => theme.loadMoreBtnColor};
-      color: ${({ theme }) => theme.headerTextColor};
-  `}
-  } */
 `;

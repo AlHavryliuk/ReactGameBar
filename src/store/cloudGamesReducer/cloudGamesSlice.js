@@ -23,9 +23,8 @@ export const cloudGamesSlice = createSlice({
         state.isLoading = true;
         state.error = null;
       })
-      .addCase(addGame.fulfilled, (state, { payload }) => {
+      .addCase(addGame.fulfilled, (state) => {
         state.isLoading = false;
-        // state.cloudGames = [...state.cloudGames, payload];
         state.tempGame = true;
       })
       .addCase(addGame.rejected, (state, { payload }) => {
@@ -51,12 +50,8 @@ export const cloudGamesSlice = createSlice({
         state.isLoading = true;
         state.error = null;
       })
-      .addCase(removeGame.fulfilled, (state, { payload }) => {
+      .addCase(removeGame.fulfilled, (state) => {
         state.isLoading = false;
-        // const { gameID: removedID } = payload;
-        // state.cloudGames = state.cloudGames.filter(
-        //   ({ gameID }) => gameID !== removedID
-        // );
         state.tempGame = false;
       })
       .addCase(removeGame.rejected, (state, { payload }) => {
@@ -68,7 +63,7 @@ export const cloudGamesSlice = createSlice({
         state.isLoading = true;
         state.error = null;
       })
-      .addCase(checkByID.fulfilled, (state, { payload }) => {
+      .addCase(checkByID.fulfilled, (state) => {
         state.isLoading = false;
         state.tempGame = true;
       })
@@ -79,15 +74,6 @@ export const cloudGamesSlice = createSlice({
       }),
 });
 
-// const persistedConfig = {
-//   key: `cloudGames`,
-//   storage,
-// };
 
 const cloudGamesReducer = cloudGamesSlice.reducer;
 export default cloudGamesReducer;
-
-// export const persistedCloudGamesReducer = persistReducer(
-//   persistedConfig,
-//   cloudGamesSlice.reducer
-// );

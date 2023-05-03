@@ -55,9 +55,9 @@ const Details = () => {
   }, [])
 
   useEffect(() => {
-    if (!id) return
+    if (!id || !authComlete) return
     dispatch(checkByID(id))
-  }, [id, dispatch])
+  }, [id, dispatch, authComlete])
 
 
 

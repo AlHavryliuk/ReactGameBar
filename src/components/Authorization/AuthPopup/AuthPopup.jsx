@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { loginUser, registerUser } from "store/authReducer/authOperations";
-import { loginValidator, registerValidator } from "utils/helpers/authValidation";
+import { authValidator } from "utils/helpers/authValidation";
 import { CusomAuthTitle, CustomAuthPopup, CustomAuthPopupBody, CustomAuthPopupContent, CustomPoupHeader, CustomUseForm, PopopClouseBtn } from "./AuthPopup.styles";
 
 const AuthPopup = ({ closePopUp, popupType }) => {
@@ -11,17 +11,22 @@ const AuthPopup = ({ closePopUp, popupType }) => {
 
 
     const onSubmit = credential => {
+        const { email } = credential;
+        const correctCredential = { ...credential, email: email.toLowerCase() };
         switch (popupType) {
             case "login":
-                if (!loginValidator(credential)) return
-                dispatch(loginUser(credential)).unwrap().then(() => closePopUp(true))
+                handleAuth(loginUser, correctCredential)
                 break
             default:
-                if (!registerValidator(credential)) return
-                dispatch(registerUser(credential)).unwrap().then(() => closePopUp(true))
+                handleAuth(registerUser, correctCredential)
                 break
         }
         reset();
+    };
+
+    const handleAuth = async (authAction, credential) => {
+        if (!authValidator(authAction, credential)) return;
+        dispatch(authAction(credential)).unwrap().then(() => closePopUp(true))
     };
 
     const handleAuthPopupClose = () => {

@@ -1,6 +1,19 @@
 import { failureToast } from 'components/Custom/Toaster/toasts';
+import { loginUser, registerUser } from 'store/authReducer/authOperations';
 
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+export const authValidator = (action, credentials) => {
+  switch (action) {
+    case loginUser:
+      return loginValidator(credentials);
+    case registerUser:
+      return registerValidator(credentials);
+    default:
+      console.log('Unexpected action');
+      return false;
+  }
+};
 
 export const registerValidator = credentials => {
   const { email, nickname, password } = credentials;

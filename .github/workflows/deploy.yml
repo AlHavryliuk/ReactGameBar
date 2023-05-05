@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
 
+env:
+  DAY_OF_WEEK: Monday
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest

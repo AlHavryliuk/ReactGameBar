@@ -30,7 +30,6 @@ export const ItemPage = styled.button`
   &.isActive {
     background-color: ${({ theme }) => theme.headerTextColor};
     color: ${({ theme }) => theme.loadMoreBtnColor};
-    /* background-color: red; */
   }
 `;
 export const ShamPageItem = styled.div``;

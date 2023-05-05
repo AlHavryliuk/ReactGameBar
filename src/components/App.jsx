@@ -39,9 +39,9 @@ export const App = () => {
     }
   }, [authComplete, user?.token, dispatch])
 
-  const apiKey = process.env.API_KEY;
-
-  console.log(apiKey);
+  console.log(process.env.BASE_URL);
+  console.log(process.env);
+  console.log(process.env.API_KEY);
 
   return (
     <ThemeProvider theme={darkMode ? darkThemeVars : lightThemeVars}>

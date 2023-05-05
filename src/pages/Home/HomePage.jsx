@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setCurrentPage } from 'store/requestReducer/requestSlice';
 import { select } from 'store/selectors/selectors';
 import { getGamesList } from './../../store/gamesReducer/gamesOperation';
+import NumPageMenu from 'components/Pagination/NumPageMenu/NumPageMenu';
 
 const HomePage = () => {
   const gamesList = useSelector(select.gamesList);
@@ -35,7 +36,9 @@ const HomePage = () => {
         {gamesList &&
           gamesList.map(game => <GameCard key={game.id} game={game} />)}
       </GameGallery>
+      <NumPageMenu />
       <ManagerButton />
+
       <footer />
     </>
   );

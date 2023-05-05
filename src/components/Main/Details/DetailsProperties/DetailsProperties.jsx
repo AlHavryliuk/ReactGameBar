@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { select } from 'store/selectors/selectors';
 import { getLastDate, releaseDate } from 'utils/dateFormatter/dateFormatter';
-import platformIcon from '../../../images/icon-spread.svg';
+import platformIcon from '../../../../images/icon-spread.svg';
 import {
   CustomPropertyIcons,
   CustomProperyiesList,

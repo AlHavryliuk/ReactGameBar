@@ -12,7 +12,7 @@ export const fetchGameList = async (page = 1, search = '') => {
       search,
     },
   });
-  return { count, results};
+  return { count, results };
 };
 
 export const fetchGameListByGenre = async (page = 1, genres) => {

@@ -27,6 +27,9 @@ export const requestSlice = createSlice({
     setFirstPage(state, action) {
       state.page = 1;
     },
+    setPage(state, action) {
+      state.page = action.payload;
+    },
     setSearchQuery(state, action) {
       state.searchQuery = action.payload;
     },
@@ -53,6 +56,7 @@ export const {
   setSearchPage,
   setFullSearchParams,
   setLastPage,
+  setPage,
 } = requestSlice.actions;
 const requestReducer = requestSlice.reducer;
 export default requestReducer;

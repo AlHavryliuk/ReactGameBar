@@ -5,8 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addGame, checkByID, removeGame } from 'store/cloudGamesReducer/cloudGamesOperations';
 import { addFavoriteGame, removeFavoriteGame } from 'store/favoriteGames/favoriteSlice';
 import { reselect, select } from 'store/selectors/selectors';
-import DetailsAchievements from '../DetailsAchievements/DetailsAchievements';
-import DetailsProperties from '../DetailsProperties/DetailsProperties';
+import DetailsAchievements from './DetailsAchievements/DetailsAchievements';
+import DetailsProperties from './DetailsProperties/DetailsProperties';
 import { DetailsBlock, DetailsButton, DetailsButtonWrapper, DetailsColorWrapper, DetailsSubTitle, DetailsText } from './Details.styled';
 
 

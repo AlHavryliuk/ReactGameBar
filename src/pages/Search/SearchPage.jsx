@@ -2,6 +2,7 @@ import GameGallery from 'components/Custom/GameGallery/GameGallery';
 import Loader from 'components/Loader/Loader';
 import GameCard from 'components/Main/GameCard/GameCard';
 import ManagerButton from 'components/Pagination/ManagerButton/ManagerButton';
+import NumPageMenu from 'components/Pagination/NumPageMenu/NumPageMenu';
 import Search from 'components/Search/Search';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -53,6 +54,7 @@ const SearchPage = () => {
                 {gamesList &&
                     gamesList.map(game => <GameCard key={game.id} game={game} />)}
             </GameGallery>
+            <NumPageMenu />
             <ManagerButton />
         </>
     )

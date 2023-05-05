@@ -1,7 +1,7 @@
 import GoBackButton from 'components/GoBackButton/GoBackButton';
 import Details from 'components/Main/Details/Details';
-import RatingStars from 'components/Main/RatingStars/RatingStars';
-import SimpleSlider from 'components/Main/SimpleSlider/SimpleSlider';
+import RatingStars from 'components/Main/Details/RatingStars/RatingStars';
+import SimpleSlider from 'components/Main/Details/SimpleSlider/SimpleSlider';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';

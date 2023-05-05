@@ -106,3 +106,11 @@ export const halfMoveAboutUnderline = keyframes`
   100% {
     width:65%;
   }`;
+
+export const heightRise = keyframes`
+    0% {
+    height: 0%
+  }
+  100% {
+    height: 100%;
+  }`;

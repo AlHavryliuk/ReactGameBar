@@ -1,6 +1,6 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
-import starsIcon from '../../../images/icon-spread.svg';
+import starsIcon from '../../../../images/icon-spread.svg';
 
 const RatingStars = ({ rating }) => {
   const simpleRate = rating.toFixed(1);

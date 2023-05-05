@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import {
   SmoothAppearance,
   halfMoveAboutUnderline,
+  heightRise,
   moveAboutUnderline,
   rotateX,
 } from 'utils/animations/animations';
@@ -49,6 +50,25 @@ export const AboutText = styled.p`
   background-color: ${({ theme }) => theme.cardBackgroundColor};
   border-radius: 10px;
   padding: 30px 30px;
+  ${mobile`
+      text-align: center;
+  `}
+`;
+
+export const AboutTextBackend = styled.p`
+  color: ${({ theme }) => theme.aboutTextColor};
+  font-size: 22px;
+  animation: ${rotateX} 1200ms forwards;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: ${({ theme }) => theme.cardBackgroundColor};
+  border-radius: 10px;
+  padding: 30px 30px;
+  opacity: 0;
+  margin: 0;
+  margin-top: 22px;
+  &.visible {
+    animation: ${SmoothAppearance} 1200ms 150ms ease-in-out forwards;
+  }
   ${mobile`
       text-align: center;
   `}
@@ -143,6 +163,28 @@ export const AboutSubBlockTitle = styled.h2`
   margin-top: 0;
   position: relative;
   animation: ${SmoothAppearance} 1300ms forwards;
+  margin: 22px 0;
+
+  &.visible {
+    &::after {
+      content: '';
+      display: block;
+      /* width: calc(100% + 80px); */
+      width: 0;
+      height: 2px;
+      position: absolute;
+      bottom: -30px;
+      left: -40px;
+      background-color: ${({ theme }) => theme.aboutTextColor};
+      animation: ${moveAboutUnderline} 1100ms 150ms ease-in-out forwards;
+
+      ${mobile`
+      display: none;
+      animation: none
+  `};
+    }
+    /* animation: ${SmoothAppearance} 1300ms forwards; */
+  }
 
   ${mobile`
       text-align: center;
@@ -161,11 +203,26 @@ export const AboutSubBlockTitle = styled.h2`
     bottom: -30px;
     left: -40px;
     background-color: ${({ theme }) => theme.aboutTextColor};
-    animation: ${moveAboutUnderline} 1100ms ease-in-out forwards;
 
     ${mobile`
       display: none;
       animation: none
   `};
+  }
+`;
+
+export const AboutHalfBlock = styled.div`
+  height: 0;
+  margin: 22px 0;
+  overflow: hidden;
+  &.visible {
+    animation: ${heightRise} 1200ms 150ms ease-in-out forwards;
+  }
+`;
+
+export const AboutHalfBlockApi = styled.div`
+  opacity: 0;
+  &.visible {
+    animation: ${SmoothAppearance} 1200ms 150ms ease-in-out forwards;
   }
 `;

@@ -4,9 +4,10 @@ import { setLastPage } from 'store/requestReducer/requestSlice';
 
 export const getGamesList = createAsyncThunk(
   'games/getGamesList',
-  async (page, { rejectWithValue }) => {
+  async (page, { rejectWithValue, dispatch }) => {
     try {
       const gamesList = await fetchGameList(page);
+      dispatch(setLastPage(gamesList.count));
       return gamesList;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -20,7 +21,7 @@ export const searchGames = createAsyncThunk(
     if (searchQuery == null) return { results: [] };
     try {
       const data = await fetchGameList(page, searchQuery);
-    
+
       dispatch(setLastPage(data.count));
       return data;
     } catch (error) {
@@ -31,9 +32,10 @@ export const searchGames = createAsyncThunk(
 
 export const searchGamesByGenre = createAsyncThunk(
   'games/searchGamesByGenre',
-  async ({ page, genre }, { rejectWithValue }) => {
+  async ({ page, genre }, { rejectWithValue, dispatch }) => {
     try {
       const gamesList = await fetchGameListByGenre(page, genre);
+      dispatch(setLastPage(gamesList.count));
       return gamesList;
     } catch (error) {
       return rejectWithValue(error.message);

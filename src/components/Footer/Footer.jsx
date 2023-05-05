@@ -4,9 +4,9 @@ import { CustomFooter, FooterContainer } from './Footer.styled';
 const Footer = () => {
     return (
         <CustomFooter>
-            <FooterContainer></FooterContainer>
+            <FooterContainer><span>Made with love for gamers</span> <span> © Game Vortex</span></FooterContainer>
         </CustomFooter>
-        
+
     )
 }
 

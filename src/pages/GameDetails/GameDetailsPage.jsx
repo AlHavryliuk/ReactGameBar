@@ -19,6 +19,7 @@ import {
   GameTitle,
   RatingBackWrapper,
 } from './GameDetailsPage.styled';
+import Footer from 'components/Footer/Footer';
 
 
 const GameDetailsPage = () => {
@@ -48,22 +49,26 @@ const GameDetailsPage = () => {
   }, [gameId, dispatch]);
 
   return (
-    <DetailsContainer>
-      {game && (
-        <>
-          <GameTitle>{game.name}</GameTitle>
-          <RatingBackWrapper >
-            <GameRating>
-              {game.rating.toFixed(1)}
-              <RatingStars rating={game.rating}></RatingStars>
-            </GameRating>
-            <GoBackButton />
-          </RatingBackWrapper>
-          <SimpleSlider />
-          <Details />
-        </>
-      )}
-    </DetailsContainer>
+    <>
+      <DetailsContainer>
+        {game && (
+          <>
+            <GameTitle>{game.name}</GameTitle>
+            <RatingBackWrapper >
+              <GameRating>
+                {game.rating.toFixed(1)}
+                <RatingStars rating={game.rating}></RatingStars>
+              </GameRating>
+              <GoBackButton />
+            </RatingBackWrapper>
+            <SimpleSlider />
+            <Details />
+          </>
+        )}
+
+      </DetailsContainer>
+      <Footer />
+    </>
   );
 };
 

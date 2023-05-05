@@ -39,6 +39,8 @@ export const App = () => {
     }
   }, [authComplete, user?.token, dispatch])
 
+  console.log(process.env);
+
   return (
     <ThemeProvider theme={darkMode ? darkThemeVars : lightThemeVars}>
       <GlobalStyle />

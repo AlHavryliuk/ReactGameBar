@@ -54,8 +54,8 @@ const SearchPage = () => {
                 {gamesList &&
                     gamesList.map(game => <GameCard key={game.id} game={game} />)}
             </GameGallery>
-            <NumPageMenu />
-            <ManagerButton />
+            {searchQuery && <NumPageMenu />}
+            {searchQuery && <ManagerButton />}
         </>
     )
 }

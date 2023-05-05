@@ -10,10 +10,6 @@ const NextPage = () => {
   const currentPageName = useSelector(select.currentPage)
   const cloudTotalPages = useSelector(select.totalPages)
   
-
-
-
-
   const incrementPages = () => {
     dispatch(incrementPage());
   };

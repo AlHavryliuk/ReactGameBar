@@ -39,9 +39,9 @@ export const App = () => {
     }
   }, [authComplete, user?.token, dispatch])
 
-  console.log(process.env.REACT_APP_BASE_URL);
+  console.log(process.env.REACT_APP_MY_API_KEY);
   // console.log(process.env);
-  console.log(process.env.REACT_APP_API_KEY);
+  console.log(process.env.REACT_APP_VORTEX_URL);
 
   return (
     <ThemeProvider theme={darkMode ? darkThemeVars : lightThemeVars}>

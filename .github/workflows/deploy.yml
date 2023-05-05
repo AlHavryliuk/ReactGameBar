@@ -19,6 +19,7 @@ jobs:
           npm install
           npm run lint:js
           npm run build
+          $DAY_OF_WEEK
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.0

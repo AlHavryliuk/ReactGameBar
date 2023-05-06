@@ -5,6 +5,7 @@ import swal from 'sweetalert';
 import getErrorMessage from 'utils/helpers/httpError';
 import {
   getCurrentUser,
+  googleLoginUser,
   loginUser,
   logoutUser,
   registerUser,
@@ -44,6 +45,19 @@ export const authSlice = createSlice({
         state.user = payload;
       })
       .addCase(loginUser.rejected, (state, { payload }) => {
+        state.error = payload;
+        state.isLoading = false;
+      })
+
+      .addCase(googleLoginUser.pending, state => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(googleLoginUser.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.user = payload;
+      })
+      .addCase(googleLoginUser.rejected, (state, { payload }) => {
         state.error = payload;
         state.isLoading = false;
       })

@@ -1,6 +1,12 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { failureToast } from 'components/Custom/Toaster/toasts';
-import { fetchTokenIsAvailable, login, logout, register } from 'service/auth';
+import {
+  fetchTokenIsAvailable,
+  googleLogin,
+  login,
+  logout,
+  register,
+} from 'service/auth';
 import swal from 'sweetalert';
 
 export const registerUser = createAsyncThunk(
@@ -27,6 +33,19 @@ export const loginUser = createAsyncThunk(
   async (credential, { rejectWithValue }) => {
     try {
       const userData = await login(credential);
+      return userData;
+    } catch (error) {
+      failureToast('Incorrect email or password, please try again');
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const googleLoginUser = createAsyncThunk(
+  'auth/postGoogleLoginUser',
+  async (credential, { rejectWithValue }) => {
+    try {
+      const userData = await googleLogin({credential});
       return userData;
     } catch (error) {
       failureToast('Incorrect email or password, please try again');

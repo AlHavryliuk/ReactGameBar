@@ -5,6 +5,11 @@ export const login = async credential => {
   return data;
 };
 
+export const googleLogin = async credential => {
+  const { data } = await $publicHost.post(`auth/google`, credential);
+  return data;
+};
+
 export const logout = async () => {
   const { data } = await $privateHost.post(`auth/logout`);
   return data;

@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { loginUser, registerUser } from "store/authReducer/authOperations";
 import { authValidator } from "utils/helpers/authValidation";
 import { CusomAuthTitle, CustomAuthPopup, CustomAuthPopupBody, CustomAuthPopupContent, CustomPoupHeader, CustomUseForm, PopopClouseBtn } from "./AuthPopup.styles";
+import GoogleAuth from "components/GoogleAuth/GoogleAuth";
 
 const AuthPopup = ({ closePopUp, popupType }) => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -52,7 +53,12 @@ const AuthPopup = ({ closePopUp, popupType }) => {
                             {errors.email && <span>This field is required</span>}
                             <input type="password" placeholder="Password..." {...register("password", { required: true })} />
                             {errors.password && <span>This field is required</span>}
+                            {
+                                popupType === 'login' &&
+                                <GoogleAuth />
+                            }
                             <input className="submit-button" type="submit" value={popupType} />
+
                         </form>
                     </CustomUseForm>
                 </CustomAuthPopupContent>

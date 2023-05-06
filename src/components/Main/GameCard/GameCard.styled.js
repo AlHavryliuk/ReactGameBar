@@ -16,7 +16,7 @@ export const CustomGameCard = styled.div`
 
   & img {
     object-fit: cover;
-    /* height: 175px; */
+    border-radius: 5px 5px 0 0;
     height: 200px;
   }
 
@@ -42,6 +42,7 @@ export const CustomGameCard = styled.div`
     height: 200px;
     width: 100%;
     position: absolute;
+    border-radius: 5px 5px 0 0;
     z-index: 0;
     top: 0;
     left: 0;

@@ -10,11 +10,11 @@ import { getGamesList } from './../../store/gamesReducer/gamesOperation';
 import NumPageMenu from 'components/Pagination/NumPageMenu/NumPageMenu';
 
 const HomePage = () => {
-  const gamesList = useSelector(select.gamesList);
-  const currentPage = useSelector(select.currentPage);
-  const isLoading = useSelector(select.isLoading);
   const dispatch = useDispatch()
-  const page = useSelector(select.page);
+  const gamesList = useSelector(select.gamesList);
+  const currentPageName = useSelector(select.pageName);
+  const gamesIsLoading = useSelector(select.gamesIsLoading);
+  const currentPage = useSelector(select.currentPage);
 
 
   useEffect(() => {
@@ -24,14 +24,14 @@ const HomePage = () => {
 
 
   useEffect(() => {
-    if (currentPage !== 'home') return
+    if (currentPageName !== 'home') return
     window.scrollTo(0, 0);
-    dispatch(getGamesList(page))
-  }, [dispatch, currentPage, page])
+    dispatch(getGamesList(currentPage))
+  }, [dispatch, currentPageName, currentPage])
 
   return (
     <>
-      {isLoading && <Loader />}
+      {gamesIsLoading && <Loader />}
       <GameGallery>
         {gamesList &&
           gamesList.map(game => <GameCard key={game.id} game={game} />)}

@@ -5,14 +5,14 @@ import { CustomPrevBtn } from './PreviousPage.styled';
 
 const PreviousPage = () => {
   const dispatch = useDispatch();
-  const page = useSelector(select.page);
+  const currentPage = useSelector(select.currentPage);
 
   const decrementPages = () => {
     dispatch(decrementPage());
   };
 
   return (
-    <CustomPrevBtn disabled={page === 1} onClick={decrementPages}>
+    <CustomPrevBtn disabled={currentPage === 1} onClick={decrementPages}>
       Previous page
     </CustomPrevBtn>
   );

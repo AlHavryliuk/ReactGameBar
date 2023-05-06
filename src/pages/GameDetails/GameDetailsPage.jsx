@@ -20,9 +20,11 @@ import {
   RatingBackWrapper,
 } from './GameDetailsPage.styled';
 import Footer from 'components/Footer/Footer';
+import Loader from 'components/Loader/Loader';
 
 
 const GameDetailsPage = () => {
+  const selectedIsLoading = useSelector(select.selectedIsLoading)
   const { gameId } = useParams();
   const dispatch = useDispatch();
   const game = useSelector(select.selectedGame);
@@ -50,6 +52,7 @@ const GameDetailsPage = () => {
 
   return (
     <>
+      {selectedIsLoading && <Loader />}
       <DetailsContainer>
         {game && (
           <>
@@ -65,7 +68,6 @@ const GameDetailsPage = () => {
             <Details />
           </>
         )}
-
       </DetailsContainer>
       <Footer />
     </>

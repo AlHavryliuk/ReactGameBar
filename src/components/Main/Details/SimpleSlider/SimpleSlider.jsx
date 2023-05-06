@@ -10,7 +10,7 @@ import { select } from 'store/selectors/selectors';
 import { SlaiderWrapper } from './SimpleSlider.styled';
 
 export const SimpleSlider = () => {
-  const screenshots = useSelector(select.screenshots);
+  const screenshots = useSelector(select.selectedGameScreenshots);
   const [lightbox, setLightbox] = useState(null);
   const settings = {
     dots: true,

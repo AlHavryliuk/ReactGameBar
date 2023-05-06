@@ -18,8 +18,11 @@ import { getCurrentUser } from 'store/authReducer/authOperations';
 
 
 export const App = () => {
+  const dispatch = useDispatch()
+  const user = useSelector(select.userData)
   const darkMode = useSelector(select.darkMode);
   const mobileNavigation = useSelector(select.mobileNavigation);
+  const authComplete = useSelector(reselect.authCompleteSuccess)
   const LazyHomePage = lazy(() => import('pages/Home/HomePage'))
   const LazyDetailsPage = lazy(() => import('pages/GameDetails/GameDetailsPage'))
   const LazySearchPage = lazy(() => import('pages/Search/SearchPage'))
@@ -27,9 +30,6 @@ export const App = () => {
   const LazyGameByGenresPage = lazy(() => import('pages/GameByGenres/GameByGenresPage'))
   const LazyGenresPage = lazy(() => import('pages/Genres/GenresPage'))
   const LazyCloudLibaryPage = lazy(() => import('pages/CloudLibary/CloudLibary'))
-  const authComplete = useSelector(reselect.authCompleteSuccess)
-  const user = useSelector(select.userData)
-  const dispatch = useDispatch()
 
   useEffect(() => {
     if (!authComplete) return;

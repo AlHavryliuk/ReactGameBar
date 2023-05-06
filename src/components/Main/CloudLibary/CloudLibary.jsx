@@ -6,15 +6,15 @@ import { getCloudGames } from "store/cloudGamesReducer/cloudGamesOperations";
 
 const CloudLibary = () => {
 
-    const cloudGames = useSelector(select.cloudGames)
     const dispatch = useDispatch()
-    const page = useSelector(select.page)
-    const currentPage = useSelector(select.currentPage)
+    const cloudGames = useSelector(select.cloudLibaryGames)
+    const page = useSelector(select.currentPage)
+    const currentPageName = useSelector(select.pageName)
 
     useEffect(() => {
-        if (currentPage !== 'cloudLibary') return
+        if (currentPageName !== 'cloudLibary') return
         dispatch(getCloudGames(page))
-    }, [dispatch, page, currentPage])
+    }, [dispatch, page, currentPageName])
 
 
     return (

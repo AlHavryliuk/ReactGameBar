@@ -2,9 +2,8 @@ import styled from 'styled-components';
 import {
   SmoothAppearance,
   halfMoveAboutUnderline,
-  heightRise,
   moveAboutUnderline,
-  rotateX,
+  rotateX
 } from 'utils/animations/animations';
 import { mobile } from 'utils/mixins/adaptMixin';
 
@@ -212,11 +211,11 @@ export const AboutSubBlockTitle = styled.h2`
 `;
 
 export const AboutHalfBlock = styled.div`
-  height: 0;
+  opacity: 0;
   margin: 22px 0;
   overflow: hidden;
   &.visible {
-    animation: ${heightRise} 1200ms 150ms ease-in-out forwards;
+    animation: ${SmoothAppearance} 1200ms 150ms ease-in-out forwards;
   }
 `;
 

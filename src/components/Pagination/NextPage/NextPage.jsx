@@ -6,10 +6,10 @@ import { select } from 'store/selectors/selectors';
 const NextPage = () => {
   const dispatch = useDispatch();
   const lastPage = useSelector(select.lastPage)
-  const currentPage = useSelector(select.page)
-  const currentPageName = useSelector(select.currentPage)
-  const cloudTotalPages = useSelector(select.totalPages)
-  
+  const currentPage = useSelector(select.currentPage)
+  const currentPageName = useSelector(select.pageName)
+  const cloudTotalPages = useSelector(select.totalCloudPages)
+
   const incrementPages = () => {
     dispatch(incrementPage());
   };

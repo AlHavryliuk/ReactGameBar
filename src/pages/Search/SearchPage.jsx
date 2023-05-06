@@ -12,13 +12,13 @@ import { setCurrentPage, setFullSearchParams } from 'store/requestReducer/reques
 import { select } from 'store/selectors/selectors';
 
 const SearchPage = () => {
-    const isLoading = useSelector(select.isLoading);
-    const gamesList = useSelector(select.gamesList);
-    const currentPage = useSelector(select.currentPage);
-    const searchQuery = useSelector(select.searchQuery);
-    const [searchParams, setSearchParams] = useSearchParams();
-    const page = useSelector(select.page);
     const dispatch = useDispatch()
+    const gamesIsLoading = useSelector(select.gamesIsLoading);
+    const gamesList = useSelector(select.gamesList);
+    const currentPageName = useSelector(select.pageName);
+    const searchQuery = useSelector(select.searchQuery);
+    const page = useSelector(select.currentPage);
+    const [searchParams, setSearchParams] = useSearchParams();
 
 
     useEffect(() => {
@@ -36,20 +36,20 @@ const SearchPage = () => {
 
 
     useEffect(() => {
-        if (currentPage !== 'search') return
+        if (currentPageName !== 'search') return
         window.scrollTo(0, 0);
         if (searchQuery !== null) {
             setSearchParams({ game: searchQuery, page })
         }
         dispatch(searchGames({ page, searchQuery }))
         // eslint-disable-next-line
-    }, [page, currentPage, dispatch, searchQuery])
+    }, [page, currentPageName, dispatch, searchQuery])
 
 
     return (
         <>
             <Search type={`mobile`} />
-            {isLoading && <Loader />}
+            {gamesIsLoading && <Loader />}
             <GameGallery>
                 {gamesList &&
                     gamesList.map(game => <GameCard key={game.id} game={game} />)}

@@ -10,7 +10,7 @@ import { CustomSvg, GameHeader, HeaderDinamicTitle, HeaderTitle } from './Header
 
 
 const Header = () => {
-  const currentPage = useSelector(select.currentPage)
+  const currentPageName = useSelector(select.pageName)
   const dispatch = useDispatch()
   const handleSetFirstPage = () => dispatch(setFirstPage())
 
@@ -22,7 +22,7 @@ const Header = () => {
             <use href={`${svg}#icon-gamepad`}></use>
           </CustomSvg>
         </HeaderTitle>
-        <HeaderDinamicTitle>{currentPage === 'home' ? 'GameVortex' : currentPage}</HeaderDinamicTitle>
+        <HeaderDinamicTitle>{currentPageName === 'home' ? 'GameVortex' : currentPageName}</HeaderDinamicTitle>
         <Search />
         <Burger />
         <Authorization headerAuth />

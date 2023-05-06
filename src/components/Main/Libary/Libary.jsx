@@ -6,8 +6,8 @@ import { useEffect } from 'react';
 import { setFirstLocalPage } from 'store/favoriteGames/favoriteSlice';
 
 const Libary = () => {
-    const favoriteGames = useSelector(reselect.gamesPagination)
     const dispatch = useDispatch();
+    const favoriteGames = useSelector(reselect.gamesPagination)
 
     useEffect(() => {
         return () => {

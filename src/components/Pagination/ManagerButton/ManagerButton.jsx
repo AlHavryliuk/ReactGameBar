@@ -8,10 +8,10 @@ import { PaginationWrapper } from './ManagerButton.styled';
 const ManagerButton = () => {
 
   const games = useSelector(select.gamesList)
-  const cloudGames = useSelector(select.cloudGames)
-  const currentPage = useSelector(select.currentPage)
+  const cloudGames = useSelector(select.cloudLibaryGames)
+  const currentPageName = useSelector(select.pageName)
 
-  const tempGames = currentPage === "cloudLibary" ? cloudGames : games
+  const tempGames = currentPageName === "cloudLibary" ? cloudGames : games
 
   return (
     <>

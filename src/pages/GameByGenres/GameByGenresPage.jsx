@@ -12,11 +12,11 @@ import { setCurrentPage } from 'store/requestReducer/requestSlice';
 import { select } from "store/selectors/selectors";
 
 const GameByGenresPage = () => {
-    const isLoading = useSelector(select.isLoading);
-    const gamesList = useSelector(select.gamesList);
-    const page = useSelector(select.page);
-    const { genre } = useParams();
     const dispatch = useDispatch()
+    const gamesIsLoading = useSelector(select.gamesIsLoading);
+    const gamesList = useSelector(select.gamesList);
+    const page = useSelector(select.currentPage);
+    const { genre } = useParams();
 
     useEffect(() => {
         if (!genre) return
@@ -33,7 +33,7 @@ const GameByGenresPage = () => {
 
     return (
         <>
-            {isLoading && <Loader />}
+            {gamesIsLoading && <Loader />}
             <GameGallery>
                 <SectionTitle>{`Games in the genre: "${genre}"`}</SectionTitle>
                 {gamesList &&

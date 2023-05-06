@@ -7,7 +7,7 @@ import { DetailsPropertyWrapper, PropertiesSubTitle } from '../DetailsProperties
 import { AchievementsCard, AchievementsContainer } from './DetailsAchievements.styled';
 
 const DetailsAchievements = () => {
-    const achievements = useSelector(select.achievements)
+    const achievements = useSelector(select.selectedGameAchievements)
     const notFoundImage = 'https://picturesofmaidenhead.files.wordpress.com/2019/01/image-not-found.jpg?w=1620'
     const dispatch = useDispatch()
 

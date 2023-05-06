@@ -6,8 +6,8 @@ import icon from '../../images/icon-spread.svg';
 import { SearchForm, SearchIcon, SearchInput, SearchWrapper } from './Search.styled';
 
 const Search = ({ type }) => {
-    const query = useRef(null)
     const dispatch = useDispatch()
+    const query = useRef(null)
 
     const handleSearchGameByQuery = () => {
         dispatch(setFirstPage())

@@ -5,9 +5,9 @@ import { ItemPage, NumPageContainer, ShamPageItem, ReactItemWrapper } from "./Nu
 import { setPage } from "store/requestReducer/requestSlice";
 
 const NumPageMenu = () => {
-    const lastPage = useSelector(select.lastPage);
-    const currentPage = useSelector(select.page);
     const dispatch = useDispatch()
+    const lastPage = useSelector(select.lastPage);
+    const currentPage = useSelector(select.currentPage);
 
     const getPageArray = memoizeOne((lastPage, currentPage) => {
         const pageArray = [];

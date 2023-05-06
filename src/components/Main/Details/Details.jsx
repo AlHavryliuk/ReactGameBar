@@ -15,12 +15,12 @@ const Details = () => {
     background_image_additional,
     name, rating
   } = useSelector(select.selectedGame);
-  const favoriteGames = useSelector(select.favoriteGames)
+  const localLibaryGames = useSelector(select.localLibaryGames)
   const dispatch = useDispatch()
-  const isLoading = useSelector(select.selectedIsLoading)
-  const cloudGames = useSelector(select.cloudGames)
-  const cloudLoading = useSelector(select.cloudLoading)
-  const tempGame = useSelector(select.tempGame)
+  const selectedIsLoading = useSelector(select.selectedIsLoading)
+  const cloudGames = useSelector(select.cloudLibaryGames)
+  const cloudLoading = useSelector(select.cloudIsLoading)
+  const tempGame = useSelector(select.tempCloudGame)
   const authComlete = useSelector(reselect.authCompleteSuccess)
 
 
@@ -69,7 +69,7 @@ const Details = () => {
 
   return (
     <DetailsBlock>
-      {isLoading ? <Loader /> :
+      {selectedIsLoading ? <Loader /> :
         <>
           <DetailsColorWrapper>
             <DetailsSubTitle>Description</DetailsSubTitle>
@@ -77,8 +77,8 @@ const Details = () => {
           </DetailsColorWrapper>
           <DetailsProperties />
           <DetailsButtonWrapper>
-            <DetailsButton onClick={handleAddFavoriteGame} disabled={gameAlreadyAdded(favoriteGames)}>{gameAlreadyAdded(favoriteGames) ? `Already added` : `Add to Locale Libary`}</DetailsButton>
-            <DetailsButton onClick={handleRemoveFavoriteGame} disabled={!gameAlreadyAdded(favoriteGames)}>Remove from Locale Libary</DetailsButton>
+            <DetailsButton onClick={handleAddFavoriteGame} disabled={gameAlreadyAdded(localLibaryGames)}>{gameAlreadyAdded(localLibaryGames) ? `Already added` : `Add to Locale Libary`}</DetailsButton>
+            <DetailsButton onClick={handleRemoveFavoriteGame} disabled={!gameAlreadyAdded(localLibaryGames)}>Remove from Locale Libary</DetailsButton>
             {authComlete && <>
               <DetailsButton onClick={handleAddGameToCloud} disabled={cloudLoading || tempGame}>{gameAlreadyAdded(cloudGames) ? `Already added` : `Add to Cloud Libary`}</DetailsButton>
               <DetailsButton onClick={handleRemoveGameFromCloud} disabled={cloudLoading || !tempGame}>Remove from Cloud Libary</DetailsButton>

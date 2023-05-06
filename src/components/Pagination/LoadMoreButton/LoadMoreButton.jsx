@@ -6,14 +6,14 @@ import { useEffect } from 'react';
 
 const LoadMoreButton = () => {
   const dispatch = useDispatch()
-  const favoriteGames = useSelector(select.favoriteGames)
+  const favoriteGames = useSelector(select.localLibaryGames)
   const per_page = useSelector(select.per_page)
-  const page = useSelector(select.localPage)
-  const currentPage = useSelector(select.currentPage)
+  const page = useSelector(select.localCurrentPage)
+  const currentPageName = useSelector(select.pageName)
 
 
   useEffect(() => {
-    if (currentPage === 'details') return
+    if (currentPageName === 'details') return
     dispatch(setFirstLocalPage())
     // eslint-disable-next-line
   }, [dispatch])

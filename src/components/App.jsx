@@ -29,6 +29,7 @@ export const App = () => {
   const LazyLibaryPage = lazy(() => import('pages/Libary/LibaryPage'))
   const LazyGameByGenresPage = lazy(() => import('pages/GameByGenres/GameByGenresPage'))
   const LazyGenresPage = lazy(() => import('pages/Genres/GenresPage'))
+  const LazyProfilePage = lazy(() => import('pages/Profile/ProfilePage'))
   const LazyCloudLibaryPage = lazy(() => import('pages/CloudLibary/CloudLibary'))
 
   useEffect(() => {
@@ -54,6 +55,7 @@ export const App = () => {
           <Route path="/libary" element={<LazyLibaryPage />} />
           <Route path="/cloudLibary" element={<LazyCloudLibaryPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/profile" element={<LazyProfilePage />} />
         </Routes>
       </Suspense>
       {mobileNavigation && <MobileNav />}

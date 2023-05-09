@@ -7,6 +7,7 @@ import {
   logout,
   register,
 } from 'service/auth';
+import { updateUserNickname } from 'service/vortexUser';
 import swal from 'sweetalert';
 
 export const registerUser = createAsyncThunk(
@@ -45,7 +46,7 @@ export const googleLoginUser = createAsyncThunk(
   'auth/postGoogleLoginUser',
   async (credential, { rejectWithValue }) => {
     try {
-      const userData = await googleLogin({credential});
+      const userData = await googleLogin({ credential });
       return userData;
     } catch (error) {
       failureToast('Incorrect email or password, please try again');
@@ -75,6 +76,23 @@ export const getCurrentUser = createAsyncThunk(
     } catch (error) {
       swal({
         title: 'Token timed out or emeil is not verify',
+      });
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const patchCurrentUserThunk = createAsyncThunk(
+  'auth/patchCurrentUser',
+  async (nickname, { rejectWithValue }) => {
+    try {
+      const result = await updateUserNickname(nickname);
+      return result;
+    } catch (error) {
+      const { message } = error.response.data;
+      swal({
+        title: 'Error',
+        text: message,
       });
       return rejectWithValue(error.message);
     }

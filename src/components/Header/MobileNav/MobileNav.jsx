@@ -31,6 +31,7 @@ const MobileNav = () => {
             <MobileNavItem onClick={handleCloseNavigationMenu} to="/libary">Locale Libary</MobileNavItem>
             {authComplete && <MobileNavItem onClick={handleCloseAndSetFirstPage} to="/cloudLibary">Cloud Libary</MobileNavItem>}
             <MobileNavItem onClick={handleCloseNavigationMenu} to="/about">About</MobileNavItem>
+            <MobileNavItem onClick={handleCloseNavigationMenu} to="/profile">Profile</MobileNavItem>
             <MobileNavItem onClick={handleCloseNavigationMenu} to="/search">Search</MobileNavItem>
         </MobileNavPopup>
     )

@@ -8,6 +8,7 @@ import {
   googleLoginUser,
   loginUser,
   logoutUser,
+  patchCurrentUserThunk,
   registerUser,
 } from './authOperations';
 
@@ -86,6 +87,19 @@ export const authSlice = createSlice({
         state.error = payload;
         state.isLoading = false;
         state.user = null;
+      })
+
+      .addCase(patchCurrentUserThunk.pending, state => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(patchCurrentUserThunk.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.user = { ...state.user, nickname: payload.nickname };
+      })
+      .addCase(patchCurrentUserThunk.rejected, (state, { payload }) => {
+        state.error = payload;
+        state.isLoading = false;
       }),
 });
 

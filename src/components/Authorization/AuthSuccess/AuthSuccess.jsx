@@ -1,4 +1,4 @@
-import { CustomAuthSuccess, CustomAuthWrapper, CustomAuthLogout } from "./AuthSuccess.styles"
+import { CustomAuthSuccess, CustomAuthWrapper, CustomAuthLogout, SettingsButton } from "./AuthSuccess.styles"
 import svg from '../../../images/icon-spread.svg'
 import { useDispatch, useSelector } from "react-redux"
 import { select } from "store/selectors/selectors"
@@ -18,12 +18,19 @@ const AuthSuccess = () => {
     return (
         <CustomAuthWrapper>
             {authIsLoading && <Loader />}
-            <CustomAuthSuccess>{user.nickname || user.email}</CustomAuthSuccess>
+            <CustomAuthSuccess>{user.nickname || user.email}
+            </CustomAuthSuccess>
             <CustomAuthLogout onClick={handleLogout}>
                 <svg height={24} width={24}>
                     <use href={`${svg}#icon-exit`}></use>
                 </svg>
             </CustomAuthLogout>
+            <SettingsButton to="/profile">
+                <svg height={22} width={22}>
+                    <use href={`${svg}#icon-cog`}></use>
+                </svg>
+            </SettingsButton>
+
         </CustomAuthWrapper>
     )
 }

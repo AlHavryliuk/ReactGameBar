@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { successToast } from 'components/Custom/Toaster/toasts';
-import { deleteGame, getAll, getGameById, postGame } from 'service/vortex';
+import { deleteGame, getAll, getGameById, postGame } from 'service/vortexGame';
 
 export const addGame = createAsyncThunk(
   'cloud/postGame',

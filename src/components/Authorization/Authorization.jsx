@@ -1,10 +1,10 @@
 import AuthPopup from "components/Authorization/AuthPopup/AuthPopup"
+import Loader from "components/Loader/Loader"
 import { useState } from "react"
-import { AuthorizationWrapper, LoginBtn, SignUpWrapper } from "./Authorization.styles"
 import { useSelector } from "react-redux"
 import { reselect, select } from "store/selectors/selectors"
 import AuthSuccess from "./AuthSuccess/AuthSuccess"
-import Loader from "components/Loader/Loader"
+import { AuthorizationWrapper, LoginBtn, SignUpWrapper } from "./Authorization.styles"
 
 const Authorization = ({ headerAuth }) => {
     const [authPopUpIsOpen, setAuthPopUpIsOpen] = useState(false)

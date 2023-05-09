@@ -11,13 +11,13 @@ export const $privateHost = axios.create({
   baseURL: VORTEX_URL,
 });
 
-$privateHost.interceptors.response.use(
-  response => response,
-  error => {
-    console.log(error.response);
-    return Promise.reject(error);
-  }
-);
+// $privateHost.interceptors.response.use(
+//   response => response,
+//   error => {
+//     console.log(error.response);
+//     return Promise.reject(error);
+//   }
+// );
 
 export const token = {
   set: token => {

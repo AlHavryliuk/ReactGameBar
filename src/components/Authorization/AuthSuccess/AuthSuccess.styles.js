@@ -60,6 +60,11 @@ export const SettingsButton = styled(NavLink)`
 
   &.active {
     background-color: ${({ theme }) => theme.headerTextColor};
+    &:hover {
+      & > svg {
+        fill: ${({ theme }) => theme.headerTextColor};
+      }
+    }
     & > svg {
       fill: ${({ theme }) => theme.loadMoreHoverColor};
     }

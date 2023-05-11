@@ -9,6 +9,7 @@ import {
   loginUser,
   logoutUser,
   patchCurrentUserThunk,
+  patchUserAvatarThunk,
   registerUser,
 } from './authOperations';
 
@@ -98,6 +99,19 @@ export const authSlice = createSlice({
         state.user = { ...state.user, nickname: payload.nickname };
       })
       .addCase(patchCurrentUserThunk.rejected, (state, { payload }) => {
+        state.error = payload;
+        state.isLoading = false;
+      })
+
+      .addCase(patchUserAvatarThunk.pending, state => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(patchUserAvatarThunk.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.user = { ...state.user, avatarURL: payload.avatarURL };
+      })
+      .addCase(patchUserAvatarThunk.rejected, (state, { payload }) => {
         state.error = payload;
         state.isLoading = false;
       }),

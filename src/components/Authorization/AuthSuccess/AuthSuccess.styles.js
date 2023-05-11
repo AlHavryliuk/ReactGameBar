@@ -5,7 +5,7 @@ import { mobile } from 'utils/mixins/adaptMixin';
 export const CustomAuthSuccess = styled.div`
   width: 100%;
   max-width: 400px;
-  padding: 15px 20px;
+  padding: 10px 20px;
   background-color: rgb(35 48 53);
   border-radius: 10px;
   color: ${({ theme }) => theme.headerTextColor};
@@ -58,6 +58,13 @@ export const SettingsButton = styled(NavLink)`
   cursor: pointer;
   transition: all 0.3s;
 
+  &.active {
+    background-color: ${({ theme }) => theme.headerTextColor};
+    & > svg {
+      fill: ${({ theme }) => theme.loadMoreHoverColor};
+    }
+  }
+
   & > svg {
     fill: ${({ theme }) => theme.headerTextColor};
   }
@@ -73,4 +80,11 @@ export const SettingsButton = styled(NavLink)`
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
       `}
   }
+`;
+
+export const MiniAvatar = styled.img`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
 `;

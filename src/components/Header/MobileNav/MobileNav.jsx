@@ -4,7 +4,6 @@ import { closeMenu } from "store/mobileNav/mobileNavSlice";
 import { setFirstPage } from "store/requestReducer/requestSlice";
 import { reselect, select } from "store/selectors/selectors";
 import icon from '../../../images/icon-spread.svg';
-import { NavItem } from "../Navigation/Navigation.styled";
 import { MobileCloseButton, MobileHeader, MobileNavItem, MobileNavPopup } from "./MobileNav.styled";
 
 const MobileNav = () => {

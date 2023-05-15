@@ -7,7 +7,11 @@ import {
   logout,
   register,
 } from 'service/auth';
-import { updateUserAvatar, updateUserNickname } from 'service/vortexUser';
+import {
+  getAllUsers,
+  updateUserAvatar,
+  updateUserNickname,
+} from 'service/vortexUser';
 import swal from 'sweetalert';
 
 export const registerUser = createAsyncThunk(
@@ -104,6 +108,23 @@ export const patchUserAvatarThunk = createAsyncThunk(
   async (image, { rejectWithValue }) => {
     try {
       const result = await updateUserAvatar(image);
+      return result;
+    } catch (error) {
+      const { message } = error.response.data;
+      swal({
+        title: 'Error',
+        text: message,
+      });
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const getUsersThunk = createAsyncThunk(
+  'admin/getUsersThunk',
+  async (page, { rejectWithValue }) => {
+    try {
+      const result = await getAllUsers(page);
       return result;
     } catch (error) {
       const { message } = error.response.data;

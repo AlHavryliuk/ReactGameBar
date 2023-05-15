@@ -14,6 +14,8 @@ import Header from './Header/MainHeader/Header';
 import MobileNav from './Header/MobileNav/MobileNav';
 import Loader from './Loader/Loader';
 import { getCurrentUser } from 'store/authReducer/authOperations';
+import { AdminPage } from 'pages/Admin/AdminPage';
+
 
 
 
@@ -31,6 +33,7 @@ export const App = () => {
   const LazyGenresPage = lazy(() => import('pages/Genres/GenresPage'))
   const LazyProfilePage = lazy(() => import('pages/Profile/ProfilePage'))
   const LazyCloudLibaryPage = lazy(() => import('pages/CloudLibary/CloudLibary'))
+ 
 
   useEffect(() => {
     if (!authComplete) return;
@@ -56,6 +59,7 @@ export const App = () => {
           <Route path="/cloudLibary" element={<LazyCloudLibaryPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/profile" element={<LazyProfilePage />} />
+          <Route path="/adminPanel" element={<AdminPage />} />
         </Routes>
       </Suspense>
       {mobileNavigation && <MobileNav />}

@@ -20,6 +20,7 @@ export const $privateHost = axios.create({
 // );
 
 export const token = {
+  get: () => $privateHost.defaults.headers.common.Authorization,
   set: token => {
     $privateHost.defaults.headers.common.Authorization = `Bearer ${token}`;
   },

@@ -2,8 +2,9 @@ import LightMode from "components/LightMode/LightMode";
 import { useDispatch, useSelector } from "react-redux";
 import { closeMenu } from "store/mobileNav/mobileNavSlice";
 import { setFirstPage } from "store/requestReducer/requestSlice";
-import { reselect } from "store/selectors/selectors";
+import { reselect, select } from "store/selectors/selectors";
 import icon from '../../../images/icon-spread.svg';
+import { NavItem } from "../Navigation/Navigation.styled";
 import { MobileCloseButton, MobileHeader, MobileNavItem, MobileNavPopup } from "./MobileNav.styled";
 
 const MobileNav = () => {
@@ -11,6 +12,8 @@ const MobileNav = () => {
     const handleCloseNavigationMenu = () => {
         dispatch(closeMenu())
     }
+    const user = useSelector(select.userData)
+    const userRole = user?.role ?? 'user'
     const authComplete = useSelector(reselect.authCompleteSuccess)
     const handleCloseAndSetFirstPage = () => {
         dispatch(setFirstPage())
@@ -31,7 +34,7 @@ const MobileNav = () => {
             <MobileNavItem onClick={handleCloseNavigationMenu} to="/libary">Locale Libary</MobileNavItem>
             {authComplete && <MobileNavItem onClick={handleCloseAndSetFirstPage} to="/cloudLibary">Cloud Libary</MobileNavItem>}
             <MobileNavItem onClick={handleCloseNavigationMenu} to="/about">About</MobileNavItem>
-            {authComplete && <MobileNavItem onClick={handleCloseNavigationMenu} to="/profile">Profile</MobileNavItem>}
+            {userRole === 'admin' && <MobileNavItem onClick={handleCloseNavigationMenu} to="/adminPanel">Admin Panel</MobileNavItem>}
             <MobileNavItem onClick={handleCloseNavigationMenu} to="/search">Search</MobileNavItem>
         </MobileNavPopup>
     )

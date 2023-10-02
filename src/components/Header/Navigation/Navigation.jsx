@@ -22,7 +22,7 @@ const Navigation = () => {
     <CustomNavigation>
       <NavigationLinks>
         <NavItem onClick={handleSetFirstPage} to="/genres">Genres</NavItem>
-        <NavItem to="/libary">Locale Libary</NavItem>
+        <NavItem to="/libary">Local Libary</NavItem>
         {authComplete && <NavItem onClick={handleSetFirstPage} to="/cloudLibary">Cloud Libary</NavItem>}
         {userRole === 'admin' && <NavItem onClick={handleSetFirstPage} to="/adminPanel">Admin Panel</NavItem>}
         <NavItem to="/about">About</NavItem>
